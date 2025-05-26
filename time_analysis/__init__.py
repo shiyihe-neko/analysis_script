@@ -2,7 +2,9 @@ import pandas as pd
 import re
 import os
 import json
-from typing import Tuple
+import numpy as np
+from typing import Tuple, List, Optional
+import matplotlib.pyplot as plt
 
 
 def time_analysis(all_data, metric='total_duration_min'):
@@ -181,3 +183,111 @@ def compute_task_time_ratio(df_total: pd.DataFrame,
     )
 
     return df_merged[['participantId', 'format', 'task_time', 'total_time', 'ratio','task']], df_format_avg
+
+def get_task_group(task: str) -> str:
+    if task.endswith('_post-task-question'):
+        return 'post-task-question'
+    m = re.match(r'^(.*?)(?:-\d+|-part\d+)$', task)
+    if m:
+        return m.group(1)
+    return task
+
+def compute_avg_ratio(
+    df: pd.DataFrame,
+    tasks: Optional[List[str]] = None
+) -> (pd.DataFrame, pd.DataFrame):
+    df = df.copy()
+    df['task_group'] = df['task'].apply(get_task_group)
+    total = (
+        df.groupby(['participantId','format'], as_index=False)
+          .agg(total_sec=('duration_sec','sum'))
+    )
+    grp = (
+        df.groupby(['participantId','format','task_group'], as_index=False)
+          .agg(group_sec=('duration_sec','sum'))
+    )
+    dfp = (
+        grp.merge(total, on=['participantId','format'])
+           .assign(ratio=lambda d: d['group_sec']/d['total_sec'])
+    )
+    if tasks is None:
+        df_avg = (
+            dfp.groupby(['format','task_group'], as_index=False)
+               .agg(avg_ratio=('ratio','mean'))
+               .sort_values('avg_ratio', ascending=False)
+               .reset_index(drop=True)
+        )
+        wide_avg = df_avg.pivot(index='format', columns='task_group', values='avg_ratio').fillna(0)
+    else:
+        df_sel = dfp[dfp['task_group'].isin(tasks)]
+        summed = (
+            df_sel.groupby(['participantId','format'], as_index=False)
+                  .agg(ratio_sum=('ratio','sum'))
+        )
+        df_avg = (
+            summed.groupby('format', as_index=False)
+                  .agg(avg_ratio=('ratio_sum','mean'))
+                  .sort_values('avg_ratio', ascending=False)
+                  .reset_index(drop=True)
+        )
+        wide_avg = df_avg.set_index('format')[['avg_ratio']]
+    return df_avg, wide_avg
+
+def plot_stacked_ratio(
+    all_wide: pd.DataFrame,
+    figsize=(10, 6),
+    sort_formats_by: Optional[str] = None,
+    stack_order_by: Optional[str] = None,
+    cmap_name: str = 'tab20'
+):
+    """
+    绘制堆叠柱状图，并可：
+      1. sort_formats_by： 按某个 task_group 的占比给 x 轴的 formats 排序
+      2. stack_order_by：  按某个 format（或 'average'）给 stack segments 排序
+    """
+    # 复制
+    df = all_wide.copy()
+    
+    # —— 1) 按 formats 排序 —— #
+    if sort_formats_by and sort_formats_by in df.columns:
+        df = df.sort_values(by=sort_formats_by, ascending=False)
+
+    # —— 2) 决定 stack 的顺序 —— #
+    if stack_order_by == 'average':
+        # 每列（task_group）在所有格式上的平均值
+        base = df.mean(axis=0)
+    elif stack_order_by in df.index:
+        # 用某一行（format）对应的值
+        base = df.loc[stack_order_by]
+    else:
+        # 不排序，按原始列顺序
+        base = None
+
+    if base is not None:
+        # 升序排列，最小的放底部
+        task_groups = base.sort_values().index.tolist()
+    else:
+        task_groups = df.columns.tolist()
+
+    # 一致的调色
+    cmap = plt.get_cmap(cmap_name)
+    colors = cmap(np.linspace(0, 1, len(task_groups)))
+
+    # —— 3) 绘图 —— #
+    formats = df.index.tolist()
+    bottom = np.zeros(len(formats))
+    fig, ax = plt.subplots(figsize=figsize)
+    for tg, color in zip(task_groups, colors):
+        vals = df[tg].values
+        ax.bar(formats, vals, bottom=bottom, label=tg, color=color)
+        bottom += vals
+
+    # —— 4) 美化 —— #
+    ax.set_xlabel('Format')
+    ax.set_ylabel('Average Time Ratio')
+    ax.set_title('Stacked Bar Chart of Task Time Ratios by Format')
+    ax.legend(loc='upper left', bbox_to_anchor=(1.02, 1))
+    plt.xticks(rotation=45, ha='right')
+    plt.tight_layout()
+    plt.show
+    return fig, ax

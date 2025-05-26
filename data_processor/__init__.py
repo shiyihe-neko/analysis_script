@@ -878,5 +878,7 @@ def extract_post_task_tlx_responses(all_data: dict, df_part: pd.DataFrame) -> pd
         df_post_survy_format.loc[mask, base] = df_post_survy_format.loc[mask, other]
         # 删除那个 other 列
         df_post_survy_format.drop(columns=[other], inplace=True)
+        df_post_survy_format['q10_months'] = pd.to_numeric(df['q10'], errors='coerce')
+        df_post_survy_format['q10_years'] = (df_post_survy_format['q10_months'] / 12).round(2)
 
     return df_post_survy_format
