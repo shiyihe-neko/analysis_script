@@ -6,6 +6,8 @@ import matplotlib.pyplot as plt
 from collections import Counter
 from typing import Tuple, Dict
 from typing import Union
+from functools import reduce
+from typing import List
 
 def load_all_data(folder_path, ignore_completed=False):
     """
@@ -467,12 +469,22 @@ def analyze_nasa_and_post_surveys(all_data):
     return df_nasa
 
 
-def merge_dfs(df1: pd.DataFrame, df2: pd.DataFrame,
-              on_cols: list, how: str = 'inner') -> pd.DataFrame:
 
-    merged = pd.merge(df1, df2, on=on_cols, how=how)
-    return merged
+def merge_dfs(dfs: List[pd.DataFrame], ignore_index: bool = True) -> pd.DataFrame:
+    """
+    将多个列结构相同的 DataFrame 在行方向拼接（上下合并）。
 
+    参数:
+        dfs (List[pd.DataFrame]): 要合并的 DataFrame 列表。
+        ignore_index (bool): 是否重新索引，默认重新索引为 True。
+
+    返回:
+        pd.DataFrame: 合并后的 DataFrame。
+    """
+    if not dfs:
+        raise ValueError("The list of DataFrames is empty.")
+    
+    return pd.concat(dfs, axis=0, ignore_index=ignore_index)
 
 
 def aggregate_tasks_with_format(

@@ -3,6 +3,7 @@ import re
 import seaborn as sns
 import matplotlib.pyplot as plt
 import numpy as np
+import scipy.stats as st
 from scipy.stats import pearsonr
 
 
@@ -314,92 +315,110 @@ def plot_nasatlx_correct(
     figsize_per: tuple      = (4,4)
 ):
     """
-    Flexible plotting of Correct vs metrics:
-      - show_by_format:  by-group scatter + per-group regressions (＋optional overall line)
-      - show_overall:    overall scatter + regression
-      - show_residual:   residuals vs correct
-
-    参数:
-      df_reading, df_nasa: DataFrames
-      metrics: list of metric names
-      group_col: 分组列名
-      ...
-      show_overall_trend: 当 show_by_format=True 时，是否绘制 overall 虚线
-      figsize_per: 每个子图的大小 (w,h)
+    修正版：在做 polyfit 和 pearsonr 前，先清洗掉 NaN/Inf，并保证样本量 ≥ 2。
     """
-    df_reading['correct'] = pd.to_numeric(df_reading['correct'], errors='coerce')
-    for col in ['mental-demand','physical-demand','temporal-demand','effort','performance','frustration']:
-        df_nasa[col] = pd.to_numeric(df_nasa[col], errors='coerce')
-    # 1. 聚合 NASA 数据
-    if agg_func=='mean':
-        df_nasa_agg = df_nasa.groupby(participant_col)[metrics].mean().reset_index()
+    # —— 1. 本地复制并转换数值型 —— #
+    df_r = df_reading.copy()
+    df_r[correct_col] = pd.to_numeric(df_r[correct_col], errors='coerce')
+    
+    # 先把 NASA-TLX 所有指标也转成数值
+    df_n = df_nasa.copy()
+    for m in metrics:
+        df_n[m] = pd.to_numeric(df_n[m], errors='coerce')
+
+    # —— 2. 聚合 NASA-TLX —— #
+    if agg_func == 'mean':
+        df_n_agg = df_n.groupby(participant_col)[metrics].mean().reset_index()
     else:
-        df_nasa_agg = df_nasa.groupby(participant_col)[metrics].median().reset_index()
+        df_n_agg = df_n.groupby(participant_col)[metrics].median().reset_index()
 
-    # 2. 合并
-    df = (df_reading[[participant_col, correct_col, group_col]]
-          .merge(df_nasa_agg, on=participant_col, how='inner')
-          .dropna(subset=[correct_col]))
+    # —— 3. 合并回答和指标，并初步 drop NaN correct —— #
+    df = (
+        df_r[[participant_col, correct_col, group_col]]
+        .merge(df_n_agg, on=participant_col, how='inner')
+        .dropna(subset=[correct_col])
+    )
 
-    formats = sorted(df[group_col].unique())
+    formats = sorted(df[group_col].dropna().unique())
     cmap    = plt.cm.get_cmap('tab10', len(formats))
     markers = ['o','s','^','D','v','P','X','*','h','8'] * 3
 
-    # 3. 针对每个 metric
+    # —— 4. 针对每个 metric 单独绘图 —— #
     for metric in metrics:
-        # 计算 overall 回归参数和残差数据
-        x_all = df[correct_col]; y_all = df[metric]
+        # 4.1 清洗 (correct, metric) 这两列的 NaN/Inf
+        x_all = pd.to_numeric(df[correct_col], errors='coerce').to_numpy()
+        y_all = pd.to_numeric(df[metric],       errors='coerce').to_numpy()
+        mask  = np.isfinite(x_all) & np.isfinite(y_all)
+        x_all = x_all[mask]
+        y_all = y_all[mask]
+
+        # 如果样本不足，就跳过
+        if len(x_all) < 2:
+            print(f"跳过 {metric}: 有效样本 < 2")
+            continue
+
+        # 全局拟合
         m_all, b_all = np.polyfit(x_all, y_all, 1)
-        y_pred_all = m_all * x_all + b_all
-        residuals  = y_all - y_pred_all
+        y_pred_all   = m_all * x_all + b_all
+        residuals    = y_all - y_pred_all
         r_all, p_all = pearsonr(x_all, y_all)
 
-        # 确定要画多少图
-        flags = [show_by_format, show_overall, show_residual]
+        # 确定子图数量
+        flags   = [show_by_format, show_overall, show_residual]
         n_plots = sum(flags)
         if n_plots == 0:
             raise ValueError("至少启用一个 show_* 参数。")
-        fig, axes = plt.subplots(1, n_plots,
-                                 figsize=(figsize_per[0]*n_plots, figsize_per[1]),
-                                 squeeze=False)
-        axes = axes[0]
 
+        fig, axes = plt.subplots(
+            1, n_plots,
+            figsize=(figsize_per[0]*n_plots, figsize_per[1]),
+            squeeze=False
+        )
+        axes = axes[0]
         idx = 0
-        # (1) 按 format
+
+        # (1) 按 format 的散点 + 回归
         if show_by_format:
             ax = axes[idx]; idx += 1
             for i, fmt in enumerate(formats):
-                sub = df[df[group_col]==fmt]
-                x, y = sub[correct_col], sub[metric]
-                ax.scatter(x, y, color=cmap(i), marker=markers[i],
+                sub = df[df[group_col] == fmt]
+                # 再次清洗子集
+                xa = pd.to_numeric(sub[correct_col], errors='coerce').to_numpy()
+                ya = pd.to_numeric(sub[metric],       errors='coerce').to_numpy()
+                mask_sub = np.isfinite(xa) & np.isfinite(ya)
+                xa, ya = xa[mask_sub], ya[mask_sub]
+                if len(xa) == 0:
+                    continue
+                ax.scatter(xa, ya, color=cmap(i), marker=markers[i],
                            label=str(fmt), alpha=0.7)
-                if len(sub)>=2:
-                    m, b = np.polyfit(x, y, 1)
-                    x0 = np.array([x.min(), x.max()])
-                    ax.plot(x0, m*x0+b, color=cmap(i), linewidth=1)
+                if len(xa) >= 2:
+                    m, b = np.polyfit(xa, ya, 1)
+                    x0 = np.array([xa.min(), xa.max()])
+                    ax.plot(x0, m*x0 + b, color=cmap(i), linewidth=1)
             if show_overall_trend:
                 x0 = np.array([x_all.min(), x_all.max()])
-                ax.plot(x0, m_all*x0+b_all,
+                ax.plot(x0, m_all*x0 + b_all,
                         color='k', linestyle='--', linewidth=2,
                         label='Overall')
-            ax.set_title(f"{metric}\nBy {group_col}")
+            title = f"{metric}\nBy {group_col}"
             if show_overall_trend:
-                ax.set_title(f"{metric}\nBy {group_col} + Overall")
+                title += " + Overall"
+            ax.set_title(title)
             ax.set_xlabel('Correct Count')
             ax.set_ylabel(metric)
             ax.legend(title=group_col, bbox_to_anchor=(1.05,1), loc='upper left')
 
-        # (2) overall only
+        # (2) overall 散点 + 回归
         if show_overall:
             ax = axes[idx]; idx += 1
             x0 = np.array([x_all.min(), x_all.max()])
             ax.scatter(x_all, y_all, alpha=0.6)
-            ax.plot(x0, m_all*x0+b_all, color='k', linewidth=2)
+            ax.plot(x0, m_all*x0 + b_all, color='k', linewidth=2)
             ax.set_title(f"{metric}\nOverall Only\nr={r_all:.2f}, p={p_all:.3f}")
             ax.set_xlabel('Correct Count')
             ax.set_ylabel(metric)
 
-        # (3) residuals
+        # (3) overall 残差图
         if show_residual:
             ax = axes[idx]; idx += 1
             ax.scatter(x_all, residuals, alpha=0.6)
@@ -410,3 +429,120 @@ def plot_nasatlx_correct(
 
         plt.tight_layout()
         plt.show()
+
+
+def plot_time_vs_response_heatmap(
+    df_post: pd.DataFrame,
+    df_result: pd.DataFrame,
+    participant_col: str,
+    format_col: str,
+    task_col: str,
+    time_col: str,
+    response_col: str,
+    bins: int = 8,
+    cmap: str = 'Blues'
+):
+    """
+    1) 合并并清洗
+    2) 把 time_col 分成 `bins` 个区间 (quantile bins)
+    3) 对 (time_bin, response_col) 做计数透视热力图
+    """
+    # 合并
+    df = pd.merge(
+        df_post[[participant_col, format_col, task_col, time_col]],
+        df_result[[participant_col, format_col, task_col, response_col]],
+        on=[participant_col, format_col, task_col],
+        how='inner'
+    ).dropna(subset=[time_col, response_col])
+
+    # 分箱（等频）
+    df['time_bin'] = pd.qcut(df[time_col], bins, duplicates='drop')
+
+    # 生成透视表
+    pivot = (
+        df
+        .groupby(['time_bin', response_col])
+        .size()
+        .unstack(fill_value=0)
+    )
+
+    # 绘图
+    plt.figure(figsize=(6, max(4, pivot.shape[0]*0.5)))
+    sns.heatmap(
+        pivot, annot=True, fmt='d',
+        cmap=cmap,
+        cbar_kws={'label': f'Count of {response_col}'}
+    )
+    plt.ylabel(f"{time_col} Bins")
+    plt.xlabel(response_col)
+    plt.title(f"{response_col} vs. Binned {time_col}")
+    plt.yticks(rotation=0)
+    plt.tight_layout()
+    plt.show()
+
+
+
+def plot_duration_vs_correct_with_stats(
+    df_post, df_result,
+    participant_col='participantId',
+    format_col='format',
+    task_col='task',
+    time_col='duration_sec',
+    response_col='correct',
+    by_format=True,
+    figsize=(16, 4),
+    test='mannwhitney'
+):
+    """
+    按 format 分面画箱线，并在每个子图上标注：
+      1) 两组间的 p-value（Mann-Whitney U 或 t-test）
+      2) 对应的点二列相关系数 r
+    
+    参数:
+      test: 'mannwhitney' 或 'ttest'
+    """
+    # 合并
+    df = (pd.merge(
+            df_post[[participant_col, format_col, task_col, time_col]],
+            df_result[[participant_col, format_col, task_col, response_col]],
+            on=[participant_col, format_col, task_col], how='inner')
+          .dropna(subset=[time_col, response_col]))
+    
+    formats = sorted(df[format_col].unique())
+    n = len(formats)
+    fig, axes = plt.subplots(1, n, figsize=(figsize[0], figsize[1]), sharey=False)
+    
+    for ax, fmt in zip(axes, formats):
+        sub = df[df[format_col]==fmt]
+        # 箱线
+        sns.boxplot(data=sub, x=response_col, y=time_col, ax=ax)
+        ax.set_title(f"{fmt}", fontsize=12)
+        ax.set_xlabel('')
+        ax.set_ylabel(time_col if fmt==formats[0] else '')
+        
+        # 取两组数据
+        x0 = sub[sub[response_col]==0][time_col]
+        x1 = sub[sub[response_col]==1][time_col]
+        
+        # 1) 计算 p 值
+        if test=='ttest':
+            stat, p = st.ttest_ind(x0, x1, nan_policy='omit')
+        else:
+            stat, p = st.mannwhitneyu(x0, x1, alternative='two-sided')
+        
+        # 2) 计算点二列相关系数
+        r, _ = st.pointbiserialr(sub[response_col], sub[time_col])
+        
+        # 叠加文本
+        ax.text(
+            0.5, 0.95,
+            f"p={p:.3f}\nr={r:.2f}",
+            ha='center', va='top', 
+            transform=ax.transAxes,
+            bbox=dict(boxstyle='round,pad=0.3', fc='white', ec='gray', alpha=0.5)
+        )
+    
+    fig.suptitle(f"{time_col} by {response_col} and {format_col}", y=1.02)
+    plt.tight_layout()
+    plt.show()
+

@@ -432,7 +432,7 @@ def vis_box_comparasion(df: pd.DataFrame,
 
         # 1) 生成显著性矩阵（略，用 compare_groups_statistically）
         res = compare_statistically(subdf, group_col, value_col, method,
-                                           None, discrete_tasks, continuous_tasks)
+                                           None, task_col, discrete_tasks, continuous_tasks)
         sig_df = res['pairwise']
         sig_mat = pd.DataFrame('', index=formats, columns=formats)
         for _, r in sig_df.iterrows():
@@ -544,7 +544,7 @@ def compare_significant_pairs(df: pd.DataFrame,
             sub = df[df[task_col] == t]
             res = compare_statistically(
                 sub, group_col, value_col, method,
-                None, discrete_tasks, continuous_tasks
+                None, task_col, discrete_tasks, continuous_tasks
             )
             out[t] = _filter(res)
         return out
