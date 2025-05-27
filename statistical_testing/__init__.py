@@ -114,7 +114,10 @@ def visualize_violin_comparison(df: pd.DataFrame,
     """
     def _plot(subdf: pd.DataFrame, title_suffix: str = None):
         # 1. 固定顺序
-        formats = sorted(subdf[group_col].dropna().unique())
+        order = ['json', 'json5c', 'json5', 'hjson', 'xml', 'yaml', 'toml']
+        subdf[group_col] = pd.Categorical(subdf[group_col], categories=order, ordered=True)
+        formats = order
+        # formats = sorted(subdf[group_col].dropna().unique())
 
         # 2. 构建显著性矩阵
         sig = pd.DataFrame('', index=formats, columns=formats)
@@ -204,7 +207,10 @@ def visualize_box_with_density(df: pd.DataFrame,
     """
     def _plot(subdf: pd.DataFrame, title_suffix: str = None):
         # 1. formats 顺序
-        formats = subdf[group_col].dropna().unique().tolist()
+        order = ['json', 'json5', 'jsonc', 'xml', 'yaml', 'toml', 'hjson']
+        subdf[group_col] = pd.Categorical(subdf[group_col], categories=order, ordered=True)
+        formats = order
+        # formats = subdf[group_col].dropna().unique().tolist()
         n = len(formats)
 
         # 2. 显著性矩阵

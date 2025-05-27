@@ -234,51 +234,61 @@ def compute_avg_ratio(
     return df_avg, wide_avg
 
 def plot_stacked_ratio(
-    all_wide: pd.DataFrame,
+    all_wide,
     figsize=(10, 6),
-    sort_formats_by: Optional[str] = None,
-    stack_order_by: Optional[str] = None,
-    cmap_name: str = 'tab20'
+    sort_formats_by=None,
+    stack_order_by=None,
+    cmap_name='tab20'
 ):
     """
     绘制堆叠柱状图，并可：
       1. sort_formats_by： 按某个 task_group 的占比给 x 轴的 formats 排序
       2. stack_order_by：  按某个 format（或 'average'）给 stack segments 排序
+
+    现在固定 format 显示顺序：['json','json5','jsonc','xml','yaml','toml','hjson']
     """
-    # 复制
+    # 定义固定顺序
+    order = ['json', 'jsonc', 'json5', 'hjson', 'xml', 'yaml', 'toml']
+
+    # 复制数据
     df = all_wide.copy()
-    
+    # 仅保留预设顺序中的 formats
+    df = df.loc[df.index.intersection(order)]
+
     # —— 1) 按 formats 排序 —— #
     if sort_formats_by and sort_formats_by in df.columns:
+        # 按指定列排序
         df = df.sort_values(by=sort_formats_by, ascending=False)
+        formats = df.index.tolist()
+    else:
+        # 使用预定顺序
+        # 将索引设为分类索引以按 order 排列
+        df.index = pd.CategoricalIndex(df.index, categories=order, ordered=True)
+        df = df.sort_index()
+        formats = order
 
     # —— 2) 决定 stack 的顺序 —— #
     if stack_order_by == 'average':
-        # 每列（task_group）在所有格式上的平均值
         base = df.mean(axis=0)
     elif stack_order_by in df.index:
-        # 用某一行（format）对应的值
         base = df.loc[stack_order_by]
     else:
-        # 不排序，按原始列顺序
         base = None
 
     if base is not None:
-        # 升序排列，最小的放底部
         task_groups = base.sort_values().index.tolist()
     else:
         task_groups = df.columns.tolist()
 
-    # 一致的调色
+    # 统一调色
     cmap = plt.get_cmap(cmap_name)
     colors = cmap(np.linspace(0, 1, len(task_groups)))
 
     # —— 3) 绘图 —— #
-    formats = df.index.tolist()
     bottom = np.zeros(len(formats))
     fig, ax = plt.subplots(figsize=figsize)
     for tg, color in zip(task_groups, colors):
-        vals = df[tg].values
+        vals = df[tg].reindex(formats).values
         ax.bar(formats, vals, bottom=bottom, label=tg, color=color)
         bottom += vals
 
@@ -289,5 +299,4 @@ def plot_stacked_ratio(
     ax.legend(loc='upper left', bbox_to_anchor=(1.02, 1))
     plt.xticks(rotation=45, ha='right')
     plt.tight_layout()
-    plt.show
     return fig, ax

@@ -75,9 +75,9 @@ def check_strict_syntax(text: str, fmt: str) -> int:
         elif fmt == 'jsonc':
             json.loads(remove_jsonc_comments(text))
         elif fmt == 'hjson':
-            hjson.loads(remove_jsonc_comments(text))
+            hjson.loads(text)
         elif fmt == 'json5':
-            json5.loads(remove_jsonc_comments(text))
+            json5.loads(text)
         elif fmt == 'yaml':
             YAML().load(remove_yaml_comments(text))
         elif fmt == 'xml':
@@ -390,3 +390,5 @@ def add_overall_rows(df: pd.DataFrame) -> pd.DataFrame:
 # print("TED         :", ted_dist)
 # print("Norm Dist   :", norm_dist)
 # print("Similarity  :", similarity)
+
+

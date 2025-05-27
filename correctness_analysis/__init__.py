@@ -111,19 +111,7 @@ def visualize_accuracy_heatmap(
     cbar_label: str = 'Accuracy'
 ):
     """
-    画一个“任务 × 格式” 的正确率热力图，并可通过 task_list / format_list 有选择地只看子集。
-
-    参数:
-      df            : 原始数据 DataFrame
-      task_col      : 任务名称所在列
-      format_col    : 格式名称所在列
-      accuracy_col  : 0–1 之间的正确率列
-      task_list     : 若非 None，只可视化此列表中的任务
-      format_list   : 若非 None，只可视化此列表中的格式
-      cmap          : seaborn/matplotlib colormap 名称
-      annot         : 是否在每个格子里写上数值
-      fmt           : annot 的数字格式
-      cbar_label    : 右侧 colorbar 的标题
+    画一个“任务 × 格式” 的正确率热力图，并在右侧和底部各加一列/行平均值。
     """
     df2 = df.copy()
 
@@ -132,27 +120,36 @@ def visualize_accuracy_heatmap(
         df2 = df2[df2[task_col].isin(task_list)]
     if format_list is not None:
         df2 = df2[df2[format_col].isin(format_list)]
-    # 如果过滤后为空，提示一下
     if df2.empty:
         raise ValueError("过滤后没有数据: 请检查 task_list / format_list 是否正确。")
 
-    # —— 计算 pivot 矩阵 —— 
+    # —— 计算 pivot（平均正确率） —— 
     pivot = (
         df2
         .groupby([task_col, format_col])[accuracy_col]
         .mean()
-        .unstack(fill_value=0)   # 对于缺失的组合填 0
+        .unstack(fill_value=0)
     )
 
-    # —— 绘图尺寸 —— 
-    n_tasks  = pivot.shape[0]
-    n_formats= pivot.shape[1]
-    figsize = (max(6, n_formats*1.2), max(4, n_tasks*0.6))
+    # —— 增加右侧“Average”列 —— 
+    pivot_avg = pivot.copy()
+    pivot_avg['Average'] = pivot.mean(axis=1)
+
+    # —— 增加底部“Average”行 —— 
+    # 先计算各列（包括新加的 Average 列）的平均
+    avg_row = pivot_avg.mean(axis=0)
+    # 将其追加为索引为 'Average' 的一行
+    pivot_avg.loc['Average'] = avg_row
+
+    # —— 调整图尺寸，考虑多了一行一列 —— 
+    n_tasks   = pivot_avg.shape[0]  # 原来 + 1
+    n_formats = pivot_avg.shape[1]  # 原来 + 1
+    figsize = (max(6, n_formats * 1.2), max(4, n_tasks * 0.6))
 
     # —— 绘制 heatmap —— 
     plt.figure(figsize=figsize)
     ax = sns.heatmap(
-        pivot,
+        pivot_avg,
         cmap=cmap,
         annot=annot,
         fmt=fmt,
@@ -163,9 +160,10 @@ def visualize_accuracy_heatmap(
 
     ax.set_xlabel(format_col)
     ax.set_ylabel(task_col)
-    ax.set_title("Accuracy Heatmap: Task vs Format")
+    ax.set_title("Accuracy Heatmap: Task vs Format\n(with row/column averages)")
     plt.tight_layout()
     plt.show()
+
 
 
 def visualize_score_distribution_heatmap(
@@ -178,20 +176,20 @@ def visualize_score_distribution_heatmap(
     cmap: str = 'Blues',
     annot: bool = True,
     fmt: str = 'd',
-    cbar_label: str = 'Number of Participants'
+    cbar_label: str = 'Number of Participants',
+    total_color=None  # 可以是单色名、colormap 名称或颜色列表
 ):
     """
-    画“格式 × 答对题数”的分布热力图：
-      • 确定每人每格式的总分：  
-        – 如果有 task=='task_all'，直接用对应 correct 作为 correct_count  
-        – 否则把各小题(correct=0/1)按 (participant,format) 分组求和  
-      • 横轴：各序列化格式  
-      • 纵轴：答对题数（0..max_score）  
-      • 格子值：恰好答对该题数的人数  
+    在“格式×答对题数”热力图中，右侧和下侧 Totals 区域使用渐变色显示。
+    
+    total_color:
+      - None（默认）：使用 light gray 渐变。
+      - str，且是 matplotlib 内置 colormap 名称，如 'Greys','Purples'。
+      - str，且是单一颜色，如 'lightgray'，会做白→该色渐变。
+      - list of colors：渐变过渡此列表中指定的颜色。
     """
+    # --- 数据预处理（同之前） ---
     df2 = df.copy()
-
-    # 1) 计算每个人每格式的总分 correct_count
     if 'task_all' in df2[task_col].unique():
         df_counts = (
             df2[df2[task_col] == 'task_all']
@@ -200,46 +198,83 @@ def visualize_score_distribution_heatmap(
         )
     else:
         df_counts = (
-            df2
-            .groupby([participant_col, format_col], as_index=False)[correct_col]
-            .sum()
-            .rename(columns={correct_col: 'correct_count'})
+            df2.groupby([participant_col, format_col], as_index=False)[correct_col]
+               .sum().rename(columns={correct_col: 'correct_count'})
         )
 
-    # 2) 确定可视化的格式列表和分数范围
     formats = sorted(df_counts[format_col].unique())
     if max_score is None:
         max_score = int(df_counts['correct_count'].max())
-    scores = list(range(0, max_score + 1))
+    scores = list(range(max_score + 1))
 
-    # 3) 统计每个 (format, score) 的人数
     pivot = (
         df_counts
-        .groupby([format_col, 'correct_count'])
-        .size()
-        .unstack(fill_value=0)      # 行=index=format，列=correct_count
-        .reindex(index=formats, fill_value=0)
-        .T                          # 转置：行→correct_count，列→format
-        .reindex(index=scores, fill_value=0)
+        .groupby([format_col, 'correct_count']).size()
+        .unstack(fill_value=0).reindex(index=formats, fill_value=0)
+        .T.reindex(index=scores, fill_value=0)
     )
 
-    # 4) 绘制热力图
-    plt.figure(figsize=(1 + len(formats)*0.6, 1 + len(scores)*0.5))
-    ax = sns.heatmap(
-        pivot,
-        cmap=cmap,
-        annot=annot,
-        fmt=fmt,
-        cbar_kws={'label': cbar_label},
-        linewidths=0.5,
-        linecolor='gray'
+    # --- 加入 Totals 行列 ---
+    pivot_ext = pivot.copy()
+    pivot_ext['Total'] = pivot_ext.sum(axis=1)
+    total_row = pivot_ext.sum(axis=0)
+    pivot_ext.loc['Total'] = total_row
+
+    data = pivot_ext.values
+    idx = pivot_ext.index.tolist()
+    cols = pivot_ext.columns.tolist()
+
+    # --- 构造两个 mask ---
+    mask_main   = np.zeros_like(data, dtype=bool)
+    mask_totals = np.zeros_like(data, dtype=bool)
+    for i, r in enumerate(idx):
+        for j, c in enumerate(cols):
+            if r == 'Total' or c == 'Total':
+                mask_main[i, j]   = True
+            else:
+                mask_totals[i, j] = True
+
+    # --- 选择 Totals 区的 cmap ---
+    if total_color is None:
+        total_cmap = sns.light_palette("gray", as_cmap=True)
+    elif isinstance(total_color, str):
+        # 如果是一个 colormap 名称
+        if total_color in plt.colormaps():
+            total_cmap = cm.get_cmap(total_color)
+        else:
+            # 当作单一颜色，做白到该色渐变
+            total_cmap = sns.light_palette(total_color, as_cmap=True)
+    elif isinstance(total_color, (list, tuple)):
+        total_cmap = sns.color_palette(total_color, as_cmap=True)
+    else:
+        raise ValueError("total_color 类型不支持。")
+
+    # --- 绘图 ---
+    fig, ax = plt.subplots(
+        figsize=(1 + len(cols)*0.6, 1 + len(idx)*0.5)
     )
+    # 主热力图
+    sns.heatmap(
+        pivot_ext, mask=mask_main,
+        cmap=cmap, annot=annot, fmt=fmt,
+        cbar_kws={'label': cbar_label},
+        linewidths=0.5, linecolor='gray',
+        ax=ax
+    )
+    # Totals 部分
+    sns.heatmap(
+        pivot_ext, mask=mask_totals,
+        cmap=total_cmap, annot=annot, fmt=fmt,
+        cbar=False,
+        linewidths=0.5, linecolor='gray',
+        ax=ax
+    )
+
     ax.set_xlabel(format_col)
     ax.set_ylabel('Correct Answer Count')
-    ax.set_title('Distribution of Correct Answer Counts by Format')
+    ax.set_title('Distribution of Correct Answer Counts by Format\n(with Totals)')
     plt.tight_layout()
     plt.show()
-
 
 
 def plot_binary_response_vs_metric_heatmap(

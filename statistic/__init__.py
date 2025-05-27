@@ -10,7 +10,7 @@ from statsmodels.stats.multitest import multipletests
 from scipy.stats import kruskal, f_oneway
 from statsmodels.stats.multicomp import pairwise_tukeyhsd
 import scikit_posthocs as sp
-
+import ptitprince as pt 
 
 def compare_statistically_orig(df: pd.DataFrame,
                                  group_col: str = 'format',
@@ -555,3 +555,408 @@ def compare_significant_pairs(df: pd.DataFrame,
         None, discrete_tasks, continuous_tasks
     )
     return _filter(res)
+
+def vis_raincloud(df: pd.DataFrame,
+                         group_col: str = 'format',
+                         value_col: str = 'ratio',
+                         method: str = 'anova',
+                         show_significance: bool = True,
+                         palette_name: str = 'tab10',
+                         fig_width: float = 14,
+                         fig_height: float = 8,
+                         violin_width: float = 0.8,
+                         task_col: str = None,
+                         discrete_tasks: list = None,
+                         continuous_tasks: list = None):
+    """
+    左：Pairwise significance heatmap
+    右：改进后的水平 Raincloud（半小提琴 + 盒须图(showmedians & showmeans) + swarmplot）
+    """
+    def _plot(subdf, title_suffix=None):
+        # 1. 清洗 & 转换
+        subdf = subdf.copy()
+        subdf[value_col] = pd.to_numeric(subdf[value_col], errors='coerce')
+        subdf = subdf.dropna(subset=[value_col, group_col])
+        subdf[group_col] = subdf[group_col].astype(str)
+        if subdf.empty:
+            print("⚠️ No data.")
+            return
+
+        # 2. 格式顺序 & 调色
+        order = ['json', 'jsonc', 'json5', 'hjson', 'xml', 'yaml', 'toml']
+        subdf[group_col] = pd.Categorical(subdf[group_col], categories=order, ordered=True)
+        formats = order
+        # formats = list(subdf[group_col].unique())
+        palette = sns.color_palette(palette_name, len(formats))
+
+        # 3. 显著性矩阵
+        if show_significance:
+            res = compare_statistically(
+                subdf, group_col, value_col, method,
+                None, task_col, discrete_tasks, continuous_tasks
+            )
+            pair_df = res['pairwise']
+            sig_mat = pd.DataFrame('', index=formats, columns=formats)
+            for _, row in pair_df.iterrows():
+                if row['significant']:
+                    sig_mat.loc[row['group1'], row['group2']] = '*'
+                    sig_mat.loc[row['group2'], row['group1']] = '*'
+
+        # 4. 子图布局
+        if show_significance:
+            fig, (ax_heat, ax_plot) = plt.subplots(
+                1, 2,
+                figsize=(fig_width, fig_height),
+                gridspec_kw={'width_ratios': [1.2, 2.5]}
+            )
+            fig.subplots_adjust(wspace=0.4)
+            sns.heatmap(
+                sig_mat != '', annot=sig_mat, fmt='',
+                cbar=False, cmap='Reds', linewidths=1,
+                linecolor='gray', ax=ax_heat
+            )
+            ax_heat.set_xticklabels(formats, rotation=45)
+            ax_heat.set_yticklabels(formats, rotation=0)
+            ax_heat.set_title('Pairwise Significance')
+        else:
+            fig, ax_plot = plt.subplots(figsize=(fig_width, fig_height))
+
+        # 5. 半小提琴
+        pt.half_violinplot(
+            x=value_col, y=group_col, data=subdf,
+            order=formats, palette=palette,
+            bw=.2, cut=0, scale='area', width=violin_width,
+            orient='h', ax=ax_plot, inner=None
+        )
+
+        # 6. 盒须图：灰色填充 + 显示中位线 & 均值
+# … 前面部分保持不变 …
+
+# 6. 盒须图：灰色填充 + 显示中位线 & 均值（中位线更粗）
+        sns.boxplot(
+            x=value_col, y=group_col, data=subdf,
+            order=formats,
+            width=0.2, showcaps=True,
+            boxprops={'facecolor':'lightgray','edgecolor':'k'},
+            whiskerprops={'color':'k','linewidth':1},
+            medianprops={'color':'firebrick','linewidth':8},   # ← 加粗到4
+            showmeans=True,
+            meanprops={'marker':'D','markeredgecolor':'black',
+                    'markerfacecolor':'white','markersize':6},
+            orient='h',
+            ax=ax_plot,
+            zorder=3
+        )
+
+# … 后面部分保持不变 …
+
+
+        # 7. 雨点：swarmplot 自动排开
+        sns.swarmplot(
+            x=value_col, y=group_col, data=subdf,
+            order=formats, orient='h',
+            size=6, color='k', alpha=0.8,
+            ax=ax_plot, zorder=4
+        )
+
+        ax_plot.set_xlabel(value_col)
+        ax_plot.set_ylabel(group_col)
+        ax_plot.set_title('Raincloud Plot')
+        plt.tight_layout()
+        plt.show()
+
+    # 支持按 task 分图
+    if task_col and df[task_col].nunique() > 1:
+        for t in df[task_col].dropna().unique():
+            _plot(df[df[task_col] == t], title_suffix=f"Task: {t}")
+    else:
+        _plot(df)
+
+
+def vis_discrete_heatmap_comparison(df: pd.DataFrame,
+                                    group_col: str = 'format',
+                                    value_col: str = 'category',
+                                    method: str = 'chi2',
+                                    palette_name: str = 'Blues',
+                                    alpha: float = 0.05):
+    """
+    离散变量比较：左配对显著性热力图，右计数热力图。
+    
+    参数：
+      df         -- 输入 DataFrame
+      group_col  -- 分组列名，如 'format'
+      value_col  -- 离散变量列名，如 'difficulty_cat'
+      method     -- 'chi2' 或 'fisher'
+      palette_name -- 计数热力图调色板
+      alpha      -- 显著性水平
+    """
+    # 1. 清洗
+    subdf = df[[group_col, value_col]].dropna().copy()
+    subdf[group_col] = subdf[group_col].astype(str)
+    subdf[value_col] = subdf[value_col].astype(str)
+
+    # 2. 构建计数表（右侧）
+    order = ['json', 'jsonc', 'json5', 'hjson', 'xml', 'yaml', 'toml']
+    subdf[group_col] = pd.Categorical(subdf[group_col], categories=order, ordered=True)
+    formats = order
+    # formats = list(subdf[group_col].unique())
+    count_table = (
+        subdf
+        .groupby([group_col, value_col])
+        .size()
+        .unstack(fill_value=0)
+        .loc[formats]
+    )
+
+    # 3. 计算配对显著性（左侧）
+    M = len(formats)
+    sig_mat = pd.DataFrame('', index=formats, columns=formats)
+    for i in range(M):
+        for j in range(i+1, M):
+            f1, f2 = formats[i], formats[j]
+            # 提取这两个格式的数据
+            sub = subdf[subdf[group_col].isin([f1, f2])]
+            # 构造 2×K 列联表
+            ct = pd.crosstab(sub[group_col], sub[value_col])
+            # 选择检验
+            if method == 'chi2':
+                _, p, _, _ = chi2_contingency(ct)
+            else:  # fisher
+                # Fisher 仅适用于 2×2，否则退回 χ2
+                if ct.shape == (2, 2):
+                    _, p = fisher_exact(ct)
+                else:
+                    _, p, _, _ = chi2_contingency(ct)
+            # 标记显著
+            if p < alpha:
+                sig_mat.iat[i, j] = '*'
+                sig_mat.iat[j, i] = '*'
+
+    # 4. 绘图
+    fig, (ax_sig, ax_count) = plt.subplots(
+        1, 2, figsize=(14, 6),
+        gridspec_kw={'width_ratios': [1, 2]}
+    )
+
+    # 左：显著性热力图
+    sns.heatmap(
+        sig_mat != '', annot=sig_mat, fmt='',
+        cbar=False, cmap='Reds', linewidths=1,
+        linecolor='gray', ax=ax_sig
+    )
+    ax_sig.set_xticklabels(formats, rotation=45)
+    ax_sig.set_yticklabels(formats, rotation=0)
+    ax_sig.set_title(f'Pairwise Significance ({method})')
+
+    # 右：计数热力图
+    sns.heatmap(
+        count_table, annot=True, fmt='d',
+        cmap=palette_name, ax=ax_count
+    )
+    ax_count.set_title(f'Counts: {group_col} × {value_col}')
+    ax_count.set_xlabel(value_col)
+    ax_count.set_ylabel(group_col)
+
+    plt.tight_layout()
+    plt.show()
+
+
+def vis_raincloud_by_task(df: pd.DataFrame,
+                          group_col: str = 'format',
+                          value_col: str = 'ratio',
+                          task_col: str = None,
+                          method: str = 'anova',
+                          show_significance: bool = True,
+                          palette_name: str = 'tab10',
+                          fig_width: float = 14,
+                          fig_height: float = 8,
+                          violin_width: float = 0.8,
+                          discrete_tasks: list = None,
+                          continuous_tasks: list = None):
+    """
+    对每个 task （如果有的话）绘制一张水平 raincloud + 显著性热力图。
+    """
+    def _plot(subdf: pd.DataFrame, title_suffix: str = None):
+        # 1. 清洗 & 转换
+        sub = subdf.copy()
+        sub[value_col] = pd.to_numeric(sub[value_col], errors='coerce')
+        sub = sub.dropna(subset=[value_col, group_col])
+        sub[group_col] = sub[group_col].astype(str)
+        if sub.empty:
+            print(f"⚠️ Task {title_suffix}: no valid data.")
+            return
+
+        # 2. 确定格式顺序 & 调色
+        order = ['json', 'jsonc', 'json5', 'hjson', 'xml', 'yaml', 'toml']
+        subdf[group_col] = pd.Categorical(subdf[group_col], categories=order, ordered=True)
+        formats = order
+        # formats = list(sub[group_col].unique())
+        palette = sns.color_palette(palette_name, len(formats))
+
+        # 3. 配对显著性
+        if show_significance:
+            res = compare_statistically(
+                sub, group_col, value_col, method,
+                None, task_col, discrete_tasks, continuous_tasks
+            )
+            pair_df = res['pairwise']
+            sig_mat = pd.DataFrame('', index=formats, columns=formats)
+            for _, row in pair_df.iterrows():
+                if row['significant']:
+                    sig_mat.loc[row['group1'], row['group2']] = '*'
+                    sig_mat.loc[row['group2'], row['group1']] = '*'
+
+        # 4. 布局
+        if show_significance:
+            fig, (ax_heat, ax_rain) = plt.subplots(
+                1, 2,
+                figsize=(fig_width, fig_height),
+                gridspec_kw={'width_ratios': [1.2, 2.5]}
+            )
+            plt.subplots_adjust(wspace=0.4)
+            title = f"Task: {title_suffix}" if title_suffix else None
+            if title:
+                fig.suptitle(title, y=1.02)
+            # 左：显著性热力图
+            sns.heatmap(
+                sig_mat != '', annot=sig_mat, fmt='',
+                cbar=False, cmap='Reds', linewidths=1,
+                linecolor='gray', ax=ax_heat
+            )
+            ax_heat.set_xticklabels(formats, rotation=45)
+            ax_heat.set_yticklabels(formats, rotation=0)
+            ax_heat.set_title('Pairwise Significance')
+        else:
+            fig, ax_rain = plt.subplots(figsize=(fig_width, fig_height))
+            if title_suffix:
+                fig.suptitle(f"Task: {title_suffix}", y=1.02)
+
+        # 5. 半边小提琴
+        pt.half_violinplot(
+            x=value_col, y=group_col, data=sub,
+            order=formats, palette=palette,
+            bw=.2, cut=0, scale='area', width=violin_width,
+            orient='h', ax=ax_rain, inner=None
+        )
+        # 6. 盒须图（中位线 & 均值）
+        sns.boxplot(
+            x=value_col, y=group_col, data=sub,
+            order=formats, width=0.2,
+            showcaps=True,
+            boxprops={'facecolor':'lightgray','edgecolor':'k'},
+            whiskerprops={'color':'k','linewidth':1},
+            medianprops={'color':'firebrick','linewidth':4},
+            showmeans=True,
+            meanprops={'marker':'D','markeredgecolor':'black',
+                       'markerfacecolor':'white','markersize':6},
+            orient='h', ax=ax_rain, zorder=3
+        )
+        # 7. 雨点（swarmplot 避免重叠）
+        sns.swarmplot(
+            x=value_col, y=group_col, data=sub,
+            order=formats, orient='h',
+            size=6, color='k', alpha=0.8,
+            ax=ax_rain, zorder=4
+        )
+
+        ax_rain.set_xlabel(value_col)
+        ax_rain.set_ylabel(group_col)
+        ax_rain.set_title('Raincloud Plot')
+        plt.tight_layout()
+        plt.show()
+
+    # 如果指定了 task_col 并且有多个 task，就分 Task 绘图
+    if task_col and df[task_col].nunique() > 1:
+        for t in df[task_col].dropna().unique():
+            _plot(df[df[task_col] == t], title_suffix=str(t))
+    else:
+        # 否则只做一张图
+        _plot(df, title_suffix=None)
+
+def vis_discrete_heatmap_comparison_by_task(df: pd.DataFrame,
+                                            group_col: str = 'format',
+                                            value_col: str = 'category',
+                                            task_col: str = None,
+                                            method: str = 'chi2',
+                                            palette_name: str = 'Blues',
+                                            alpha: float = 0.05):
+    """
+    针对离散变量，按 task 分图：
+     - 左：Pairwise significance heatmap
+     - 右：Counts heatmap
+    """
+
+    def _plot(subdf: pd.DataFrame, title: str = None):
+        # 清洗、类型转换
+        sub = subdf.dropna(subset=[group_col, value_col])
+        sub[group_col] = sub[group_col].astype(str)
+        sub[value_col] = sub[value_col].astype(str)
+
+        # 准备格式顺序和计数表
+        order = ['json', 'jsonc', 'json5', 'hjson', 'xml', 'yaml', 'toml']
+        subdf[group_col] = pd.Categorical(subdf[group_col], categories=order, ordered=True)
+        formats = order
+        # formats = list(sub[group_col].unique())
+        count_table = (
+            sub.groupby([group_col, value_col])
+               .size()
+               .unstack(fill_value=0)
+               .loc[formats]
+        )
+
+        # 计算配对显著性
+        M = len(formats)
+        sig_mat = pd.DataFrame('', index=formats, columns=formats)
+        for i in range(M):
+            for j in range(i+1, M):
+                f1, f2 = formats[i], formats[j]
+                block = sub[sub[group_col].isin([f1, f2])]
+                ct = pd.crosstab(block[group_col], block[value_col])
+                # 选择检验
+                if method == 'chi2':
+                    _, p, _, _ = chi2_contingency(ct)
+                else:
+                    # 若不是 2×2，就退回卡方
+                    if ct.shape == (2, 2):
+                        _, p = fisher_exact(ct)
+                    else:
+                        _, p, _, _ = chi2_contingency(ct)
+                if p < alpha:
+                    sig_mat.iat[i, j] = '*'
+                    sig_mat.iat[j, i] = '*'
+
+        # 绘图
+        fig, (ax_sig, ax_ct) = plt.subplots(
+            1, 2, figsize=(14, 6),
+            gridspec_kw={'width_ratios': [1, 2]}
+        )
+        if title:
+            fig.suptitle(title, y=1.02)
+
+        sns.heatmap(
+            sig_mat != '', annot=sig_mat, fmt='',
+            cbar=False, cmap='Reds', linewidths=1,
+            linecolor='gray', ax=ax_sig
+        )
+        ax_sig.set_xticklabels(formats, rotation=45)
+        ax_sig.set_yticklabels(formats, rotation=0)
+        ax_sig.set_title(f'Pairwise Significance ({method})')
+
+        sns.heatmap(
+            count_table, annot=True, fmt='d',
+            cmap=palette_name, ax=ax_ct
+        )
+        ax_ct.set_title(f'Counts: {group_col} × {value_col}')
+        ax_ct.set_xlabel(value_col)
+        ax_ct.set_ylabel(group_col)
+
+        plt.tight_layout()
+        plt.show()
+
+    # 如果指定了 task_col 并且有多个任务，分 Task 画
+    if task_col and df[task_col].nunique() > 1:
+        for task in df[task_col].dropna().unique():
+            subset = df[df[task_col] == task]
+            _plot(subset, title=f'Task: {task}')
+    else:
+        _plot(df, title=None)
