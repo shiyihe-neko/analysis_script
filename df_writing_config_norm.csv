@@ -1,0 +1,1620 @@
+participantId,task,format,code,start_time,end_time,duration_sec,help_count,char_count,char_per_sec,normalized_time
+67895b7d6400163124042af7,writing-task-config,jsonc,"{
+    // version details
+    ""version"": ""4.4.8"", // software version
+    
+    //repository information
+    ""repository"": ""4.4.8""
+     ""author"": {
+         ""middleName"": null, // no middle name given
+          ""ismember"": true // indicate membership status
+     }
+{,
+// keywords for categorization
+""keywrods"": [
+    ""type"", // Dta type
+    ""canvas"", // Graphics-related functionality
+    ""responsive"", // Responsive design
+    ""charts"" // Charting abilities
+    ]
+}",1747336194056,1747336876921,682.865,0,464,0.5296009078872707,1289.3954482142858
+659960f32faa4ff4b116de92,writing-task-config,toml,"version = 4.4.7
+[repository]
+type = ""git""
+[repository.author]
+name = ""Alice""
+isMember= true
+[engines]
+pnpm = "">=8""
+keywords = [""canvas"", ""responsive"", ""charts""]
+",1747174236780,1747175177415,940.635,27,161,1.8734912101420298,502.07601450592887
+5f7f239e9b204e05b6c36538,writing-task-config,json5,"{ ""version"": ""4.4.7""
+""repository"":{
+""author"":{
+    ""authorname"" [
+    ""name1""
+    ""name2""
+    ],
+}
+""email:
+""email1""
+""email2""]
+
+""JMember
+]""name'
+""name3""[]",1746772539421,1746773057599,518.178,0,153,1.071070725218533,483.7943823870968
+67b8636acd5ed420cc098b64,writing-task-config,toml,"version = ""4-4-7""
+(repository)
+(repository.author)
+middle _name =""""
+Ismember =true 
+
+(repository.type)
+git = """"
+
+(engines)
+pnpm = "">8""
+
+keywords = {""canvas"",""responsive"",""charts""}",1747175207986,1747176367954,1159.968,0,179,0.7183539432500384,1614.758310857143
+57ca4b09993b08000192297b,writing-task-config,xml,"<version>4.4.7</version>
+<repository>
+    <author>
+        <middle name=""""/>
+        <IsMember>true</IsMember>
+    </author>
+    <type>git</type>
+</repository>
+<engines>
+    <pnpm> >=8 </pnpm>
+</engines>
+<keywords>canvas</keywords>
+<keywords>responsive</keywords>
+<keywords>charts</keywords>",1747173238748,1747173603870,365.122,1,291,1.8542227716215618,196.91377195238098
+67d1cc8044430e99a7d91b4a,writing-task-config,toml,"version = ""4.4.7""
+
+[resposity] 
+type = ""git
+author.middle-name= ""same"" 
+author.isMember = true
+
+[engines] 
+npm = "">=8""
+
+keywords = [""canvas"",""responsive"",""charts""]
+",1746779635799,1746780186521,550.722,0,164,0.3925502682426833,1402.9336993333334
+6693ce87e76d32ccf07fbcd8,writing-task-config,xml,"<?xml version = ""4.47"" encoding = ""UTF-8""?>
+<repository>
+    <author>
+        <middle name></middle>
+        <IsMember>true</IsMember>
+    </author>
+    <type>git</type>
+</repository>
+<engines>
+    <pnpon> >=8 </pnpon>
+</engines>
+<keywords>
+    <canvas></canvas>
+    <responsive></responsive>
+    <charts></charts>
+</keywords>",1746770255182,1746771314848,1059.666,3,326,0.7032541295124596,1506.80380751497
+680ebf035ab59d342f31726e,writing-task-config,hjson,"{
+version: 4.4.7
+repository:
+ author:
+  middle name: '''
+
+  IsMember:
+   true
+  type:
+   git
+engines:
+ pnpm:
+  >=8
+keywords:
+  canvas
+  responsive 
+  charts
+}",1747175682882,1747176992386,1309.504,0,158,0.8395246896579186,1559.8159483952568
+67f0d86fabc081fdc410e828,writing-task-config,yaml,"version: 4.4.7
+Repository:
+          : author
+          - middle name: ~
+          - Is member : true
+          : type
+          - git
+engines:
+          - pnpm
+          >=8
+keywords:
+          - canvas
+          - responsive
+          - charts",1746770271259,1746770948891,677.632,1,245,0.8669026953738606,781.6701962239998
+6691809035e52ca9b2b0f39a,writing-task-config,yaml,"version: 4.4.7
+repository:
+    author:
+      middle name: ~
+      IsMember:
+    type:
+      git:
+engines:
+    pnpm: >=8
+keywords:
+    canvas
+    responsive
+    charts
+    
+       ",1747174790424,1747176308267,1517.843,17,179,0.7006772070903736,2166.2514273911984
+678faf5b31008609fd85b185,writing-task-config,json5,"version : 
+repository: {
+    author
+    middle name: {
+    ismember: true
+    }
+    type: git
+engines
+    pnpm: >=8
+keywords
+    canvas
+    responsive
+    charts
+
+",1747346459131,1747346828168,369.037,2,163,1.5038891559730285,245.38843074590164
+65e85a421f2dee53c62fbf45,writing-task-config,json5,"{
+version: 4.4.7
+}
+
+""repository"": {
+author:{
+""isMember"": true,
+""middle name"": null
+}
+
+engines:{
+pnpm: >=8
+
+""keywords"": [""Canvas"", ""Charts""]//Responsive
+}",1746776587756,1746778178576,1590.82,0,153,0.6776695726361887,2347.48624438247
+666b0b42bb6fa2822fa27a32,writing-task-config,json5,"{
+    ""version"": 4.4.7 
+    
+ }  ""repository"" : ""author"": 
+          ""middle name"" : }
+           ""IsMember"" : true
+            ""type"" : git
+           
+    ""engines"" : ""pnpm"", >=8
+}      ""keywords"" : canvas; responsive; charts",1746769662973,1746770323318,660.345,20,227,1.130998330431036,583.8602783333333
+6708da9c62672d0fe65b6683,writing-task-config,jsonc,"())   ""version""4.4.7
+()     ""repository""author,type,git,middlename,IsMember,true
+()      ""engines"" pupm,>=8
+()      ""keywords""cavas,responsive,charts
+()   ()""""",1747173631700,1747174056584,424.884,0,159,0.8110300081103001,523.881972
+60f70af563ef757f65e750e0,writing-task-config,xml,"</version> 
+    <4.4.7>
+</repository>
+    <author>middle name</author>
+    <IsMember>true</IsMember>
+</engines>
+    <pnpm>>=8</pnpm>
+</keywords>
+    <canvas>    
+    </responsive>
+    </charts>
+    ",1746769163580,1746769864211,700.631,7,198,1.6202784573412063,432.4139451620553
+670f9ddb0e32533c222c3031,writing-task-config,json,"version{4.4.7}
+            repository:author""middle name: IsMember{true}
+                          type> git
+ engines-pupm->=8  
+ 
+ 
+ 
+keywords :{cavas}
+          :responsive""
+          :chart""",1746769235431,1746770101228,865.797,1,193,0.39195116079185766,2208.941027884273
+67d03135f855dd0ff0994265,writing-task-config,toml,"version =''4.4.7''
+repository= ''github.com/user/repo''
+engines =[''1.4.0''] pnp
+processing =''3.5.4'' 
+name=''John Ban''
+email= ''John.Ban@outmail.com
+keywords =[''canvas'', ''responsive'',''charts'']",1746770102648,1746771266799,1164.151,0,201,0.6975076104575311,1669.0154810445347
+674f479b2a4ef75e4551f258,writing-task-config,json5,"{
+""version"" : 4.4.7
+'engines' [pnpm] : >=8
+{ ""keywords""
+ [""canvas"", ""responsive"", ""charts""]
+}
+""repository"" : [""author
+""midddle, name"",
+""IsMember"" = true
+type = ""git""""]
+}",1747338704836,1747339639412,934.576,1,169,0.9637832399396985,969.6952190810811
+5ee4a14b578f8a000b384376,writing-task-config,yaml,"version: 4.4.7
+repository:
+    author: 
+        middle name: null
+        IsMember: true
+    type: git
+engines:
+    pnpm: >=8
+keywords:
+    - canvas
+    - responsive
+    - charts",1746768132942,1746768543997,411.055,9,178,1.6948130681475626,242.53707250988143
+63af557b3d4f219c3226b7d6,writing-task-config,yaml,"# Example of a YAML format
+version: 4-4-7
+repository:
+    author:
+        -middle name:
+            - null
+            - true
+    type:
+        - git
+engines:
+    - pmpm  
+        >=8
+keywords:
+    -canvas
+    - responsive
+    - charts
+    ",1747334379641,1747334864641,485.0,1,240,2.428213528618231,199.73531746031745
+65583ffa38bfc41805a553cd,writing-task-config,hjson,"{
+ version: 4.4.7
+ 
+ repository: { author, type.
+author: middle name= null, 
+isMember=true.
+type: git
+}
+engines: pnpm//>=8
+keywords: canvas, responsive, charts.",1747181410513,1747182418322,1007.809,12,160,0.8835749723882822,1140.603832718254
+66684d30d1a0d64a3a348c82,writing-task-config,yaml,"version: 4.4.7
+repository:
+    type: git
+    author:
+        middle name: ishSensher
+        isMember: true
+engines:
+    -pnpm
+    -<18
+keywords:
+    -canvas
+    -responsive
+    -charts",1747335268099,1747335724516,456.417,0,185,1.1580829132219062,394.11426832142854
+60ec51c51a3158a50ded8a3e,writing-task-config,json5,"{
+    ""version"": ""4-4-7"",
+    ""repository"":{
+        ""type"": ""git"",
+        ""author"":{
+            ""middle name"": null,
+            ""isMember"": true
+        }
+    },
+    ""engines"":{
+        ""pnpm"": "">=8""
+    },
+    ""keywords"": [""canvas"", ""responsive"", ""charts""]
+}",1747334946318,1747335291008,344.69,2,263,1.9161749498144656,179.88440984126984
+671bdd06525adeea062a1d73,writing-task-config,json,"{
+    ""version"": 4.4.7,
+    ""repository"": {
+        ""author"": {
+            ""middle name"": """",
+            ""isMember"": true
+        },
+        ""type"": ""git""
+    },
+    ""engines"": {
+        ""pnpm"": "">=8""
+    },
+    ""keywords"": [""canvas"", ""responsive"", ""charts""]
+}",1747173202628,1747173374862,172.234,0,262,1.913410578427055,90.014135984127
+6647e8618c77f7b938865d25,writing-task-config,json5,"{
+    version: ""4.4.7"",
+    repository: ""npnm"",
+    engines: {
+        node:"">=8""
+    },
+    keywords:[""canvas"",""responsive"",""charts""],
+     author: {
+        fullname: ""Jade name"",
+        isMember: true
+     },
+     type: ""git""
+    
+}",1747361833356,1747362184159,350.803,0,236,0.7159344089531893,489.99321112800004
+613a541cf948d295c1df8752,writing-task-config,jsonc,"{
+    {
+        ""version:"" ""447"",
+    },
+    {
+        ""repository:"" [
+            {
+            ""author""
+            {
+                ""middle name:"" ""null""
+                ""isMember:"" true
+            }
+        }
+        {
+            ""type""
+            {""git""
+            }
+        }
+        ]
+    },
+    {
+        ""engines:""
+        {
+            ""pnpm:"" >=8
+        }
+    },
+    {
+        ""keywords:""
+        {
+            ""canvas"",
+            ""responsive"",
+            ""charts""
+        }
+    }
+}
+    
+        
+    ",1746768116715,1746769270011,1153.296,36,521,1.960570743927677,588.2450319999999
+5e5c993cd0394c474f7cc502,writing-task-config,toml,"version = 4.4.7
+[[repository]]
+[author]
+middle name = 
+IsMember = true
+[type]
+type = git
+ 
+engines = { pnpm >=8 }
+
+keywords = [""canvas"", ""responsive"", ""charts""]",1747618780152,1747619418685,638.533,17,160,2.701671858114551,236.3473558352941
+67c045fa5074c5500ca40e76,writing-task-config,xml,"<root>
+<version>4.4.7</version>
+<respository>
+<authot>
+<middlename></LsMember</middlename>
+<isMember>true></isMember>
+</author>
+<type>git</type>
+</repository>
+<engines>
+ <npm>>=6</npm>
+ </engines>
+   <keywords>
+     <keyword>canvas</keyword>
+     <keyword>responsive</keyword>
+     <keyword>charts</keyword>
+     </keywords>
+     
+        ",1746773493379,1746774596856,1103.477,0,339,0.3965506700880177,2782.688526929167
+67d2eaf9d5996dc6be1c7072,writing-task-config,xml,"<?xml version=""1.0"" encoding=""UTF-8""?>
+<root>
+    <version>4.4.7</version>
+    <type>pnpm</type>
+    </repository>
+    <keywords>canvas</keywords>
+    <keywords>responsive</keywords>
+    <keywords>charts</keywords>",1746770353682,1746771054243,700.561,0,214,0.9811164401499428,714.044705940239
+60e2ebb6ad1d5ee0e515a7c5,writing-task-config,yaml,"version: 4.4.7
+Respository
+-Author:
+     middle name
+     is member: true
+-Type:
+   git
+Engines:pnpm
+        >=8
+Keywords:
+  -canvas
+  -responsive
+  -charts
+  ",1746768597159,1746769195680,598.521,13,159,0.9097111667045713,657.92420925
+67153c0d669d191ab273b865,writing-task-config,yaml,"Version: 4-4-7
+engines: popm >=8
+is Developer: True
+skills:
+- python
+- javaScript
+- YAML
+keywords:
+ canvas
+ responsive
+ charts
+ Repository:
+ author, type, git
+ module name
+ 1st member: True
+",1747176711083,1747177468160,757.077,11,190,0.6137144394048681,1233.5981547609563
+67ab1d683813ed19603e1030,writing-task-config,yaml,"version: 4.4.7
+repository:
+  author:
+    middle name: """"
+    IsMember: true
+  type: git
+engines: 
+  pnpm: "">=8""
+keywords:
+  - canvas
+  - responsive 
+  - charts
+",1746779247277,1746779628984,381.707,0,160,1.2862164738196018,296.7673076573705
+60e343946a7faddde88fbe3c,writing-task-config,yaml,"Version: 4.4.7
+repository: 
+  author:
+   middle name: 
+     IsMember: true
+  type: git
+engines:
+  pnpm: >=8
+keywords:
+   - canvas
+   - responsive
+   - charts",1747175028140,1747176131432,1103.292,2,157,0.8211752868433437,1343.5523665612648
+67e0333064ddada0e2fc6f1e,writing-task-config,yaml,"
+  ""version"": ""4.4.7"",
+  ""repository"": {
+    ""author"": {
+      ""middle name"": """",
+      ""isMember"": true
+    },
+    ""type"": ""git""
+  },
+  ""engines"": {
+    ""npm"": "">=8""
+  },
+  ""keywords"": [""canvas"", ""responsive"", ""charts""]
+}",1746774663026,1746774892872,229.846,0,222,0.4246298811373341,541.2855058253969
+5b3ec4332a5fbf00014eae57,writing-task-config,toml,"version = ""4.4.7""
+
+[[repository]]
+[author]
+middleName = """"
+isMember = true
+
+[[repository]]
+[type] = ""git""
+
+[engines]
+pnpm = "">=8""
+
+keywords = [""canvas"", ""responsive"", ""charts""]",1747347077219,1747347917283,840.064,6,176,1.0031222179032238,837.4493008
+66912d7bf9d35c08f6919958,writing-task-config,json,"''version"": ""4.4.7"",
+""repository"":{
+    ""authory"":{
+        ""middle name"":""""
+        ""isMember"": true
+    },
+    ""type"":""git""
+},
+""engines"": {
+},
+""engines"":{
+    ""npm"": "">=8""
+}
+""keyword"": [""canvas"", ""responsive"", "" charts""]
+}",1746770559420,1746771177683,618.263,0,224,0.3583699287810872,1725.20892615873
+6717980047b565ab5b849317,writing-task-config,hjson,"{
+  version: 4.4.7
+  respiratory:
+  author: {
+    middle name:
+ }
+ IsMember: true
+ Type: gif
+ Engines: {
+   pnpn: >=8
+   }
+   keywords: [canvas, responsive, charts]
+   }",1746770185685,1746770970640,784.955,3,169,0.8097087315750778,969.42884446
+651b29ff3a6cadf518640abe,writing-task-config,xml,"<？xml version=""4.4.7"" encoding></？xml>
+<repository></repository>author</middle name>
+<repository></repository>type<git>
+                         author<middle name></middle>
+                                <IsMember></IsMember=true>
+<engines></engines>pnpm>=8
+<keywords></keywords>
+    <canvas></canvas>
+    <responsive></responsive>
+    <charts></charts>
+",1746769420371,1746770247972,827.601,1,356,1.3971048882038888,592.3685522738094
+6818ca1523ece90f671e3601,writing-task-config,json,"{
+    ""version"": ""4.4.7""
+""engines"": {
+    ""pnpm"" "">=8""
+    {
+}keyworods"":[""canvas"",""responsive "", ""charts"",
+""author""{
+""middlename"":""is a member""
+""member""true
+{
+""type"": ""git""
+",1746770328915,1746771669177,1340.262,3,174,0.3260912269673516,4110.082974216867
+67c1dd323984fa84ae83e162,writing-task-config,jsonc,"{
+  ""version"":version""'//
+  447
+ ""repository"": ""Repository""' /*
+  ""author
+  type
+  git
+ Code storage * //
+  ""engines"": ""Engines"", //
+  pnpm
+  >=8
+   ""keywords"": ""Keywords""/*
+   canvas
+   responsive
+   charts
+   git */
+}
+ ""middle name
+ isMember
+ tru""
+ }",1747176534554,1747178481037,1946.483,3,252,0.4909860562908879,3964.436413336336
+67d2a409ab3638e33fc417b9,writing-task-config,hjson,"{
+  ""version"": ""4.4.7""
+  ""repository"": """",
+  ""engines"".:{
+    ""npm"": ""->4'
+    
+    },
+    ""keywords"":[""canvas"", ""responsive"" 
+    ""author"": {
+    ""middle name"": """",
+    ""isMember"": """",
+    ""title"": """"
+    },
+    ""type"": {
+    ""gift"": """"
+    }",1747348613813,1747349116390,502.577,0,243,0.27593207416699544,1821.3794156305219
+66ec8f7ce843d25227820f97,writing-task-config,hjson,"version; 4.4.7
+Repository 
+author: { middle name}{IsMember}
+type: {git
+
+engine: {"">8}
+keyword: {canvas
+          responsive
+          charts
+          ",1747335705088,1747336184708,479.62,2,151,1.882959953741456,254.71598535433074
+6680d2279263349cc005956a,writing-task-config,json,"{
+    ""version"": ""4.4.7"" ,
+    ""repository"" : {
+      ""author"" : {
+          ""middleName"" : ""..."",
+          ""isMember"" : true
+      },
+      ""type"" : ""git""
+    },
+    ""engines"" : {
+      ""pnpm"" :  "">=8""
+    },
+    ""keywords"" : [""canvas"", ""responsive"", ""chart""]
+}",1746769901862,1746770807089,905.227,0,263,0.360810519900671,2508.870861773109
+6081728972120aa7f9685791,writing-task-config,json,"{
+    ""version"": ""4.4.7"",
+    ""repository"": {
+        ""type"": ""git""
+    },
+    ""engines"": {
+        ""pnpm"": "">=8""
+    },
+    ""keywords"": [""canvas"", ""responsive"", ""charts""],
+    ""author"": {
+        ""middle name"": ""IsMember"",
+        ""IsMember"": true
+    }
+}",1746769121253,1746769717127,595.874,2,256,0.9733188957697128,612.2083960250001
+67aca6831f2b0b79416bdb6c,writing-task-config,xml,"<?xml version=""1.0""?> <root></root>
+<root>
+<version>2.4.7/versio>
+<repository><engineer>
+><keywords><propan/></keywords></
+respository
+</engineer> <root></root>",1747177743421,1747178009860,266.439,0,160,0.3454551233067517,771.2694993480001
+675aaf0eb1b401136f37c475,writing-task-config,json,"{
+""version"": ""4.4.7"",
+""repository"": {
+    ""author"": {
+        ""middle name"": """",
+        ""IsMember"": ""true"",
+        ""type"":""git
+        
+    }
+  },
+  ""engine"": {
+      ""pnpm"": "">=8""
+   },
+   ""keywords"": [
+       ""canva"",
+       "" responsive"",
+       ""chart""
+     ]
+}
+
+
+
+
+
+
+
+
+
+
+
+",1747347079320,1747348656406,1577.086,11,279,0.9429973094640257,1672.418345388889
+6723422d5f63c70998014b03,writing-task-config,jsonc,"{
+""person"": {
+    ""name"": ""Alice"",
+    ""address"": {
+        ""city"": ""New York"",
+        ""zip"": ""10001""
+    } ,
+    ""skills"": [
+        { ""name"": ""Python"", ""Level"": ""Advanced"" }
+        { ""name"" : ""JavaScript"", ""Level"":""Intermediate""
+            
+        }]
+    }
+    }
+}
+}",1747346652687,1747347851308,1198.621,1,272,0.6245982401944582,1919.0271807791669
+6554e79557e3d6be08e32ceb,writing-task-config,yaml,"version : 4.4.7
+repository : author
+           : middle name
+           : IsMember true
+           : type git
+engines:
+   pnpm >=8
+keywords:
+   canvas
+   responsive
+   charts",1746768636844,1746769116917,480.073,13,174,1.1081603246295901,433.21619564431484
+645b519f108c046164a6d232,writing-task-config,yaml,"version: 4.4.7
+repository:
+    Author:
+       middle name: null
+       IsMember: true
+    Type: git
+engines:
+    pnpm: >=8
+keywords:
+    - canvas
+    - responsive
+    - charts",1746768076335,1746768428943,352.608,9,175,2.4087072350939676,146.3888989340974
+589cd166b2a7180001f0527d,writing-task-config,jsonc,"{
+    ""version"": 4.4.7
+    
+}
+
+{
+    ""repository""
+    ""author""
+    Middle name:null
+    
+}
+
+{
+    ""IsMember"": true
+}
+
+{
+    'type':git
+{
+
+""keywords"": [""canvas"", ""responsive"", ""charts"",],
+
+}
+",1747174423225,1747175457076,1033.851,1,190,0.9930811261458234,1041.0539207530867
+6682a94b061954ae8483fb08,writing-task-config,toml,"version = ""4.4.7""
+
+[repository]
+
+[repository.author]
+middle_name = """"
+IsMember = true
+
+[repository.type]
+type = ""git""
+
+[engines]
+pnpm = "">=8""
+
+keywords = [""canvas"", ""responsive"", ""charts""]",1746769182255,1746770406032,1223.777,20,188,1.5854970041481027,771.8570245155039
+6735b2a6112cf17b7b8df8d1,writing-task-config,jsonc,"""verison""; ""4.4.7""
+""repository"" : {
+    ""author"" ; {
+        ""middle name"": null,
+        ""isMember"": true
+
+    }
+    }
+}.
+""engines"" : {
+    ""npm"" : ""+8""
+}
+""keywords"": {
+    ""type"",
+    ""canvas"",
+    ""responsive"",
+    ""Charts"",
+    ""git""
+}",1747174782899,1747175297835,514.936,0,239,2.3010756615592527,223.78055993650796
+67792abbab2fa21bf3644c09,writing-task-config,hjson,"version: 4.4.7
+repository: {
+  author: {
+    middlename"" """"
+    IsMember: true
+  }type: ""git""
+}
+engines: {
+  pnpm: "">=8""
+}
+keywords: [
+  canvas
+  responsive
+  charts
+  ",1746771926902,1746772734197,807.295,0,168,0.8641489190210541,934.2081928593271
+5ea90bb434d5e337e98c7edd,writing-task-config,json5,"{
+""version"":4.47,
+""repository"":[
+{""author"": ""middle name"":, ""isMember"": true},
+{""type"": ""git"",},
+]
+""engines"": ""pnpm"":<=8
+""keywords"": ""canvas"", ""responsive"", ""charts""
+}
+",1746768933393,1746770674660,1741.267,37,168,1.1641891566844662,1495.6907904545455
+677f8968bbb08bc37c8d2a4b,writing-task-config,xml,"<data>
+    <element name=""keyword""></element>
+      <git=3.0>
+          <engines=3.0>
+       </PNPM=8.0>
+       <git=>=8</git>
+      <element name=""metadata"">   
+      </element>
+      ",1746771538517,1746772796957,1258.44,3,185,0.23693778893717155,5311.267593257143
+672f51ea346fba23ddd5a793,writing-task-config,xml,"<data>
+    <version>4.4.7</version>
+    <repository>
+        <auhor>
+            <middle_ name/>
+            <isMember>true</isMember>
+            </author>
+            <type>git</type>
+            </repository>
+            <engines>
+                <npm>7</npm>
+                <yarn>1</yarn>
+                </engines>
+                <keywords>
+                    <keyword>canvas</keyword>
+                    <keyword>responsive</keyword>
+                    <keyword>charts<keyword></keyword>
+                    </data>",1746769509200,1746770220636,711.436,0,526,0.9916340712874715,717.4380354603176
+67d13a1ec91ae2216896de44,writing-task-config,json,"{
+    ""version"": ""4.4.7"",
+    ""repository"": {
+         ""author"": {
+             ""middle name"": """",
+             ""IsMember"": true
+             
+         },
+         ""type"": ""git""
+    },
+    ""engine"": {
+        ""pnpm"": "">=8""
+    },
+    ""keywords"": [""canvas"", ""responsive"", ""charts""]
+}",1747175842043,1747176453963,611.92,0,282,0.607809520994369,1006.7627749544072
+67bf5ad9c5a4637861cfd21e,writing-task-config,toml,"version="" 4.4.7""
+respiratory
+url=
+engines= [""gears"", ""sprockets""]
+keywords= [ ""canvas"", ""responsive"",""charts""]
+author
+middle- name= true
+Is-Member= true",1746769743335,1746770594873,851.538,0,152,0.35408312927653735,2404.9098349866667
+616e5ae706e970fe0aff99b6,writing-task-config,hjson,"{
+    version: 4.4.7
+    repository:{
+        author:{
+            middlename
+            isMember: True
+        }
+        type: git
+        }
+    engines:{
+        pnpm: >=8
+        }
+    keywords:[
+        canvas
+        responsive
+        charts
+        ]
+
+
+}",1747346146921,1747346309400,162.479,0,262,1.0773053465621796,150.8198214354839
+66311bae532a469f4858933e,writing-task-config,toml,"version = 4.4.7
+
+[repository]
+author ={ middle_name = """", IsMember = true }
+type = git
+[engines]
+pnpm = >=8
+
+keywords = [""canvas"", ""responsive"", ""charts""]",1747174312411,1747175050660,738.249,22,154,1.5966577472610695,462.371476458498
+669284eabea5b8c9655927da,writing-task-config,yaml,"Version: 4.4.7
+ Repository:
+  author:
+   middle name:
+    Is/Member: true
+     Type: git 
+Engines:
+ Pnpm: "">=8""
+Keywords:
+ canvas
+  responsive
+  charts",1747337795501,1747340042219,2246.718,15,151,1.2528960792307617,1793.2197548095235
+67da5ae29f57419143d2b99a,writing-task-config,jsonc,"[
+    {""name"": ""version""
+        ""color"": ""purple""
+        ""value"": ""4.4.7""
+    },
+    {
+        ""name"": ""repository"",
+        ""color"": ""purple"",
+        ""children"": [
+            {
+                ""name"": ""author"",
+                ""color"": ""orange"",
+                ""children"": [
+                    {
+                        ""name"": ""middle name"",
+                        ""color"": ""green"",
+                        {
+                            ""name"": null,
+                            ""color"": ""blue""
+                            
+                        }
+                    }]
+            }""name"": ""isMember"",
+            ""color"": ""green"",
+            ""value"": ""true""
+    }
+            ]
+    }]",1746770439915,1746771729410,1289.495,0,699,1.2109039013209424,1064.9028371230158
+68138e7f96395f4c5f3a0a87,writing-task-config,json,"{
+    ""version"": ""1"",
+    ""repository"": ""1"",
+    ""engones"" {
+        ""pnpm"":4.4.7
+        ""node"": "">=8"",
+},
+     ""keywords"": null,
+     ""author"": {
+         ""git"" : null
+         ""middle name"" : null,
+         
+     }
+        ""type"": null
+        ""isMember"": true
+    
+},
+         ""type"": null
+         ""canvas"": null
+         ""responsive"": null
+         ""charts"": null
+}
+        
+        ",1746779717007,1746780420522,703.515,0,389,1.1306443887846358,622.2248188541666
+66684beba2a2d24645a6d782,writing-task-config,jsonc,"{
+  // Toplevel elements
+  ""version"": ""1.0.0"".
+  ""repository"": {
+     // repository metadata
+      ""author"":{ 
+          ""name"": author name 
+        ""email"": ""author@example.com"",
+        ""url"": ""https://author,wbsite""
+      },
+      ""type"":git"", // Type of ripository
+  ",1746771137194,1746772104020,966.826,0,272,0.3369263007957487,2869.5474283739836
+660eafee7515c432e850362d,writing-task-config,hjson,"""version"" ""4.4.7"".
+""respiratory""
+""engines""
+""pnpm""
+}
+""keywords""
+""canvas""
+""responsive""
+""charts""
+]
+""author""
+""middle name""null
+""ISmember"" true
+}
+""type"" git
+",1746769789949,1746770197370,407.421,0,152,0.4874448954226789,835.8298626693226
+62d7fef5538b81f205ba4656,writing-task-config,xml,"<?xml version=""4.4.7"" encoding=""UTF-8"">
+<repository>
+<author>
+<middleName></middleName>
+<isMember>True</isMember>
+</author>
+<type>Git</type>
+<engines>
+<pnpm>>=8</pnpm>
+<keywords>
+<canvas></canvas>
+<responsive></responsive>
+<charts></charts>
+</keywords>
+</engines>
+</repository>",1747337320632,1747337574011,253.379,12,277,2.055723220924638,123.25540589361701
+67caa7fe00179edfb74d3e1a,writing-task-config,json5,"{
+    ""categories"": {
+        ""purple"": [""engines"", ""keywords""]
+        ""gold"": [
+        ""left"": [""canva""]
+        ""middle"": [""responsive""]
+        ""right"": [""charts"", ""pnpm""]
+        ],
+        ""green"": ["".=8""]
+    }
+}",1746773066840,1746774806744,1739.904,0,220,0.8531675108416347,2039.3462923636362
+65fae23bd06ae76bcc297e8b,writing-task-config,hjson,"{
+""note"" :""Different color represent different levels of the nested structure.\npurple rectangles indicate the top-level elements."" ,
+""version"" : ""4.4.7"",
+""respository"" :{
+""author"" :{
+""middle name"" :, null
+""surname"" : ""tittle""
+}
+},
+""engines': {
+"" papa"" :""...""
+}
+""keywords"": [
+""type""
+""canvaa"",
+""responsive "",
+""charts""
+]
+}
+",1746769973960,1746771193572,1219.612,0,321,0.6071179176575326,2008.8552232252969
+588ab33542c8e900019d02ae,writing-task-config,jsonc,"{
+    ""Version"": ""4.4.7"",
+    ""Repository"": {
+        ""author"": {""middle name"", 
+                  ""is member"": true
+        ""Type"": ""Git""
+    },
+    ""engines"": {
+    ""pnpm"": "">=8""
+    },
+    ""keywords"" [
+        ""canvas""
+        ""responsive
+        ""charts""
+        ],
+    }",1747422935633,1747423760077,824.444,4,275,1.228975341808767,670.8385204756097
+67f4ea448eb6a2b293c1f2fc,writing-task-config,json,"{
+    ""version"": ""4.4.7"",
+    ""repository"": {
+        ""author"": {
+            ""middle name"": true,
+            ""IsMember"": false
+            
+        }
+    },
+    ""engines"": {
+        ""type"": ""git"",
+        ""popes"": "">=8""
+        
+    },
+    ""keywords"": [
+        ""canvas"",
+        ""responsive"",
+        ""charts""]
+}",1747341171636,1747341778599,606.963,0,315,0.3219021725190448,1885.5511140239043
+65f4ab7884f8411c9e11a34e,writing-task-config,json5,"{
+    ""name"": ""figure"",
+    ""version"": ""4.4.7"",
+    ""type"": ""Repository"",
+    ""type"": ""git""
+    author: ""middle name""
+    {
+    isMember: true
+    }
+    ""engines"": ""pnpm"" >=8
+    {
+    ""keywords"":
+    canvas
+    responsive
+    charts
+    }
+}",1747173435127,1747174122889,687.762,14,241,2.0834716780662728,330.10383929880476
+611d0afbb2a19acfd012545b,writing-task-config,toml,"Version=""4.4.7""
+
+[Repository.author]
+
+middle_name=""""
+
+isMember=true
+
+[Engines]
+
+pnppm="">=8""
+
+type=""git""
+
+[keyword]
+
+canvas=""""
+
+responsive=""""
+
+charts=""""",1746768867085,1746769768653,901.568,4,151,0.9601774989480126,938.9597246215139
+67406c1303bd39d206ff2b50,writing-task-config,xml,"<?xml version=""4.4.7"" encoding=""UTF-8""?>
+    </repository>
+        <type>git</type>
+        </author>
+        <middle name></middle>
+        <IsMember>true</IsMember>
+    </engines>
+        <pnpm>>=8</pnpm>
+    <keywords>canvas</keywords>
+    <keywords>responsive</keywords>
+    <keywords>charts</keywords>",1746776861361,1746777714139,852.778,10,306,0.99670927730667,855.5935210158731
+61601e9a6b8306196d2a129c,writing-task-config,hjson,"{
+    version: 4.4.7
+    repository:
+    {
+        author: middle name, IsMember
+        type: git
+    }    
+    engines:
+    {
+        pnpm:>=8
+    }    
+    keywords:
+    [
+      canvas
+      responsive
+      charts
+    ]  ",1746779604897,1746780651447,1046.55,0,225,0.8347953121025755,1253.660609765625
+65fad6c874ac75642ffc254b,writing-task-config,hjson,"[
+version: 4.4.7
+]
+[
+Reoisitory:
+[
+1,author: [
+1,middle name 
+2,IsMember: true
+]
+2,type: git
+]
+engines:[
+pnpm: >=8
+]
+keywords:{
+canvas
+responsive
+charts
+}
+
+",1746768348314,1746769502583,1154.269,20,156,1.757419826507515,656.7975293039999
+606c7d27f4f3ae688332a55d,writing-task-config,toml,"version = 4.4.7
+
+engines = {pnpm >= 8}
+
+keywords={canvas, responsive, charts}
+
+repository={author, type}
+
+repository.author = {middle_name, IsMember = True)
+
+repository.type = {git}",1747173185067,1747173460741,275.674,6,181,1.8513640088982555,148.90318633992095
+67f66486e35051403284eb5e,writing-task-config,xml,"""version.4.4.7.0""
+""repository"": {
+""author"":{
+""Ismember"":""man""
+""Ismember"": true
+}
+""type"":""kit""
+}
+""engines""{
+""pnpm"""";{
+""version"" : ""<=8""
+}
+}'
+""keywords"": [""canvas"" , responsive, charts""
+}",1746772793346,1746773443619,650.273,0,185,0.8027852971279328,810.0210633234502
+67a8fa10b4db1990f7372f01,writing-task-config,json5,"{
+    version: ""4.4.7
+    respository: null,
+    engines: {
+    pnpm: "">=8""
+    },
+    keyworsds: {
+        ""canvas""
+        ""responsive,""
+        ""charts""
+        author: {
+            middlename: null,
+            isMember: true
+        }
+    }
+}",1746769566243,1746770387363,821.12,0,248,1.175836788232263,698.3282103585658
+6094ce8d0764c24f352d1fe5,writing-task-config,hjson,"version: 4.4.7
+repository: [
+    author: {
+        ""middleName"": null
+        ""isMember"": true
+    },
+    type: [
+        git
+    ]
+]
+engines: [
+    pnpm: >=8
+]
+krywords: [
+    ""canvas"",
+    ""responsive"",
+    ""charts""
+]",1747340742843,1747341744022,1001.179,12,219,1.10925988942756,902.564862880478
+6715c7aedee148c65c10509c,writing-task-config,yaml,"version: 4.4.7
+repository: 
+  author:
+   middle_name:
+   isMember: true
+  type: git
+engines: 
+  pnpm: "">=8""
+keywords:
+  - canvas
+  - responsive
+  - charts
+   ",1746768171210,1746768542219,371.009,0,158,1.4641628706888539,253.39325796825395
+664e413a5f3eb7f99d90e15b,writing-task-config,json,"{
+    ""version"": ""4.4.7"",
+    ""repository"": {
+       ""type"": ""git""  
+    },
+    ""engines"": {
+        ""npm"": "">=8""
+    },
+    ""keywords"": [
+        ""canvas"",
+        ""responsive"",
+        ""charts""
+    ],
+    ""author"": {
+        ""middleName"": null,
+        ""isMember"": true
+    }
+        
+}",1746771117872,1746771892896,775.024,0,288,0.5500898261759807,1408.9044427301587
+65fb13bebfa339f73b4cf76a,writing-task-config,jsonc,"// top level configuration for the pacckage
+'version':'4.4.7', version number of the package
+
+'repository':{
+    'author':{
+        'middle name': null, //author's middle name
+        'is member' true //boolean flag indicating membeship status
+        {,
+        'type': 'git'  //repository type
+        
+    }
+}",1746770430412,1746771070571,640.159,0,312,0.8196638706274796,781.001850807377
+65fb236a5a78fcf672df7469,writing-task-config,json,"{
+    
+    ""version"": ""4.4.7"",
+    
+    ""repository"":  {
+        
+       ""author"": {   
+         
+        ""middle name"",
+        
+        ""IsMember"": true
+        
+       },
+       
+       ""type"": ""git""
+       
+    },
+    ""engines"": {
+        
+    },
+    ""keywords"": [
+        ""canvas"",
+        ""responsive,
+        ""charts""
+        ]
+        
+    }
+}",1747426158385,1747427171319,1012.934,2,351,0.9481991509970679,1068.2713636
+60f7c71d1cffec381351b0b3,writing-task-config,xml,"<version>4.4.7</version>
+<repository=""author""> type</repository>
+<engines="">=8""></pnpm>
+ <keywords></keywords>canvas
+ <keyword>responsive</keywordkeywords>
+ <keywords>charts</keywords 
+ <type>git</type>
+  <author></author>middlename
+  <author></author>Ismember
+  <Ismember>true</Ismember>",1746768635986,1746769358394,722.408,0,288,0.46075075495930995,1567.8932529666668
+675330fb23080b9ae3ec8239,writing-task-config,json5,"{
+version: ""4.4.7""
+repository: null,
+engine: {
+    pnpm: "">=8""
+    type: ""git""
+    
+},
+keywords: {
+    ""cavas"",
+    ""responsive"",
+    ""charts""
+},
+authour: {
+    middle name:null,
+    isMember: true
+}
+}",1746769520839,1746770149735,628.896,0,201,0.8801925246506299,714.4982289523809
+671e39c25e5e3f340a6f21d4,writing-task-config,jsonc,"{   
+    // project version
+    ""version"" : ""4.4.7"",
+    
+    
+    // source code respiratory
+    ""type"": ""gift""
+    
+},
+
+
+  // Engine requirements
+  ""engines"":{
+      ""pnpm"": "">=8""
+      
+      
+      
+      // Relevant keywords for the project
+      ""keywords"" :[
+         ""canvas""
+         ""responsive""
+         ""charts""
+         
+         ],
+         
+         
+         //project author details 
+         ""author"" : {
+           ""middle name"" : """",
+           ""ismember"": true
+           
+         }
+         ]
+  
+  ",1746771437810,1746773606629,2168.819,0,521,0.3093063172012342,7011.88071302459
+5fb4fcd1fce53c30649dd704,writing-task-config,xml," XML <version 4.4.7>
+     <repository>
+         <author/<middle name>
+                 <IsMember>/<true>
+         <type/<git>
+     <engines/<pnpm>=8>
+     <keywords>
+         <canvas>
+         <responsive>
+         <charts>          
+              ",1746768943401,1746769677005,733.604,0,248,1.0070170230009108,728.4921538007968
+67d0251c804fc17732eb948a,writing-task-config,toml,"version: ""4.4.7""
+repository:""git
+[author]
+middle name =
+IsMember = true
+ [engines]
+ pn = "">=8""
+[keywords]
+   tags = ""canvas"", ""responsive"", ""charts""
+   ",1746769383950,1746770111986,728.036,2,152,1.171788946749223,621.303010256
+67d11644421446068e1fec14,writing-task-config,toml,"version ""4.4.7""
+
+[keywords]
+values = [""canvas"", ""responsive"", ""charts""]
+
+[engines.pnpm]
+version = "">=8""
+
+[repository]
+type = ""git""
+
+[repository.author]
+middle_name = """"
+isMember = true",1747337544367,1747337951575,407.208,0,184,0.8950953792443834,454.93252388785044
+67d0088c269b3e96d9ba6019,writing-task-config,hjson,"versin: 4-4-7
+
+repository:
+
+[ author:""middle name: Null
+type: ""isMember"":true
+]
+
+engines:pnpm;>=8
+
+keywords:
+
+{ canvas : 
+
+  responsive:
+  
+  chart:
+  }",1746771646469,1746772760262,1113.793,1,152,0.7265638844586213,1532.9594875609755
+678a94ff1cf9f0775cb89e69,writing-task-config,hjson,"{
+version: ""4.4.7""
+respository:
+author:
+middle name: ""name""
+IsMember: true
+engines:
+  pnpm: "">+8""
+  type: ""git""
+ keywords:
+   [
+    canvas
+    responsive
+    charts
+   ]
+}",1747174337988,1747174879642,541.654,0,171,1.1828709027839712,457.91472148412697
+67176f0792ed8c4064f61a2c,writing-task-config,json,"{
+    ""version"": [4,4,7]
+    
+    ""respiratory"":
+        ""author"":{
+        ""middlename"":null
+        ""IsMember"":true,
+        ""type"":""git""
+        },
+    ""engines"":{
+    ""pnpm"":"">=8"" 
+    },
+    ""keywords"":[""canvas"",""responsive"",""charts""]
+}",1746776201974,1746777807791,1605.817,12,241,0.7023739127779305,2286.270846320158
+678526627e48ded12935af38,writing-task-config,yaml,"=version: 4.4.7
+respiratory:
+    author:
+     middle name: null
+     isMember: true
+    type: git
+  engines:
+    nmp: "">8""
+keywords:
+   - canvas
+   - responsive
+   -charts",1746769440408,1746769798366,357.958,0,171,1.142627408245961,313.2762240925926
+6738d09a032bf7224008ce7e,writing-task-config,yaml,"version: 6.6.7
+respiratory:
+   author:
+     middle_name:  null
+     isMember: true
+    type: git
+ engines:
+   pnpm: "">=8""
+ keywords:
+   - canvas
+   - responsive
+   - charts",1747338121011,1747338545622,424.611,0,172,0.5974353728811411,710.7228987
+62d6d87d91cf24a3c1c0f10c,writing-task-config,hjson,"{
+specify version
+Repository
+[
+Author
+[
+""Middle Name"" : null
+""Is Member"" : True
+""Is Member"" : False
+]
+Type
+""type"" : Git
+{
+engines
+""pnpm"" : >=8
+}
+{
+keywords
+list
+[
+1: Canvas,
+2: Responsive,
+3: charts
+]
+}
+
+",1747336171941,1747337424212,1252.271,49,204,2.1955809576915035,570.3597472063492
+67c6ed1e12728e4fe7a1edf6,writing-task-config,jsonc,"{
+    ""version"":""4.4.7"",
+    ""repository"":{
+        ""type"":""git"",
+        ""url"":""git""
+    },
+""author"":{
+    ""inside name"":""John Doe"",
+    ""is Member"":true
+},
+""engines"":{
+    ""npm"":"">=8""
+},
+""keywords"":[
+    ""canvas"",
+    ""responsive"",
+    charts
+    ]
+}",1747176171127,1747176605110,433.983,4,252,1.232776639136346,352.03700834567906
+672b5998daafdbf9c43a531b,writing-task-config,jsonc,"//version of the data format""version"":""1.0"",
+//Repository information
+""repository"": 
+""type"" : ""git"" 
+//""URL"":
+""https//example.comrepo.git""
+// Engine requirements
+""engines""
+//Node.js version required
+""node"": "">14.00""
+//""npm"":>6.0.0
+relevent keywords for the project
+""keywords:
+serialization""
+""data
+study
+usability""",1746771426755,1746772240001,813.246,0,313,0.49300082030426945,1649.5834621493775
+5795af044a84da00014c5df1,writing-task-config,json,"{
+    ""version"": ""4.4.7"",
+    ""repository"": { ""author"": { ""isMember"":true, ""middlename"": null }, ""type"":""git"" },
+    ""engines"": { ""pnpm"": "">=8"" }
+    ""keywords"": { ""canvas"", ""responsive"", ""charts"" }
+}",1746768267293,1746768522839,255.546,0,200,2.030645761532612,125.84469671713146
+65298aca34ac384b783169d4,writing-task-config,jsonc,"{
+    ""version"": {4.4.7
+       
+    }
+""repository""
+{ ""author"",
+""middle name"",
+}
+""Ismember""
+    true,
+}
+""type""
+{
+   ""git"",
+}      
+""engines""
+{
+  [""pnpm""
+>=8 ]  }
+""keywords""
+{
+   ""canvas"", 
+   ""responsive"",
+   ""charts"",
+}",1746768831001,1746769822572,991.571,13,219,1.0764033662068906,921.1890552648223
+681374d36d7bd7ccb6f914f5,writing-task-config,json5,"{
+    ""version"": '4.4.7',
+    ""repository"":{
+        ""author"":{
+            ""middle name"": '',
+            ""IsMember"": true
+        },
+        ""type"": 'git'
+    },
+    ""engines"":{
+        ""pnpm"": "">=8""
+    },
+    ""keywords"": ['canvas', 'responsive','charts']
+}",1747342080745,1747342414418,333.673,0,260,0.9192048148823637,363.0017974206349
+61287939bc5a971fc15333e4,writing-task-config,json,"[""version"": ""4-4,7]
+[""repository:""author,""-middle name"",""ismember-true"",type-""gift""]
+[""engines:""pnpm"",-"">=8""]
+[keywords:""canvas"""",responsive"",""charts""]",1746769592184,1746772282305,2690.121,7,151,0.3553424143061434,7570.503524756098
+65feaaac53eb219f09ad5ea0,writing-task-config,toml,"version = 44.7
+
+keywords = (""canvas"", ""responsive"", ""charts"")
+
+(repository)
+type = ""git""
+url = 
+
+(author)
+middle name = John
+IsMember-true
+
+engines = >=8 
+",1746770232645,1746771741384,1508.739,0,155,1.1004273504273503,1371.0482563106798
+5755c957eb80c4000741a9ce,writing-task-config,json5,"{
+    version: ""4.4.7"",
+    repository: {
+        author: {
+            ""middle name"": """",
+            IsMember: true
+        },
+        type: ""git""
+    },
+    engines: {
+        pnpm :"">=8""
+    },
+    keywords: [""canvas"", ""responsive"", ""charts""]
+}",1747173386909,1747173535582,148.673,1,248,2.2887608379557327,64.95785734117646
+6693d3ae2bd15cf7a058e6a7,writing-task-config,json5,"{
+ ""version"" 4.4.7
+ 
+}
+ ""repository""
+   ""author""
+   ""middle name""
+   ""IsMember""
+      ""true""
+ {
+   ""type"":
+    ""git""
+ }  
+  ""engines""
+    ""pnpm"" >=8
+
+{
+  ""keywords""
+     ""canvas""
+     ""responsive""
+     ""charts""",1746769454014,1746771249517,1795.503,25,210,0.7503746761836803,2392.8086287929154
+60e2bf0aa568b97e8d525872,writing-task-config,toml,"version = ""4.4.7""
+
+[keywords]
+keywords = [""canvas"", ""responsive"", ""charts""]
+
+[engines]
+pnpm = "">=8""
+
+[repository]
+type = ""git""
+
+[repository.author]
+""middle name"" = """"
+Ismember = true",1746768848322,1746769282768,434.446,0,182,0.993718280867374,437.19231935714294
+67d24179c5bd87691f1fe036,writing-task-config,yaml,"version: 4.4.7
+repository:
+    author:
+        name: null
+        IsMember: true
+    type: git
+engines:
+    pnpm >=8
+keywords:
+    - canvas
+    - responsive
+    - charts",1746769501733,1746769717754,216.021,6,169,2.4557573867622984,87.96512276190475
+5c4f5967aac8be0001716a65,writing-task-config,xml,"<?xml version=""1.0"" encoding=""UTF-8""?>
+<!--- Nested structure example XML File -->
+<version>""4.4.7""</version>
+<respository>
+    <author>
+        <middle_name>""""</middle_name>
+        <IsMember>true</IsMember>
+    </author>
+    <type>""git""</type>
+</respository>
+<engines>
+    <pnpm>"">=8""</pnpm>
+</engines>
+<keywords>
+    <canvas></canvas>
+    <responsive></responsive>
+    <charts></charts>
+</keywords>
+",1747173292719,1747173781409,488.69,3,402,2.0084625338382276,243.31546731225293

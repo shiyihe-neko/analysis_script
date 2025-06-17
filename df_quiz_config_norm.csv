@@ -1,0 +1,215 @@
+participantId,format,quiz_key,correct_answer,user_final_answer,correct,num_wrong_attempts,all_wrong_attempts_list,all_wrong_attempts_frequency,wrong_choice_distribution,wrong_choice_count
+67895b7d6400163124042af7,jsonc,tutorial-jsonc-part1,['B'],['B'],1,5,"[['C'], ['C'], ['A'], ['A'], ['A']]","{'C': 2, 'A': 3}","{'C': 2, 'A': 3}",5
+67895b7d6400163124042af7,jsonc,tutorial-jsonc-part2,"['A', 'B', 'C', 'D']",['A'],0,5,"[['C'], ['A'], ['A'], ['A'], ['A']]","{'C': 1, 'A': 4}",{},0
+659960f32faa4ff4b116de92,toml,tutorial-toml-part1,"['B', 'D']","['B', 'D']",1,4,"[['C', 'D', 'A', 'B'], ['C', 'D'], ['C', 'B'], ['B', 'A']]","{'C': 3, 'D': 2, 'A': 2, 'B': 3}","{'C': 3, 'A': 2}",5
+659960f32faa4ff4b116de92,toml,tutorial-toml-part2,"['A', 'B', 'D']","['A', 'B', 'D']",1,1,"[['A', 'B']]","{'A': 1, 'B': 1}",{},0
+5f7f239e9b204e05b6c36538,json5,tutorial-json5-part1,['D'],"['D', 'A']",0,5,"[['A'], ['B'], ['B'], ['C', 'B'], ['D', 'A']]","{'A': 2, 'B': 3, 'C': 1, 'D': 1}","{'A': 2, 'B': 3, 'C': 1}",6
+5f7f239e9b204e05b6c36538,json5,tutorial-json5-part2,"['A', 'B', 'C', 'D']","['D', 'A', 'C', 'B']",1,1,"[['D', 'A']]","{'D': 1, 'A': 1}",{},0
+67b8636acd5ed420cc098b64,toml,tutorial-toml-part1,"['B', 'D']","['B', 'D']",1,1,"[['A', 'C']]","{'A': 1, 'C': 1}","{'A': 1, 'C': 1}",2
+67b8636acd5ed420cc098b64,toml,tutorial-toml-part2,"['A', 'B', 'D']","['A', 'B', 'D']",1,2,"[['C', 'A'], ['C', 'A', 'B']]","{'C': 2, 'A': 2, 'B': 1}",{'C': 2},2
+57ca4b09993b08000192297b,xml,tutorial-xml-part1,"['A', 'B']","['A', 'B']",1,0,[],{},{},0
+57ca4b09993b08000192297b,xml,tutorial-xml-part2,"['B', 'D']","['D', 'B']",1,2,"[['A', 'B', 'D'], ['A', 'D']]","{'A': 2, 'B': 1, 'D': 2}",{'A': 2},2
+67d1cc8044430e99a7d91b4a,toml,tutorial-toml-part1,"['B', 'D']","['B', 'D']",1,3,"[['A', 'C', 'D'], ['A', 'C'], ['A', 'C']]","{'A': 3, 'C': 3, 'D': 1}","{'A': 3, 'C': 3}",6
+67d1cc8044430e99a7d91b4a,toml,tutorial-toml-part2,"['A', 'B', 'D']","['A', 'B', 'D']",1,1,[['A']],{'A': 1},{},0
+6693ce87e76d32ccf07fbcd8,xml,tutorial-xml-part1,"['A', 'B']","['A', 'B']",1,0,[],{},{},0
+6693ce87e76d32ccf07fbcd8,xml,tutorial-xml-part2,"['B', 'D']","['B', 'D']",1,1,"[['B', 'C', 'D']]","{'B': 1, 'C': 1, 'D': 1}",{'C': 1},1
+680ebf035ab59d342f31726e,hjson,tutorial-hjson-part1,"['A', 'C']","['C', 'A']",1,1,[['C']],{'C': 1},{},0
+680ebf035ab59d342f31726e,hjson,tutorial-hjson-part2,"['A', 'B', 'C', 'D']","['C', 'D']",0,5,"[['B', 'A'], ['B', 'A', 'D'], ['B', 'C', 'D'], ['B', 'C', 'D'], ['C', 'D']]","{'B': 4, 'A': 2, 'D': 4, 'C': 3}",{},0
+67f0d86fabc081fdc410e828,yaml,tutorial-yaml-part1,"['B', 'C', 'D']","['B', 'D', 'C']",1,1,"[['B', 'D']]","{'B': 1, 'D': 1}",{},0
+67f0d86fabc081fdc410e828,yaml,tutorial-yaml-part2,"['B', 'C', 'D']","['B', 'D', 'C']",1,0,[],{},{},0
+6691809035e52ca9b2b0f39a,yaml,tutorial-yaml-part1,"['B', 'C', 'D']",['A'],0,5,"[['B', 'D', 'A', 'C'], ['B', 'D', 'A'], ['B', 'D'], ['D', 'A'], ['A']]","{'B': 3, 'D': 4, 'A': 4, 'C': 1}",{'A': 4},4
+6691809035e52ca9b2b0f39a,yaml,tutorial-yaml-part2,"['B', 'C', 'D']","['B', 'C', 'D']",1,0,[],{},{},0
+678faf5b31008609fd85b185,json5,tutorial-json5-part1,['D'],['B'],0,5,"[['A', 'B'], ['A'], ['A'], ['B', 'D'], ['B']]","{'A': 3, 'B': 3, 'D': 1}","{'A': 3, 'B': 3}",6
+678faf5b31008609fd85b185,json5,tutorial-json5-part2,"['A', 'B', 'C', 'D']","['A', 'B', 'C', 'D']",1,1,[['B']],{'B': 1},{},0
+65e85a421f2dee53c62fbf45,json5,tutorial-json5-part1,['D'],['D'],1,5,"[['B', 'A'], [], ['B'], ['A'], ['A']]","{'B': 2, 'A': 3}","{'B': 2, 'A': 3}",5
+65e85a421f2dee53c62fbf45,json5,tutorial-json5-part2,"['A', 'B', 'C', 'D']","['A', 'B', 'C', 'D']",1,4,"[['A'], ['C'], ['C', 'D'], ['B']]","{'A': 1, 'C': 2, 'D': 1, 'B': 1}",{},0
+666b0b42bb6fa2822fa27a32,json5,tutorial-json5-part1,['D'],"['C', 'A']",0,5,"[['A', 'D', 'C'], ['A', 'D', 'C', 'B'], ['A', 'D', 'B'], ['B', 'C', 'D'], ['C', 'A']]","{'A': 4, 'D': 4, 'C': 4, 'B': 3}","{'A': 4, 'C': 4, 'B': 3}",11
+666b0b42bb6fa2822fa27a32,json5,tutorial-json5-part2,"['A', 'B', 'C', 'D']",['B'],0,5,"[['C'], ['C', 'A'], ['A'], ['D'], ['B']]","{'C': 2, 'A': 2, 'D': 1, 'B': 1}",{},0
+6708da9c62672d0fe65b6683,jsonc,tutorial-jsonc-part1,['B'],"['A', 'C', 'B', 'D']",0,5,"[['C'], ['A'], ['A'], ['A', 'C'], ['A', 'C', 'B', 'D']]","{'C': 3, 'A': 4, 'B': 1, 'D': 1}","{'C': 3, 'A': 4, 'D': 1}",8
+6708da9c62672d0fe65b6683,jsonc,tutorial-jsonc-part2,"['A', 'B', 'C', 'D']","['B', 'A', 'C', 'D']",1,1,[['B']],{'B': 1},{},0
+60f70af563ef757f65e750e0,xml,tutorial-xml-part1,"['A', 'B']","['B', 'A']",1,4,"[['A', 'D', 'B', 'C'], ['D', 'B'], ['B', 'C'], ['B', 'C']]","{'A': 1, 'D': 2, 'B': 4, 'C': 3}","{'D': 2, 'C': 3}",5
+60f70af563ef757f65e750e0,xml,tutorial-xml-part2,"['B', 'D']","['B', 'D']",1,0,[],{},{},0
+670f9ddb0e32533c222c3031,json,tutorial-json-part1,['B'],['B'],1,1,[['A']],{'A': 1},{'A': 1},1
+670f9ddb0e32533c222c3031,json,tutorial-json-part2,['D'],['D'],1,2,"[['C'], ['B']]","{'C': 1, 'B': 1}","{'C': 1, 'B': 1}",2
+67d03135f855dd0ff0994265,toml,tutorial-toml-part1,"['B', 'D']","['B', 'D']",1,2,"[['A'], ['A', 'B']]","{'A': 2, 'B': 1}",{'A': 2},2
+67d03135f855dd0ff0994265,toml,tutorial-toml-part2,"['A', 'B', 'D']","['A', 'B', 'D']",1,0,[],{},{},0
+674f479b2a4ef75e4551f258,json5,tutorial-json5-part1,['D'],['D'],1,3,"[['A', 'B'], ['A'], ['B']]","{'A': 2, 'B': 2}","{'A': 2, 'B': 2}",4
+674f479b2a4ef75e4551f258,json5,tutorial-json5-part2,"['A', 'B', 'C', 'D']","['A', 'D']",0,5,"[['D'], ['C'], ['A'], ['B'], ['A', 'D']]","{'D': 2, 'C': 1, 'A': 2, 'B': 1}",{},0
+5ee4a14b578f8a000b384376,yaml,tutorial-yaml-part1,"['B', 'C', 'D']","['D', 'C', 'B']",1,4,"[['A', 'B', 'C', 'D'], ['A', 'B', 'C'], ['A', 'B', 'D'], ['A', 'D', 'C']]","{'A': 4, 'B': 3, 'C': 3, 'D': 3}",{'A': 4},4
+5ee4a14b578f8a000b384376,yaml,tutorial-yaml-part2,"['B', 'C', 'D']","['B', 'C', 'D']",1,0,[],{},{},0
+63af557b3d4f219c3226b7d6,yaml,tutorial-yaml-part1,"['B', 'C', 'D']","['B', 'D', 'C']",1,0,[],{},{},0
+63af557b3d4f219c3226b7d6,yaml,tutorial-yaml-part2,"['B', 'C', 'D']","['B', 'C', 'D']",1,3,"[['A', 'B', 'C', 'D'], ['B', 'D', 'A'], ['B', 'A', 'C']]","{'A': 3, 'B': 3, 'C': 2, 'D': 2}",{'A': 3},3
+65583ffa38bfc41805a553cd,hjson,tutorial-hjson-part1,"['A', 'C']","['C', 'A']",1,0,[],{},{},0
+65583ffa38bfc41805a553cd,hjson,tutorial-hjson-part2,"['A', 'B', 'C', 'D']","['A', 'B']",0,5,"[['D', 'B'], ['D', 'A'], ['A', 'D'], ['A', 'C'], ['A', 'B']]","{'D': 3, 'B': 2, 'A': 4, 'C': 1}",{},0
+66684d30d1a0d64a3a348c82,yaml,tutorial-yaml-part1,"['B', 'C', 'D']",['A'],0,5,"[['D'], ['A'], ['A'], ['B'], ['A']]","{'D': 1, 'A': 3, 'B': 1}",{'A': 3},3
+66684d30d1a0d64a3a348c82,yaml,tutorial-yaml-part2,"['B', 'C', 'D']","['B', 'C', 'D']",1,0,[],{},{},0
+60ec51c51a3158a50ded8a3e,json5,tutorial-json5-part1,['D'],['D'],1,0,[],{},{},0
+60ec51c51a3158a50ded8a3e,json5,tutorial-json5-part2,"['A', 'B', 'C', 'D']","['A', 'B', 'C', 'D']",1,0,[],{},{},0
+671bdd06525adeea062a1d73,json,tutorial-json-part1,['B'],['B'],1,2,"[['A', 'B', 'D'], ['D', 'B']]","{'A': 1, 'B': 2, 'D': 2}","{'A': 1, 'D': 2}",3
+671bdd06525adeea062a1d73,json,tutorial-json-part2,['D'],['D'],1,0,[],{},{},0
+6647e8618c77f7b938865d25,json5,tutorial-json5-part1,['D'],['D'],1,0,[],{},{},0
+6647e8618c77f7b938865d25,json5,tutorial-json5-part2,"['A', 'B', 'C', 'D']","['A', 'D', 'B', 'C']",1,5,"[['A'], ['A', 'D'], ['D'], ['C'], ['A', 'D']]","{'A': 3, 'D': 3, 'C': 1}",{},0
+613a541cf948d295c1df8752,jsonc,tutorial-jsonc-part1,['B'],['B'],1,2,"[['B', 'C'], ['C']]","{'B': 1, 'C': 2}",{'C': 2},2
+613a541cf948d295c1df8752,jsonc,tutorial-jsonc-part2,"['A', 'B', 'C', 'D']","['D', 'C', 'B', 'A']",1,3,"[['A'], ['C'], ['D']]","{'A': 1, 'C': 1, 'D': 1}",{},0
+5e5c993cd0394c474f7cc502,toml,tutorial-toml-part1,"['B', 'D']","['D', 'B']",1,3,"[['A', 'C', 'D'], ['A', 'D'], ['A', 'D', 'B']]","{'A': 3, 'C': 1, 'D': 3, 'B': 1}","{'A': 3, 'C': 1}",4
+5e5c993cd0394c474f7cc502,toml,tutorial-toml-part2,"['A', 'B', 'D']","['A', 'B', 'D']",1,0,[],{},{},0
+67c045fa5074c5500ca40e76,xml,tutorial-xml-part1,"['A', 'B']","['B', 'A']",1,2,"[['D', 'B', 'A', 'C'], ['B']]","{'D': 1, 'B': 2, 'A': 1, 'C': 1}","{'D': 1, 'C': 1}",2
+67c045fa5074c5500ca40e76,xml,tutorial-xml-part2,"['B', 'D']","['B', 'D']",1,1,"[['B', 'D', 'C']]","{'B': 1, 'D': 1, 'C': 1}",{'C': 1},1
+67d2eaf9d5996dc6be1c7072,xml,tutorial-xml-part1,"['A', 'B']","['A', 'B']",1,0,[],{},{},0
+67d2eaf9d5996dc6be1c7072,xml,tutorial-xml-part2,"['B', 'D']","['B', 'D']",1,1,"[['A', 'B', 'C', 'D']]","{'A': 1, 'B': 1, 'C': 1, 'D': 1}","{'A': 1, 'C': 1}",2
+60e2ebb6ad1d5ee0e515a7c5,yaml,tutorial-yaml-part1,"['B', 'C', 'D']",['C'],0,5,"[['A'], ['A', 'B'], ['A', 'B', 'D'], ['D'], ['C']]","{'A': 3, 'B': 2, 'D': 2, 'C': 1}",{'A': 3},3
+60e2ebb6ad1d5ee0e515a7c5,yaml,tutorial-yaml-part2,"['B', 'C', 'D']","['B', 'C', 'D']",1,1,"[['B', 'C']]","{'B': 1, 'C': 1}",{},0
+67153c0d669d191ab273b865,yaml,tutorial-yaml-part1,"['B', 'C', 'D']","['A', 'D', 'B', 'C']",0,5,"[['A', 'D', 'C'], ['A', 'D', 'B'], ['A', 'B', 'C'], ['A', 'B', 'D'], ['A', 'D', 'B', 'C']]","{'A': 5, 'D': 4, 'C': 3, 'B': 4}",{'A': 5},5
+67153c0d669d191ab273b865,yaml,tutorial-yaml-part2,"['B', 'C', 'D']","['B', 'C', 'D']",1,0,[],{},{},0
+67ab1d683813ed19603e1030,yaml,tutorial-yaml-part1,"['B', 'C', 'D']","['B', 'D', 'C']",1,3,"[['B', 'D'], ['D', 'A'], ['B', 'D']]","{'B': 2, 'D': 3, 'A': 1}",{'A': 1},1
+67ab1d683813ed19603e1030,yaml,tutorial-yaml-part2,"['B', 'C', 'D']","['B', 'D', 'C']",1,2,"[['B', 'D'], ['B', 'D', 'A']]","{'B': 2, 'D': 2, 'A': 1}",{'A': 1},1
+60e343946a7faddde88fbe3c,yaml,tutorial-yaml-part1,"['B', 'C', 'D']","['D', 'C', 'B']",1,0,[],{},{},0
+60e343946a7faddde88fbe3c,yaml,tutorial-yaml-part2,"['B', 'C', 'D']","['B', 'C', 'D']",1,3,"[['A', 'B', 'D', 'C'], ['A', 'B', 'D'], ['A', 'B', 'C']]","{'A': 3, 'B': 3, 'D': 2, 'C': 2}",{'A': 3},3
+67e0333064ddada0e2fc6f1e,yaml,tutorial-yaml-part1,"['B', 'C', 'D']","['C', 'B', 'D']",1,5,"[['C'], ['C', 'A', 'B'], ['C', 'A', 'B'], ['C', 'A', 'B'], ['C', 'A', 'B']]","{'C': 5, 'A': 4, 'B': 4}",{'A': 4},4
+67e0333064ddada0e2fc6f1e,yaml,tutorial-yaml-part2,"['B', 'C', 'D']","['B', 'C', 'D']",1,1,"[['B', 'A']]","{'B': 1, 'A': 1}",{'A': 1},1
+5b3ec4332a5fbf00014eae57,toml,tutorial-toml-part1,"['B', 'D']","['B', 'D']",1,0,[],{},{},0
+5b3ec4332a5fbf00014eae57,toml,tutorial-toml-part2,"['A', 'B', 'D']","['A', 'D', 'B']",1,1,"[['A', 'D']]","{'A': 1, 'D': 1}",{},0
+66912d7bf9d35c08f6919958,json,tutorial-json-part1,['B'],['B'],1,1,"[['B', 'D']]","{'B': 1, 'D': 1}",{'D': 1},1
+66912d7bf9d35c08f6919958,json,tutorial-json-part2,['D'],['D'],1,0,[],{},{},0
+6717980047b565ab5b849317,hjson,tutorial-hjson-part1,"['A', 'C']",['C'],0,5,"[['A', 'B'], ['A'], ['B'], ['D'], ['C']]","{'A': 2, 'B': 2, 'D': 1, 'C': 1}","{'B': 2, 'D': 1}",3
+6717980047b565ab5b849317,hjson,tutorial-hjson-part2,"['A', 'B', 'C', 'D']","['D', 'C']",0,5,"[['A', 'D'], ['D'], ['B', 'D'], ['C', 'B'], ['D', 'C']]","{'A': 1, 'D': 4, 'B': 2, 'C': 2}",{},0
+651b29ff3a6cadf518640abe,xml,tutorial-xml-part1,"['A', 'B']","['B', 'A']",1,4,"[['D'], ['D', 'B'], ['D', 'B'], ['B', 'D', 'A']]","{'D': 4, 'B': 3, 'A': 1}",{'D': 4},4
+651b29ff3a6cadf518640abe,xml,tutorial-xml-part2,"['B', 'D']","['D', 'B']",1,3,"[['D', 'C'], ['D', 'A'], ['D', 'A']]","{'D': 3, 'C': 1, 'A': 2}","{'C': 1, 'A': 2}",3
+6818ca1523ece90f671e3601,json,tutorial-json-part1,['B'],['C'],0,5,"[['A'], ['B', 'C'], ['B', 'C'], ['B', 'C'], ['C']]","{'A': 1, 'B': 3, 'C': 4}","{'A': 1, 'C': 4}",5
+6818ca1523ece90f671e3601,json,tutorial-json-part2,['D'],['D'],1,4,"[['B'], ['A'], ['A'], ['A']]","{'B': 1, 'A': 3}","{'B': 1, 'A': 3}",4
+67c1dd323984fa84ae83e162,jsonc,tutorial-jsonc-part1,['B'],['B'],1,3,"[['C', 'A'], ['C', 'B'], ['C']]","{'C': 3, 'A': 1, 'B': 1}","{'C': 3, 'A': 1}",4
+67c1dd323984fa84ae83e162,jsonc,tutorial-jsonc-part2,"['A', 'B', 'C', 'D']","['B', 'C']",0,5,"[['D'], ['B'], ['B'], ['B'], ['B', 'C']]","{'D': 1, 'B': 4, 'C': 1}",{},0
+67d2a409ab3638e33fc417b9,hjson,tutorial-hjson-part1,"['A', 'C']","['A', 'C']",1,5,"[['D'], ['D', 'B'], ['B'], ['C'], ['A']]","{'D': 2, 'B': 2, 'C': 1, 'A': 1}","{'D': 2, 'B': 2}",4
+67d2a409ab3638e33fc417b9,hjson,tutorial-hjson-part2,"['A', 'B', 'C', 'D']","['B', 'A', 'C', 'D']",1,5,"[['D'], ['C'], ['A', 'C'], ['A'], ['B']]","{'D': 1, 'C': 2, 'A': 2, 'B': 1}",{},0
+66ec8f7ce843d25227820f97,hjson,tutorial-hjson-part1,"['A', 'C']","['D', 'A', 'B']",0,5,"[['A'], ['B'], ['C'], ['D'], ['D', 'A', 'B']]","{'A': 2, 'B': 2, 'C': 1, 'D': 2}","{'B': 2, 'D': 2}",4
+66ec8f7ce843d25227820f97,hjson,tutorial-hjson-part2,"['A', 'B', 'C', 'D']","['D', 'B', 'A', 'C']",1,2,"[['D', 'B'], ['D', 'B', 'A']]","{'D': 2, 'B': 2, 'A': 1}",{},0
+6680d2279263349cc005956a,json,tutorial-json-part1,['B'],['B'],1,1,[['D']],{'D': 1},{'D': 1},1
+6680d2279263349cc005956a,json,tutorial-json-part2,['D'],['D'],1,0,[],{},{},0
+6081728972120aa7f9685791,json,tutorial-json-part1,['B'],['B'],1,2,"[['A'], ['A', 'B']]","{'A': 2, 'B': 1}",{'A': 2},2
+6081728972120aa7f9685791,json,tutorial-json-part2,['D'],['D'],1,2,"[['B', 'D'], ['B']]","{'B': 2, 'D': 1}",{'B': 2},2
+67aca6831f2b0b79416bdb6c,xml,tutorial-xml-part1,"['A', 'B']","['A', 'B']",1,2,"[['C', 'B'], ['A', 'C']]","{'C': 2, 'B': 1, 'A': 1}",{'C': 2},2
+67aca6831f2b0b79416bdb6c,xml,tutorial-xml-part2,"['B', 'D']",['D'],0,10,"[['A'], ['A', 'B'], ['A', 'B', 'C'], ['A', 'B', 'D'], ['D'], ['D'], ['D'], ['D'], ['D'], ['D']]","{'A': 4, 'B': 3, 'C': 1, 'D': 7}","{'A': 4, 'C': 1}",5
+675aaf0eb1b401136f37c475,json,tutorial-json-part1,['B'],"['B', 'C']",0,5,"[['D', 'A'], ['D', 'A', 'C'], ['D', 'A', 'B', 'C'], ['D', 'B', 'C'], ['B', 'C']]","{'D': 4, 'A': 3, 'C': 4, 'B': 3}","{'D': 4, 'A': 3, 'C': 4}",11
+675aaf0eb1b401136f37c475,json,tutorial-json-part2,['D'],['D'],1,0,[],{},{},0
+6723422d5f63c70998014b03,jsonc,tutorial-jsonc-part1,['B'],['B'],1,0,[],{},{},0
+6723422d5f63c70998014b03,jsonc,tutorial-jsonc-part2,"['A', 'B', 'C', 'D']",['C'],0,5,"[['D'], ['B'], ['C'], ['A'], ['C']]","{'D': 1, 'B': 1, 'C': 2, 'A': 1}",{},0
+6554e79557e3d6be08e32ceb,yaml,tutorial-yaml-part1,"['B', 'C', 'D']","['B', 'C', 'D']",1,0,[],{},{},0
+6554e79557e3d6be08e32ceb,yaml,tutorial-yaml-part2,"['B', 'C', 'D']","['B', 'C', 'D']",1,0,[],{},{},0
+645b519f108c046164a6d232,yaml,tutorial-yaml-part1,"['B', 'C', 'D']","['C', 'B', 'D']",1,2,"[['C', 'A', 'B'], ['C', 'A']]","{'C': 2, 'A': 2, 'B': 1}",{'A': 2},2
+645b519f108c046164a6d232,yaml,tutorial-yaml-part2,"['B', 'C', 'D']","['B', 'D', 'C']",1,0,[],{},{},0
+589cd166b2a7180001f0527d,jsonc,tutorial-jsonc-part1,['B'],['B'],1,2,"[['A', 'D'], ['A', 'D', 'B', 'C']]","{'A': 2, 'D': 2, 'B': 1, 'C': 1}","{'A': 2, 'D': 2, 'C': 1}",5
+589cd166b2a7180001f0527d,jsonc,tutorial-jsonc-part2,"['A', 'B', 'C', 'D']",['D'],0,5,"[['C'], ['A'], ['A'], ['B'], ['D']]","{'C': 1, 'A': 2, 'B': 1, 'D': 1}",{},0
+6682a94b061954ae8483fb08,toml,tutorial-toml-part1,"['B', 'D']","['B', 'D']",1,0,[],{},{},0
+6682a94b061954ae8483fb08,toml,tutorial-toml-part2,"['A', 'B', 'D']","['D', 'A', 'B']",1,0,[],{},{},0
+6735b2a6112cf17b7b8df8d1,jsonc,tutorial-jsonc-part1,['B'],['B'],1,3,"[['A', 'D'], ['A'], ['D']]","{'A': 2, 'D': 2}","{'A': 2, 'D': 2}",4
+6735b2a6112cf17b7b8df8d1,jsonc,tutorial-jsonc-part2,"['A', 'B', 'C', 'D']","['A', 'B', 'C', 'D']",1,4,"[['D'], ['C'], ['A'], ['D', 'A']]","{'D': 2, 'C': 1, 'A': 2}",{},0
+67792abbab2fa21bf3644c09,hjson,tutorial-hjson-part1,"['A', 'C']","['C', 'A']",1,3,"[['C', 'D'], ['C'], ['C', 'D', 'B', 'A']]","{'C': 3, 'D': 2, 'B': 1, 'A': 1}","{'D': 2, 'B': 1}",3
+67792abbab2fa21bf3644c09,hjson,tutorial-hjson-part2,"['A', 'B', 'C', 'D']","['A', 'B', 'C', 'D']",1,5,"[['A', 'D'], ['A', 'D', 'B'], ['D'], ['A'], ['A']]","{'A': 4, 'D': 3, 'B': 1}",{},0
+5ea90bb434d5e337e98c7edd,json5,tutorial-json5-part1,['D'],['D'],1,3,"[['A', 'C', 'D'], ['A'], ['C']]","{'A': 2, 'C': 2, 'D': 1}","{'A': 2, 'C': 2}",4
+5ea90bb434d5e337e98c7edd,json5,tutorial-json5-part2,"['A', 'B', 'C', 'D']","['A', 'D', 'B', 'C']",1,1,"[['A', 'D']]","{'A': 1, 'D': 1}",{},0
+677f8968bbb08bc37c8d2a4b,xml,tutorial-xml-part1,"['A', 'B']","['B', 'A']",1,3,"[['B', 'D'], ['B', 'D', 'A'], ['B']]","{'B': 3, 'D': 2, 'A': 1}",{'D': 2},2
+677f8968bbb08bc37c8d2a4b,xml,tutorial-xml-part2,"['B', 'D']","['B', 'D']",1,1,[['A']],{'A': 1},{'A': 1},1
+672f51ea346fba23ddd5a793,xml,tutorial-xml-part1,"['A', 'B']","['B', 'A']",1,4,"[['B'], ['B', 'A', 'C'], ['B', 'C'], ['B', 'C', 'A', 'D']]","{'B': 4, 'A': 2, 'C': 3, 'D': 1}","{'C': 3, 'D': 1}",4
+672f51ea346fba23ddd5a793,xml,tutorial-xml-part2,"['B', 'D']","['B', 'D']",1,2,"[['B', 'C', 'D'], ['B', 'C']]","{'B': 2, 'C': 2, 'D': 1}",{'C': 2},2
+67d13a1ec91ae2216896de44,json,tutorial-json-part1,['B'],['B'],1,2,"[['B', 'C', 'D'], ['C']]","{'B': 1, 'C': 2, 'D': 1}","{'C': 2, 'D': 1}",3
+67d13a1ec91ae2216896de44,json,tutorial-json-part2,['D'],['D'],1,5,"[['A', 'B', 'C', 'D'], ['A'], ['B'], ['B'], ['C']]","{'A': 2, 'B': 3, 'C': 2, 'D': 1}","{'A': 2, 'B': 3, 'C': 2}",7
+67bf5ad9c5a4637861cfd21e,toml,tutorial-toml-part1,"['B', 'D']","['B', 'D']",1,1,"[['C', 'B', 'A', 'D']]","{'C': 1, 'B': 1, 'A': 1, 'D': 1}","{'C': 1, 'A': 1}",2
+67bf5ad9c5a4637861cfd21e,toml,tutorial-toml-part2,"['A', 'B', 'D']","['D', 'A']",0,5,"[['A', 'B'], ['A', 'D'], ['D', 'C'], ['D', 'B'], ['D', 'A']]","{'A': 3, 'B': 2, 'D': 4, 'C': 1}",{'C': 1},1
+616e5ae706e970fe0aff99b6,hjson,tutorial-hjson-part1,"['A', 'C']","['A', 'C']",1,1,"[['A', 'C', 'D']]","{'A': 1, 'C': 1, 'D': 1}",{'D': 1},1
+616e5ae706e970fe0aff99b6,hjson,tutorial-hjson-part2,"['A', 'B', 'C', 'D']","['A', 'B', 'C', 'D']",1,0,[],{},{},0
+66311bae532a469f4858933e,toml,tutorial-toml-part1,"['B', 'D']","['D', 'B']",1,2,"[[], ['D', 'C']]","{'D': 1, 'C': 1}",{'C': 1},1
+66311bae532a469f4858933e,toml,tutorial-toml-part2,"['A', 'B', 'D']","['B', 'A', 'D']",1,0,[],{},{},0
+669284eabea5b8c9655927da,yaml,tutorial-yaml-part1,"['B', 'C', 'D']","['A', 'D', 'C']",0,5,"[['A', 'B', 'C'], ['A', 'B'], ['A', 'B', 'C', 'D'], ['A', 'B', 'D'], ['A', 'D', 'C']]","{'A': 5, 'B': 4, 'C': 3, 'D': 3}",{'A': 5},5
+669284eabea5b8c9655927da,yaml,tutorial-yaml-part2,"['B', 'C', 'D']","['C', 'D', 'B']",1,1,"[['C', 'D', 'A']]","{'C': 1, 'D': 1, 'A': 1}",{'A': 1},1
+67da5ae29f57419143d2b99a,jsonc,tutorial-jsonc-part1,['B'],['B'],1,5,"[['D', 'A'], ['D'], ['D', 'C'], ['D', 'A', 'B', 'C'], ['D', 'A']]","{'D': 5, 'A': 3, 'C': 2, 'B': 1}","{'D': 5, 'A': 3, 'C': 2}",10
+67da5ae29f57419143d2b99a,jsonc,tutorial-jsonc-part2,"['A', 'B', 'C', 'D']","['D', 'C', 'B', 'A']",1,1,[['D']],{'D': 1},{},0
+68138e7f96395f4c5f3a0a87,json,tutorial-json-part1,['B'],['B'],1,2,"[['A', 'B', 'C'], ['A', 'C']]","{'A': 2, 'B': 1, 'C': 2}","{'A': 2, 'C': 2}",4
+68138e7f96395f4c5f3a0a87,json,tutorial-json-part2,['D'],['D'],1,1,"[['A', 'B', 'C']]","{'A': 1, 'B': 1, 'C': 1}","{'A': 1, 'B': 1, 'C': 1}",3
+66684beba2a2d24645a6d782,jsonc,tutorial-jsonc-part1,['B'],['B'],1,2,"[['A', 'B', 'D'], ['A']]","{'A': 2, 'B': 1, 'D': 1}","{'A': 2, 'D': 1}",3
+66684beba2a2d24645a6d782,jsonc,tutorial-jsonc-part2,"['A', 'B', 'C', 'D']","['D', 'C', 'A', 'B']",1,5,"[['A'], ['D'], ['D'], ['D'], ['D', 'C', 'A']]","{'A': 2, 'D': 4, 'C': 1}",{},0
+660eafee7515c432e850362d,hjson,tutorial-hjson-part1,"['A', 'C']","['A', 'C']",1,2,"[['A', 'D'], ['A', 'B']]","{'A': 2, 'D': 1, 'B': 1}","{'D': 1, 'B': 1}",2
+660eafee7515c432e850362d,hjson,tutorial-hjson-part2,"['A', 'B', 'C', 'D']","['D', 'A', 'B', 'C']",1,1,"[['D', 'A']]","{'D': 1, 'A': 1}",{},0
+62d7fef5538b81f205ba4656,xml,tutorial-xml-part1,"['A', 'B']","['A', 'B']",1,1,"[['D', 'A', 'B', 'C']]","{'D': 1, 'A': 1, 'B': 1, 'C': 1}","{'D': 1, 'C': 1}",2
+62d7fef5538b81f205ba4656,xml,tutorial-xml-part2,"['B', 'D']","['B', 'D']",1,2,"[['A'], ['B']]","{'A': 1, 'B': 1}",{'A': 1},1
+67caa7fe00179edfb74d3e1a,json5,tutorial-json5-part1,['D'],['B'],0,5,"[['B'], ['B', 'D'], ['B', 'D', 'A'], ['B', 'D', 'A'], ['B']]","{'B': 5, 'D': 3, 'A': 2}","{'B': 5, 'A': 2}",7
+67caa7fe00179edfb74d3e1a,json5,tutorial-json5-part2,"['A', 'B', 'C', 'D']","['D', 'A', 'C', 'B']",1,4,"[['D'], ['D', 'A'], ['D', 'A'], ['D', 'A', 'C']]","{'D': 4, 'A': 3, 'C': 1}",{},0
+65fae23bd06ae76bcc297e8b,hjson,tutorial-hjson-part1,"['A', 'C']",['A'],0,5,"[['B'], ['B', 'A', 'D'], ['B', 'A', 'D'], ['B', 'A', 'D'], ['B', 'A', 'D']]","{'B': 5, 'A': 4, 'D': 4}","{'B': 5, 'D': 4}",9
+65fae23bd06ae76bcc297e8b,hjson,tutorial-hjson-part2,"['A', 'B', 'C', 'D']","['D', 'A', 'B', 'C']",1,1,"[['D', 'A', 'B']]","{'D': 1, 'A': 1, 'B': 1}",{},0
+588ab33542c8e900019d02ae,jsonc,tutorial-jsonc-part1,['B'],['B'],1,1,"[['B', 'C', 'D']]","{'B': 1, 'C': 1, 'D': 1}","{'C': 1, 'D': 1}",2
+588ab33542c8e900019d02ae,jsonc,tutorial-jsonc-part2,"['A', 'B', 'C', 'D']","['D', 'C', 'B', 'A']",1,1,[['D']],{'D': 1},{},0
+67f4ea448eb6a2b293c1f2fc,json,tutorial-json-part1,['B'],['B'],1,0,[],{},{},0
+67f4ea448eb6a2b293c1f2fc,json,tutorial-json-part2,['D'],['D'],1,4,"[['B', 'C'], ['B', 'A'], ['A', 'D'], ['A']]","{'B': 2, 'C': 1, 'A': 3, 'D': 1}","{'B': 2, 'C': 1, 'A': 3}",6
+65f4ab7884f8411c9e11a34e,json5,tutorial-json5-part1,['D'],['D'],1,1,"[['A', 'B']]","{'A': 1, 'B': 1}","{'A': 1, 'B': 1}",2
+65f4ab7884f8411c9e11a34e,json5,tutorial-json5-part2,"['A', 'B', 'C', 'D']","['C', 'D', 'B', 'A']",1,1,[['C']],{'C': 1},{},0
+611d0afbb2a19acfd012545b,toml,tutorial-toml-part1,"['B', 'D']","['A', 'B']",0,5,"[['A', 'C', 'D', 'B'], ['A', 'D'], ['D', 'C'], ['D', 'A'], ['A', 'B']]","{'A': 4, 'C': 2, 'D': 4, 'B': 2}","{'A': 4, 'C': 2}",6
+611d0afbb2a19acfd012545b,toml,tutorial-toml-part2,"['A', 'B', 'D']","['A', 'B', 'D']",1,2,"[['C', 'D'], ['C', 'A', 'B']]","{'C': 2, 'D': 1, 'A': 1, 'B': 1}",{'C': 2},2
+67406c1303bd39d206ff2b50,xml,tutorial-xml-part1,"['A', 'B']","['A', 'B']",1,0,[],{},{},0
+67406c1303bd39d206ff2b50,xml,tutorial-xml-part2,"['B', 'D']","['B', 'D']",1,0,[],{},{},0
+61601e9a6b8306196d2a129c,hjson,tutorial-hjson-part1,"['A', 'C']","['A', 'C']",1,0,[],{},{},0
+61601e9a6b8306196d2a129c,hjson,tutorial-hjson-part2,"['A', 'B', 'C', 'D']","['D', 'A', 'B', 'C']",1,2,"[['D', 'A', 'B'], ['D', 'A']]","{'D': 2, 'A': 2, 'B': 1}",{},0
+65fad6c874ac75642ffc254b,hjson,tutorial-hjson-part1,"['A', 'C']","['A', 'C']",1,4,"[['A', 'C', 'B'], ['C', 'B'], ['B', 'A'], ['B', 'A', 'C', 'D']]","{'A': 3, 'C': 3, 'B': 4, 'D': 1}","{'B': 4, 'D': 1}",5
+65fad6c874ac75642ffc254b,hjson,tutorial-hjson-part2,"['A', 'B', 'C', 'D']","['C', 'A']",0,5,"[['C'], ['C', 'B'], ['D', 'C'], ['C', 'A'], ['C', 'A']]","{'C': 5, 'B': 1, 'D': 1, 'A': 2}",{},0
+606c7d27f4f3ae688332a55d,toml,tutorial-toml-part1,"['B', 'D']","['B', 'D']",1,2,"[['A', 'B', 'C', 'D'], ['A', 'C']]","{'A': 2, 'B': 1, 'C': 2, 'D': 1}","{'A': 2, 'C': 2}",4
+606c7d27f4f3ae688332a55d,toml,tutorial-toml-part2,"['A', 'B', 'D']","['A', 'B', 'D']",1,1,"[['A', 'B']]","{'A': 1, 'B': 1}",{},0
+67f66486e35051403284eb5e,xml,tutorial-xml-part1,"['A', 'B']","['B', 'A']",1,3,"[['B'], ['B', 'D'], ['B', 'D', 'C', 'A']]","{'B': 3, 'D': 2, 'C': 1, 'A': 1}","{'D': 2, 'C': 1}",3
+67f66486e35051403284eb5e,xml,tutorial-xml-part2,"['B', 'D']","['D', 'B']",1,0,[],{},{},0
+67a8fa10b4db1990f7372f01,json5,tutorial-json5-part1,['D'],['D'],1,1,[['B']],{'B': 1},{'B': 1},1
+67a8fa10b4db1990f7372f01,json5,tutorial-json5-part2,"['A', 'B', 'C', 'D']",['C'],0,5,"[['B'], ['B', 'C'], ['B', 'D'], ['D', 'C'], ['C']]","{'B': 3, 'C': 3, 'D': 2}",{},0
+6094ce8d0764c24f352d1fe5,hjson,tutorial-hjson-part1,"['A', 'C']","['C', 'A']",1,5,"[['C'], ['C', 'B'], ['C', 'B'], ['B', 'A'], ['C', 'D']]","{'C': 4, 'B': 3, 'A': 1, 'D': 1}","{'B': 3, 'D': 1}",4
+6094ce8d0764c24f352d1fe5,hjson,tutorial-hjson-part2,"['A', 'B', 'C', 'D']","['A', 'B', 'C', 'D']",1,0,[],{},{},0
+6715c7aedee148c65c10509c,yaml,tutorial-yaml-part1,"['B', 'C', 'D']","['D', 'C', 'A']",0,5,"[['A', 'C', 'D'], ['A', 'C'], ['A', 'D', 'B'], ['C', 'D'], ['D', 'C', 'A']]","{'A': 4, 'C': 4, 'D': 4, 'B': 1}",{'A': 4},4
+6715c7aedee148c65c10509c,yaml,tutorial-yaml-part2,"['B', 'C', 'D']","['D', 'B', 'C']",1,2,"[['D', 'C', 'A', 'B'], ['D', 'A', 'B']]","{'D': 2, 'C': 1, 'A': 2, 'B': 2}",{'A': 2},2
+664e413a5f3eb7f99d90e15b,json,tutorial-json-part1,['B'],['B'],1,3,"[['A', 'D'], ['D', 'C'], ['D', 'C']]","{'A': 1, 'D': 3, 'C': 2}","{'A': 1, 'D': 3, 'C': 2}",6
+664e413a5f3eb7f99d90e15b,json,tutorial-json-part2,['D'],['D'],1,0,[],{},{},0
+65fb13bebfa339f73b4cf76a,jsonc,tutorial-jsonc-part1,['B'],['B'],1,5,"[['A'], ['C'], ['C'], ['C'], ['D']]","{'A': 1, 'C': 3, 'D': 1}","{'A': 1, 'C': 3, 'D': 1}",5
+65fb13bebfa339f73b4cf76a,jsonc,tutorial-jsonc-part2,"['A', 'B', 'C', 'D']",['C'],0,5,"[['C'], ['A'], ['B'], ['D'], ['C']]","{'C': 2, 'A': 1, 'B': 1, 'D': 1}",{},0
+65fb236a5a78fcf672df7469,json,tutorial-json-part1,['B'],['B'],1,1,"[['B', 'C']]","{'B': 1, 'C': 1}",{'C': 1},1
+65fb236a5a78fcf672df7469,json,tutorial-json-part2,['D'],['D'],1,0,[],{},{},0
+60f7c71d1cffec381351b0b3,xml,tutorial-xml-part1,"['A', 'B']","['A', 'B']",1,0,[],{},{},0
+60f7c71d1cffec381351b0b3,xml,tutorial-xml-part2,"['B', 'D']","['B', 'D']",1,3,"[['C', 'D'], ['C', 'D', 'B'], ['C', 'B']]","{'C': 3, 'D': 2, 'B': 2}",{'C': 3},3
+675330fb23080b9ae3ec8239,json5,tutorial-json5-part1,['D'],"['D', 'B', 'A']",0,5,"[['A'], ['C', 'D'], ['D', 'B'], ['D', 'B'], ['D', 'B', 'A']]","{'A': 2, 'C': 1, 'D': 4, 'B': 3}","{'A': 2, 'C': 1, 'B': 3}",6
+675330fb23080b9ae3ec8239,json5,tutorial-json5-part2,"['A', 'B', 'C', 'D']","['A', 'B', 'C']",0,5,"[['D'], ['B'], ['A'], ['C'], ['A', 'B', 'C']]","{'D': 1, 'B': 2, 'A': 2, 'C': 2}",{},0
+671e39c25e5e3f340a6f21d4,jsonc,tutorial-jsonc-part1,['B'],"['B', 'A', 'D']",0,5,"[['C'], ['A'], ['A'], ['B', 'A', 'D', 'C'], ['B', 'A', 'D']]","{'C': 2, 'A': 4, 'B': 2, 'D': 2}","{'C': 2, 'A': 4, 'D': 2}",8
+671e39c25e5e3f340a6f21d4,jsonc,tutorial-jsonc-part2,"['A', 'B', 'C', 'D']",['C'],0,5,"[['D'], ['A'], ['A'], ['B'], ['C']]","{'D': 1, 'A': 2, 'B': 1, 'C': 1}",{},0
+5fb4fcd1fce53c30649dd704,xml,tutorial-xml-part1,"['A', 'B']","['B', 'A']",1,4,"[['B'], ['B', 'D'], ['B', 'D'], ['B', 'D', 'A']]","{'B': 4, 'D': 3, 'A': 1}",{'D': 3},3
+5fb4fcd1fce53c30649dd704,xml,tutorial-xml-part2,"['B', 'D']","['D', 'B']",1,2,"[['A', 'C'], ['C', 'D']]","{'A': 1, 'C': 2, 'D': 1}","{'A': 1, 'C': 2}",3
+67d0251c804fc17732eb948a,toml,tutorial-toml-part1,"['B', 'D']","['D', 'B']",1,2,"[['C', 'D'], ['C', 'A']]","{'C': 2, 'D': 1, 'A': 1}","{'C': 2, 'A': 1}",3
+67d0251c804fc17732eb948a,toml,tutorial-toml-part2,"['A', 'B', 'D']","['A', 'D', 'B']",1,1,"[['A', 'D']]","{'A': 1, 'D': 1}",{},0
+67d11644421446068e1fec14,toml,tutorial-toml-part1,"['B', 'D']","['C', 'B']",0,5,"[['D', 'C', 'B'], ['D', 'C'], ['C', 'B'], ['C', 'B'], ['C', 'B']]","{'D': 2, 'C': 5, 'B': 4}",{'C': 5},5
+67d11644421446068e1fec14,toml,tutorial-toml-part2,"['A', 'B', 'D']","['A', 'B', 'D']",1,4,"[['B', 'C', 'D'], ['B', 'C'], ['C', 'D', 'A'], ['C', 'A', 'B']]","{'B': 3, 'C': 4, 'D': 2, 'A': 2}",{'C': 4},4
+67d0088c269b3e96d9ba6019,hjson,tutorial-hjson-part1,"['A', 'C']","['C', 'A']",1,1,"[['B', 'C']]","{'B': 1, 'C': 1}",{'B': 1},1
+67d0088c269b3e96d9ba6019,hjson,tutorial-hjson-part2,"['A', 'B', 'C', 'D']","['A', 'C', 'B', 'D']",1,4,"[['A', 'D'], ['A', 'C'], ['A', 'C'], ['A', 'C']]","{'A': 4, 'D': 1, 'C': 3}",{},0
+678a94ff1cf9f0775cb89e69,hjson,tutorial-hjson-part1,"['A', 'C']",['D'],0,5,"[['A'], ['C'], ['C', 'D'], ['C', 'D'], ['D']]","{'A': 1, 'C': 3, 'D': 3}",{'D': 3},3
+678a94ff1cf9f0775cb89e69,hjson,tutorial-hjson-part2,"['A', 'B', 'C', 'D']","['D', 'A', 'B', 'C']",1,5,"[['A', 'B'], ['C', 'D'], ['C'], ['B'], ['D']]","{'A': 1, 'B': 2, 'C': 2, 'D': 2}",{},0
+67176f0792ed8c4064f61a2c,json,tutorial-json-part1,['B'],['B'],1,1,"[['A', 'C']]","{'A': 1, 'C': 1}","{'A': 1, 'C': 1}",2
+67176f0792ed8c4064f61a2c,json,tutorial-json-part2,['D'],['D'],1,1,"[['D', 'A']]","{'D': 1, 'A': 1}",{'A': 1},1
+678526627e48ded12935af38,yaml,tutorial-yaml-part1,"['B', 'C', 'D']","['B', 'D', 'C']",1,2,"[['B', 'D'], ['B', 'D', 'A']]","{'B': 2, 'D': 2, 'A': 1}",{'A': 1},1
+678526627e48ded12935af38,yaml,tutorial-yaml-part2,"['B', 'C', 'D']","['B', 'C', 'D']",1,2,"[['A', 'B'], ['A', 'B', 'C']]","{'A': 2, 'B': 2, 'C': 1}",{'A': 2},2
+6738d09a032bf7224008ce7e,yaml,tutorial-yaml-part1,"['B', 'C', 'D']","['B', 'C', 'D']",1,3,"[['A', 'D', 'C'], ['C', 'A', 'B'], ['A', 'D', 'B']]","{'A': 3, 'D': 2, 'C': 2, 'B': 2}",{'A': 3},3
+6738d09a032bf7224008ce7e,yaml,tutorial-yaml-part2,"['B', 'C', 'D']","['B', 'D', 'C']",1,2,"[['A', 'B', 'C'], ['A', 'B', 'D']]","{'A': 2, 'B': 2, 'C': 1, 'D': 1}",{'A': 2},2
+62d6d87d91cf24a3c1c0f10c,hjson,tutorial-hjson-part1,"['A', 'C']","['C', 'A']",1,2,"[['B', 'C', 'D'], ['B', 'C']]","{'B': 2, 'C': 2, 'D': 1}","{'B': 2, 'D': 1}",3
+62d6d87d91cf24a3c1c0f10c,hjson,tutorial-hjson-part2,"['A', 'B', 'C', 'D']","['C', 'B', 'A', 'D']",1,1,"[['C', 'B']]","{'C': 1, 'B': 1}",{},0
+67c6ed1e12728e4fe7a1edf6,jsonc,tutorial-jsonc-part1,['B'],['B'],1,1,"[['B', 'C']]","{'B': 1, 'C': 1}",{'C': 1},1
+67c6ed1e12728e4fe7a1edf6,jsonc,tutorial-jsonc-part2,"['A', 'B', 'C', 'D']","['A', 'B', 'D', 'C']",1,0,[],{},{},0
+672b5998daafdbf9c43a531b,jsonc,tutorial-jsonc-part1,['B'],['B'],1,5,"[['A'], ['A', 'C'], ['A', 'C'], ['A', 'C', 'D'], ['A', 'C', 'D', 'B']]","{'A': 5, 'C': 4, 'D': 2, 'B': 1}","{'A': 5, 'C': 4, 'D': 2}",11
+672b5998daafdbf9c43a531b,jsonc,tutorial-jsonc-part2,"['A', 'B', 'C', 'D']",['C'],0,5,"[['B'], ['A'], ['D'], ['D'], ['C']]","{'B': 1, 'A': 1, 'D': 2, 'C': 1}",{},0
+5795af044a84da00014c5df1,json,tutorial-json-part1,['B'],['B'],1,1,"[['B', 'C']]","{'B': 1, 'C': 1}",{'C': 1},1
+5795af044a84da00014c5df1,json,tutorial-json-part2,['D'],['D'],1,0,[],{},{},0
+65298aca34ac384b783169d4,jsonc,tutorial-jsonc-part1,['B'],['B'],1,1,"[['A', 'B']]","{'A': 1, 'B': 1}",{'A': 1},1
+65298aca34ac384b783169d4,jsonc,tutorial-jsonc-part2,"['A', 'B', 'C', 'D']","['D', 'C', 'B', 'A']",1,1,[['D']],{'D': 1},{},0
+681374d36d7bd7ccb6f914f5,json5,tutorial-json5-part1,['D'],['D'],1,3,"[['B', 'C', 'D'], ['B', 'C'], ['B', 'D']]","{'B': 3, 'C': 2, 'D': 2}","{'B': 3, 'C': 2}",5
+681374d36d7bd7ccb6f914f5,json5,tutorial-json5-part2,"['A', 'B', 'C', 'D']","['D', 'C', 'B', 'A']",1,1,[['D']],{'D': 1},{},0
+61287939bc5a971fc15333e4,json,tutorial-json-part1,['B'],['D'],0,5,"[['C'], ['D', 'B'], ['D', 'B'], ['B', 'D'], ['D']]","{'C': 1, 'D': 4, 'B': 3}","{'C': 1, 'D': 4}",5
+61287939bc5a971fc15333e4,json,tutorial-json-part2,['D'],['D'],1,2,"[['B'], ['A', 'D']]","{'B': 1, 'A': 1, 'D': 1}","{'B': 1, 'A': 1}",2
+65feaaac53eb219f09ad5ea0,toml,tutorial-toml-part1,"['B', 'D']","['D', 'B']",1,1,[['D']],{'D': 1},{},0
+65feaaac53eb219f09ad5ea0,toml,tutorial-toml-part2,"['A', 'B', 'D']","['A', 'B', 'D']",1,1,"[['A', 'B']]","{'A': 1, 'B': 1}",{},0
+5755c957eb80c4000741a9ce,json5,tutorial-json5-part1,['D'],['D'],1,2,"[['C', 'A'], ['C']]","{'C': 2, 'A': 1}","{'C': 2, 'A': 1}",3
+5755c957eb80c4000741a9ce,json5,tutorial-json5-part2,"['A', 'B', 'C', 'D']","['D', 'B', 'A', 'C']",1,1,[['D']],{'D': 1},{},0
+6693d3ae2bd15cf7a058e6a7,json5,tutorial-json5-part1,['D'],['D'],1,1,"[['D', 'B']]","{'D': 1, 'B': 1}",{'B': 1},1
+6693d3ae2bd15cf7a058e6a7,json5,tutorial-json5-part2,"['A', 'B', 'C', 'D']","['A', 'B', 'C', 'D']",1,0,[],{},{},0
+60e2bf0aa568b97e8d525872,toml,tutorial-toml-part1,"['B', 'D']","['C', 'D']",0,5,"[['A', 'B', 'C'], ['A', 'C', 'D'], ['A', 'C', 'D'], ['A', 'C', 'D', 'B'], ['C', 'D']]","{'A': 4, 'B': 2, 'C': 5, 'D': 4}","{'A': 4, 'C': 5}",9
+60e2bf0aa568b97e8d525872,toml,tutorial-toml-part2,"['A', 'B', 'D']","['A', 'B', 'D']",1,2,"[['A', 'B'], ['A', 'B', 'C']]","{'A': 2, 'B': 2, 'C': 1}",{'C': 1},1
+67d24179c5bd87691f1fe036,yaml,tutorial-yaml-part1,"['B', 'C', 'D']","['D', 'B', 'C']",1,4,"[['D', 'C', 'A'], ['C', 'A', 'B'], ['C', 'A', 'D'], ['C', 'A']]","{'D': 2, 'C': 4, 'A': 4, 'B': 1}",{'A': 4},4
+67d24179c5bd87691f1fe036,yaml,tutorial-yaml-part2,"['B', 'C', 'D']","['B', 'C', 'D']",1,0,[],{},{},0
+5c4f5967aac8be0001716a65,xml,tutorial-xml-part1,"['A', 'B']","['B', 'A']",1,2,"[['A', 'B', 'C'], ['B', 'C']]","{'A': 1, 'B': 2, 'C': 2}",{'C': 2},2
+5c4f5967aac8be0001716a65,xml,tutorial-xml-part2,"['B', 'D']","['D', 'B']",1,2,"[['A', 'D'], ['A', 'C']]","{'A': 2, 'D': 1, 'C': 1}","{'A': 2, 'C': 1}",3

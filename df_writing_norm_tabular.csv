@@ -1,0 +1,1931 @@
+participantId,task,format,code,start_time,end_time,duration_sec,help_count,char_count,char_per_sec,normalized_time
+64457bc906c125cebd4bf66b,writing-task-tabular,json5,"{
+ ""person"":   
+""name"": {
+    ""treatment""{
+        ""tests"":{
+        }
+""results"" {
+    }??????
+    ??????????????????
+    ?????????????????
+    ???????????
+}",1746561717576,1746561968418,250.842,10,157,2.2096670768270914,113.52026856470589
+6697c8b6d9d7baa7edd8c4d3,writing-task-tabular,hjson,"patients: [
+    {
+        name: John
+        tests: [
+            {
+                id: 1
+                result: Normal
+            }
+            {
+                id: 2
+                result: Elevated
+            }
+            {
+                id: 1
+                result: Normal
+                note: Cholesterol
+            }
+        ]
+    }
+    {
+        name: Michael
+        treatment: Regular Monitoring
+    }
+]    ",1745932567200,1745933142854,575.654,0,426,1.6313426602631032,352.871296768
+67e25388d573ec2d5f1c8442,writing-task-tabular,yaml,"person:
+  name: John
+tests
+  # id:1
+  normal
+  #id: 2
+  elavated cholesterol
+  
+  
+  person:
+    name: Michael
+    tests
+    #id:1
+    normal
+    treatment:
+    Regular monitoring",1746146837797,1746147375040,537.243,2,179,0.8658127645539003,620.5071373333334
+67e5cf90b79d0874e1cf16b0,writing-task-tabular,toml,"[patients]
+[[patients.patient]]
+name = ""John""
+age = 30
+
+[patients.patient.test]
+blood = ""Normal""
+xray = ""Normal""
+
+[[patients.patient]]
+name = ""Michael""
+age = 45
+
+[[patients.patient.test]]
+blood = ""Elevated Cholesterol""
+xray = ""Normal""
+
+[patients.patient.treatment]
+type = ""Regular Monitoring""",1746145745579,1746146463120,717.541,2,292,0.7768139530582426,923.6973630238095
+67d00f24466a67ba7e41228e,writing-task-tabular,toml,"[[patients]]
+[[users]]
+name = ""john""
+[tests] =id ""1"" , result ""Normal""
+name =""Michael""
+[[tests]] = id ""2"", result ""Elevated cholesterol""
+[[[patients]]]
+[[users]]
+name = ""michael""
+[tests] =id ""1"" , result ""Normal
+[treatment] = ""regular monitoring""",1745930601970,1745932342937,1740.967,11,246,0.8216303257483766,2118.9176512128515
+66475d6f7b27e4443ef0d031,writing-task-tabular,json,"{
+    patients
+    if(name)=John
+    then{
+        tests,
+        if(id)=1,
+        then(result)=Normal,
+        if(id=2),
+        then(result)=Elevated Cholesterol
+    }
+     if(name)=Michael
+    then{
+        tests,
+        if(id)=1,
+        then(result)=Normal
+    treatment=Regular Monitoring    
+}",1744921480385,1744921734203,253.818,0,302,2.3666072657671675,107.24973411155378
+6672d878f68b9e349b56e871,writing-task-tabular,toml,name='John'test= Id=1 Results=Normal Id=2 Name='Michael' test Id=1 Results = Normal results= Elevated Cholesterol Id=2 Regula Monitoring                    ,1746144856654,1746145373859,517.205,0,156,0.49901966781387536,1036.4421151290323
+67f5bb69760b211cdfe8021c,writing-task-tabular,jsonc,"{
+    ""patients"" : {
+        ""name"" : ""john"",
+        ""tests"" : [
+            {""Id"" : ""1"" , ""result"" : ""normal""},
+            { ""Id"" : ""2"" , ""result"" : ""Elevated Cholestrol""}
+            ]
+            
+        ""name""  : ""Michael"", 
+        ""tests"" : [
+            {""id"" : ""1"" , ""result"" : ""Normal""},
+        ""treatment"" : ""Regular Monitoring"" 
+        ]
+}",1746150048109,1746150828548,780.439,0,355,1.6780119295099116,465.09740859109314
+67e571bef6af7ecd9c29ad72,writing-task-tabular,json,"{
+    ""patients"" : [
+     {
+         ""name"" : ""John"", 
+         ""tests"" : [
+          {
+              ""id"" : 1,
+              ""results"" : ""Normal""
+          }
+             ],
+             ""treatment"" : ""Regular Monitoring""
+     },
+     {
+         ""name"" : ""Michael"",
+         ""tests"" : [
+        {
+            ""id"" : 1, 
+            ""results"" : ""Elevated Cholesterol""
+        },
+        {
+            ""id"" : 1, 
+            ""results"" : ""Normal""
+        }
+        ]
+     }
+    
+    ]
+}",1746146822874,1746147358937,536.063,0,484,0.8075569549916651,663.8082883027523
+60f1f1d4ac991a259b83f603,writing-task-tabular,json,"Note: Different colors represent different levels of the nested structure. Purple rectangles indicate the top-level elements. 
+
+                       Patient
+                       
+                       
+                       
+    Name     tests       Name      tests    treatment
+    
+    John                           Michel           Bergulaf
+                                                    Monitoring
+    
+    
+    
+    
+    id    result      id    result          id      result
+    1     Normal      2     Elevated        1       Normal
+                            Cholesterol",1746232143082,1746232546737,403.655,0,591,0.9237993347184237,436.95095333992094
+678f0bb28ec3307e4f1afb78,writing-task-tabular,hjson,"{patient
+    name: John
+    tests: 
+        id: 1
+        result: Normal
+        id:2
+        result: Elevated Cholesterol
+    treatment: null     
+    name: Michael
+    tests:
+        id: 1
+        results: Normal
+    treatment: Regular Monitoring
+}",1746145002506,1746145881479,878.973,6,250,1.065239419054795,825.1412633414634
+669b961e1c9cf30a26bb57d2,writing-task-tabular,xml,"<patients>
+    <patient>
+        <name>John</name>
+        <test>
+            <id>1
+            <results>
+                <tests
+            </results></id>
+        </test>
+        </name>
+    </patient></patient>",1746232263758,1746232658791,395.033,0,213,1.3390465988216391,295.0106444
+673c13c9d37c8a73bc80b8ce,writing-task-tabular,json,"{
+    ""patient"" : {
+        ""name"" : ""John"",
+        ""tests"" : [
+            {""Id"" :""1"", ""results"" : ""Normal"" }
+            {""Id"" : ""2"", ""results"" : ""Elavated Cholestrol"" }
+            ]
+    }
+   ""patient"" :{
+            ""name"" : ""Michael"",
+            ""tests"" : [
+                {""Id"" : ""1"" , ""results"" : ""Normal""}
+                ]
+                {""treatment"" : ""Regular Monitoring""}
+                
+   }        
+    
+}",1746145824604,1746146954586,1129.982,0,424,1.2552658401996375,900.1933804079999
+66992f58a7964f557fc75f58,writing-task-tabular,toml,"name= ""John""
+""""normal""""
+""""elevated cholesterol""""
+
+
+
+
+name= ""Michael""
+""""Normal""""",1744924062603,1744924254999,192.396,5,79,2.1048252911813643,91.40711146245059
+60721c2da01b3a616edba9a7,writing-task-tabular,xml,"<?xml version=""1.0"" encoding=""UTF-8""?>
+<hopital>
+  <patient>
+     <name>John</name>
+      <tests id=""1"">
+        <results>Normal</results>
+       </tests>
+      <test id=""2"">
+        <result>Elevated Cholesterol</result>
+        </test>
+    </patient>
+<patient>
+    <name>Michael</name>
+        <test id=""1""><result>Normal</result>
+        <treatment>Regualar Monitoring</treatment>
+     </patient>
+</hospital>
+",1745930803789,1745931968128,1164.339,0,411,1.0813925329636835,1076.7033843011584
+673e43cc760355e9e4f042a3,writing-task-tabular,json5,"{
+    patients: [
+    {
+        name: ""John"" ,
+        tests: [
+        {
+            id: 1,
+            results: ""Normal""
+        },
+        {
+            id: 2,
+            result: ""Elevated Cholesterol""
+        }
+        
+    ]
+  },
+  {
+    name: ""Michael"",
+    tests: [
+    {
+        id: 1,
+        result: ""Normal""
+    }
+   ],
+   treatment: ""Regular Monitoring""
+  }
+ ]
+}",1746563204189,1746564088861,884.672,0,375,0.43046775328345455,2055.1411650513596
+60a0b744298c64d46b63e893,writing-task-tabular,hjson,"{patients}
+[name
+[tests
+]
+{John}
+//id
+result
+id
+result
+//""1""
+[normal]
+//""2""
+Elevated Cholesterol]
+
+[name
+tests
+treatement]
+{Michael
+Regular Monitoring
+}
+//id
+//result
+//""1""
+//""normal""",1746522191831,1746522494290,302.459,4,183,1.8905286755090605,159.98646511857706
+67dc19c31078d1581e39e75a,writing-task-tabular,yaml,"name: John
+age:
+treatment: 
+id: 1
+result: Normal
+id: 2
+result: Elevated Cholesterol
+
+name: Michael
+age:
+treatment: Regular Monitoring
+id: 1
+result: Normal",1746144494016,1746145183877,689.861,6,154,1.110391412973073,621.2773189166667
+678bad003d15e6aba1ee5a5d,writing-task-tabular,jsonc,"{
+    ""patients"": [
+        {
+          ""name"": ""John"",
+          ""tests"": [
+            {
+                ""id"": 1,
+                ""result"": ""Normal""
+            },
+            {
+                ""id"": 2,
+                ""result"": ""Elevated Cholesterol""
+            }
+           ]
+        },
+        {
+            ""name"": ""Micheal"",
+            ""tests"": [
+                {
+                    ""id"": 1,
+                    ""result"": ""normal""
+                }
+             ],
+             ""treatment"": ""regular monitoring""
+        }
+    ]
+        
+}",1746385619640,1746386346773,727.133,0,549,0.43927900820561705,1655.2873832287582
+66cdfebcb908ea2717d06b6c,writing-task-tabular,hjson,"Patients: [
+    {
+    name: John
+    tests: [
+        {id: 1, result: Normal}
+        {id: 2, result: Elevated Cholesterol}
+        ]
+    }
+    {
+    name: Micheal
+    tests: [
+    {id: 1. resilt: Normal}
+    ]
+    treatment: regular 
+    }
+    ]",1746144340538,1746144857279,516.741,1,246,1.7353459673865137,297.7740518095238
+67f0c5d37f91ceae5cb3b318,writing-task-tabular,jsonc,"""person"":{ 
+    ""name"": John
+    ""tests"": [
+       {""id"":1
+       ""result"":normal
+       ""id"":2
+       ""result"":Evaluated Cholestrol}]}
+       ""person"":{
+           ""name"": Michael
+           ""tests"":[
+               {""id"":1
+                  ""result"":normal
+                  ""treatment"":Regular Monitoring
+               }]
+       }",1746144691529,1746145533883,842.354,11,334,0.6999055009744475,1203.5253313872056
+56cb8858edf8da000b6df354,writing-task-tabular,hjson,"{
+    patients:
+        {
+            name: John
+            tests: {
+                        {
+                        id: 1
+                        result: Normal
+                        }
+                        {
+                        id: 2 
+                        result: Elevated Cholesterol
+                        }
+                    }
+        }
+        {
+            name: Michael
+            tests: {
+                        {
+                        id: 1
+                        result: Normal
+                        }
+                    }
+            treatment: Regular Monitoring
+        }
+}",1746391837901,1746392099201,261.3,1,612,3.020423818199252,86.5110380952381
+67aee0dfad3492b61a9ba0eb,writing-task-tabular,jsonc,"{ ""patients"" :
+}
+{
+    ""person"" : {
+ ""name""  : ""John"",
+ ""tests"" :
+      ""id"" : 1
+      ""result"" : ""normal""
+      :""id"" :2
+      ""result"" : ""elevated cholesterol""
+}
+{    ""person"" : {
+    ""name"" : ""Michael""
+    ""tests"" :
+    'id' : 1
+    ""result"" : normal
+    ""treatment"" : ""regular monitoring""
+    
+    
+}",1746150333782,1746151111210,777.428,1,304,0.7470163810020691,1040.7107792698412
+667971a555af1f83d3f29ae7,writing-task-tabular,hjson,"{
+    patients: [
+        {
+            name: John
+            tests: [
+                {
+                    id: 1
+                    result: Normal
+                },
+                {
+                    id: 2
+                    result: Elevated Cholesterol
+                }
+            ]
+        },
+        {
+            name: Michael
+            tests: [
+                {
+                    id: 1
+                    result: Normal
+                }
+            ]
+            treatment: Regular Monitoring
+        }
+    ]
+}",1746495306429,1746495611820,305.391,3,533,2.2150535744108573,137.8707059404762
+5c6414540821d30001046198,writing-task-tabular,hjson,"{
+patients
+
+ {
+""name"": John, 
+
+
+
+
+{
+tests
+
+list: [ 
+""id"": 1
+""result"": Normal
+""id"": 2
+""result"": Elevated Cholesterol
+]
+}}
+
+{
+""name"": Michael,
+
+{
+tests
+
+list: [
+""id"": 1
+""result"": Normal
+
+}
+
+{ ""treatment"": Regular Monitoring 
+}}
+
+ 
+
+ ",1747341842733,1747343144736,1302.003,10,231,1.9656745060562975,662.3695815296443
+6788c1c724c24dc56b08790a,writing-task-tabular,json5,"{
+
+  patients: [
+  {
+  name:""John""
+  tests: [
+  {
+      id: 1,
+      result: ""Normal""
+      },
+  }
+  id: 2
+  result: ""Elevated cholestrol""
+}
+]
+},
+{
+}
+name: ""Michael""
+tests: [
+{
+id:3,
+result: ""Normal""
+}
+],
+treatment: ""Regular monitoring""
+  ",1746529214640,1746529980012,765.372,2,239,1.0495293910210661,729.2525645759999
+67adb520391eb17f214a50b4,writing-task-tabular,yaml,"patients:
+    name: John
+    tests:
+    - id: 1
+    - result: normal
+    -id: 2
+    -result: elevated cholesterol
+    name: Michael
+    tests:
+    -id: 1
+    -result: normal
+    -treatment: regular monitoring",1746145350773,1746146081642,730.869,5,208,0.6310096711511658,1158.2532462088236
+67d95269b47464c18da766ca,writing-task-tabular,xml,"<person id=""101>patients
+<name>John</name>
+<id 1>Result, Normal!>
+<id 2>Result, Elevated Cholesterol>
+</person>Michael>
+<id 1> Result, <Treatment></ Regular Monitoring>
+</id 1> Result,<Normal></person>",1746150481726,1746151603170,1121.444,1,201,0.8169722748139118,1372.6830573968255
+64275e53f51a5ed4f6b7d019,writing-task-tabular,toml,"# The picture is very hard to see, so small even if I try to zoom in.
+# I seriously am having a hard time reading the text in the boxes.
+# I'll try anyway.
+
+[patient]
+name = ""John""
+[patient.tests]
+id = 1
+result = ""Normal""
+id = 2
+result = ""Elevated Cholesterol""
+
+[patient]
+name = ""Michael""
+[patient.tests]
+id = 1
+result = ""Normal""
+[patient.treatment]
+isRegularMonitoring = true",1746144777116,1746145239452,462.336,11,376,3.5996400359964,128.43950933333335
+6734346ca8e90c2da6fb4509,writing-task-tabular,jsonc,"//Patients 
+{
+ ""patients"": [
+     {
+     ""name"": ""John"",
+     ""tests"": [
+         {""id"": 1 , ""result"": ""Normal"" },
+         {""id"": 2, ""result"": ""Elevalted Cholesterol""}
+         ]
+     
+ },
+     {
+     ""name"": ""Micheal"",
+     ""tests"": {""id"": 1 , ""result"": ""Normal"" },
+      ""treatment"": ""Regular Monitoring""
+ }
+ ]
+  
+}
+
+",1747335267209,1747336262047,994.838,35,320,1.6839241375666967,590.7855216313725
+66049694dfb8828a8f3dce70,writing-task-tabular,yaml,"patients
+  name: John
+  tests: 
+    id: 1
+    result: Normal
+    id: 2
+    result: Elevated Cholesterol
+  name: Michael
+  tests: 
+    id: 1
+    result: Normal
+  treatment: Regular Monitoring",1745930067553,1745930445088,377.535,5,190,1.3323011948582653,283.37060828063244
+67ab214c2cde1be7c45535ac,writing-task-tabular,jsonc,"{
+     ""patients""
+     ""name"": ""John
+   ""Tests"":[
+       {""id"":1
+       ""results"":""normal""
+       ""Tests"":[
+        {""id"":2
+        ""results"":""elevated cholesterol""
+        ]
+        }
+{
+    ""patients""
+    ""name"":""Michael""
+    ""Tests"":[
+        {""id"":1
+        ""results"":normal
+        ""treatment"": Regular monitoring
+    
+}",1745933324777,1745933775761,450.984,0,324,1.2377275125621945,364.36452726693227
+607728dc0b4f8590b94ae57c,writing-task-tabular,jsonc,"{
+    ""patients"": {
+        ""name"": ""John"",
+        ""tests"": [
+            {""id"": 1}, 
+            {""result"": ""Normal""}
+        ],
+        [
+            {""id"": 2},
+            {""result"": ""Elevated Cholesterol""}
+        ]
+    },
+    {
+        ""name"": ""Michael"",
+        ""test"": [
+            {""id"": 1},
+            {""result"": ""Normal""}
+            ],
+        ""treatment"": ""Regular Monitoring""
+    }
+}",1746384276853,1746384847376,570.523,12,399,2.507596542466885,227.51786036470588
+667c18ace97ab6869cb1c50e,writing-task-tabular,hjson,"{ ""name"": John,
+    ""test1"" : {
+            id:1
+            result:normal
+        },
+    ""test2"": {
+            id:2
+            result:elevated cholesterol
+         }
+}
+
+{ ""name"": Michael,
+    ""test"": {
+        id: 1
+        result: normal
+    },
+    ""treatment"": Regular monitoring
+}
+
+        ",1746385793911,1746386333997,540.086,13,296,0.8479662575504788,636.9192113376623
+667ac09492ea0caadf488520,writing-task-tabular,json,"Name
+"" John""
+""ID""(1
+""Results""(normal)
+(2) ""elevated Cho;esterol
+
+
+
+
+Name,(Michael)
+,Michael
+""ID""(1
+"" Results""(normal)
+""Treatment ( regular monitoring)
+",1746489653328,1746490256207,602.879,0,151,0.8591797560884137,701.6913465753969
+6740ae39809389d7da9de209,writing-task-tabular,xml,"<patient>
+    <name>john</name>
+    <test>
+        <id>1</id>
+        <result>normal</result>
+        <id>2</id>
+        <result>elevated cholesterol</result>
+    </test>
+    <name>Micheal</name>
+    <test>
+        <id>1</id>
+        <result>nomarl</result>
+    <treatment>regular monitoring</treatment>    
+    </test>
+</patient>",1746145072554,1746145772324,699.77,6,330,0.8618558400175804,811.9339308366534
+67c246023b44ca64d40ae45a,writing-task-tabular,json5,"{
+    ''patients'':[
+    {
+        ''name'':'' ''
+        ''age'':'''',
+        ''treatment'':{
+            ''type'':'' '',
+            ''medication'': '' ''
+            
+        }
+    }
+]
+
+}
+",1745941040102,1745941516767,476.665,0,192,0.2203343677962614,2163.371083537736
+67debe02a893eea51e8d02f2,writing-task-tabular,json,"{
+    ""patients""
+    ""name"":""John""
+
+ ""Tests"":[
+     {""id"":1
+     ""results"":""normal""]
+     ""Tests"":[
+         {""id"":2
+         ""results"":""elevated cholesterol""
+         ]
+         }
+{
+    ""patients""
+    ""name"":""Michael""
+    ""Tests"":[
+        {""id"":1
+        ""results"":normal
+    ""Treatment"":""Regular monitoring""
+    
+}
+ ",1745930247389,1745931209450,962.061,1,319,1.411922904527118,681.3835209523809
+673d0377254c407e5da57f97,writing-task-tabular,toml,"[[patients]]
+name = ""John""
+[[patients.tests]]
+id =1
+result= ""Normal""
+[[patients.tests]]
+id =2
+result = ""Elevated Cholesterol""
+[[patients]]
+name = ""Michael""
+[[patients.tests]]
+id =1
+result= ""Normal""
+[[patients]]
+treatment = ""Regular Monitoring""",1746385374478,1746386008256,633.778,4,243,1.1205129459263574,565.6141701031746
+62fd14d7b1e0729dc8aadb79,writing-task-tabular,xml,"<?xml version=""1.0"" encoding=""UTF-8""?>
+
+<patients>
+    
+<patient>
+    <name>John</name>
+    <tests>
+        <test>
+            <id>1</id>
+            <result>Normal</result>
+        </test>
+        
+        <test>
+            <id>2</id>
+            <result>Elevated Cholestrol</result>
+        </test>
+    </tests>
+</patient>
+
+<patient>
+    <name>Michael</name>
+    <tests>
+        <test>
+            <id>1</id>
+            <result>Normal</result>
+        </test>
+    </tests>
+    <treatment>Regular Monitoring</treatment>
+</patient>
+
+</patients>",1746488208891,1746489065415,856.524,9,546,2.131777988113206,401.788556208
+5dafea4de40355001651fa2f,writing-task-tabular,jsonc,",,patients'' : {
+,,name"" : John
+,,tests''{   
+name: {John, Michael}
+result {normal}https://shiyihe-neko.github.io/reVISit_study/a-usability-study-tabular/assets/tasks/fig/tabular_write.png",1745929746524,1745930444991,698.467,1,188,1.0102985269195672,691.3471428387096
+6787e4bd2bf9557a90208f03,writing-task-tabular,yaml,"patient: 
+   name: John
+tests:
+   id: 1
+   result: Normal
+   id: 2
+   result: Elevataed Cholesterol
+   
+patients:
+   name: Micheal
+tests:
+   id: 1
+   results: Normal
+treatments: Regular Monitoring
+   
+",1746387694949,1746388237751,542.802,3,201,0.8941967726628138,607.0274648650307
+5e8a5a892f6f027054a83d88,writing-task-tabular,toml,"[[patients]]
+name = ""John""
+
+[[patients.test]]
+id = 1
+result = ""Normal""
+
+[[patients.tests]]
+id = 2
+result = ""Elevated Cholesterol""
+
+[[patients]]
+name = ""Michael""
+treatment = ""Regular Monitoring""
+
+[[patients.tests]]
+id = 1
+result = ""Normal""",1746384441743,1746384819711,377.968,4,238,1.5957244715745749,236.86294641269842
+67e4920c40c9561040ca01d0,writing-task-tabular,xml,"<Patients>
+     </patient>
+      </Name>R Michael</Name>
+      </Tests>
+        </Test>
+          </Name>John</Name>
+          </Result>Normal</Result>",1745930367478,1745931021457,653.979,0,151,0.9622552524683939,679.6315201422925
+615200d54efc832849db2259,writing-task-tabular,json,"{
+    ""patients"":
+    {
+        ""name"": ""John"",
+        ""tests"": 
+        {
+            ""id"": ""1"",
+            ""results"": ""Normal"",
+            ""id"": ""2,
+            ""results"": ""Elevated Cholestrol""
+            
+            
+        },
+        
+        ""name"": ""Michael"",
+        ""tets"": 
+        {
+            ""id"": ""1"",
+            ""result"": ""Normal""
+        
+        },
+        
+        ""treatment"": ""Regular Monitoring""
+      
+    }
+    
+}",1746385108798,1746386313488,1204.69,3,443,0.7264206209724664,1658.3917983870967
+67f184a3b82990251abd1592,writing-task-tabular,yaml,"# Example of a YAML file                                                                                     patients:                                                                                                   name:Michael                                                                                        tests:                                                                                                         id:
+             - 1                                                                                            result:                                                                                    - Normal                                                                                   name:John                                                                                  tests:                                                                                         id:                                                                                            - 1                                                                                      result:                                                                                    - Normal                                                                             id:                                                                                             - 2                                                                                       result:                                                                                    - Elevated Cholesterol                                                                                                                                                                        ",1746385119905,1746386266226,1146.321,9,1735,0.9797951408406721,1169.9598744860557
+67bf88cc763aae600b429a3e,writing-task-tabular,toml,"patients
+
+name = ""John""
+test
+id= [1]
+result = ""normal""
+id= [2]
+result = ""elevated cholesterol""
+
+
+
+name =""Michael
+test
+
+id= [1]""
+result ""Normal""
+
+treatment = ""Monitoring""",1746151284153,1746151714629,430.476,7,169,0.8312833475472523,517.8450900888889
+67a754a5c8614c52a939d87b,writing-task-tabular,hjson,"patient: [
+ { 
+   name: John 
+   tests: [
+     { 
+      id: 2
+      result: Normal
+      } 
+      {
+        id: 2
+        resultL: Elevated cholestrol 
+      }
+    ]
+  }
+  {
+    name: Michael 
+    test: [
+       {
+         id: 3
+         result: Normal
+        }
+      ]
+        treatment: Regular monitoring
+     }
+    ]",1746150409076,1746151530018,1120.942,0,321,0.3261974881472775,3436.3906551417003
+60fce3df91350150e2e88423,writing-task-tabular,yaml,"Patients: 
+  Name: John
+  Tests: 
+   Id: 1
+     Result: Normal 
+   Id: 2
+     Result: Elevated Cholesterol 
+
+
+  Name: Michael
+  Tests: 
+    Id: 1
+     Result: Normal 
+  Treatment: Regular Monitoring ",1744921267602,1744921442852,175.25,0,199,1.5239182305548642,114.99960856573705
+67d29234dbfdb6668d124115,writing-task-tabular,yaml,"""petient""
+name: John
+tests:
+id: 1
+result: Normal
+id: 2
+result: Elevated Cholesterol
+
+""patient""
+name: Michael
+tests:
+id: 1
+result: Normal
+treatment: Regular Monitoring
+",1746150063599,1746150661358,597.759,0,167,0.7302119936264734,818.6102189739885
+65cf6d8a589a67afcab54e6f,writing-task-tabular,hjson,"{
+  patients: [
+    {
+      name: john
+      tests: [
+        {
+          id: 1,
+          result: Normal
+        },
+        {
+          id: 2,
+          result: Elevated Cholesterol
+        }
+      ]
+    },
+    {
+      name: Michael,
+      tests: [
+        {
+          id: 1,
+          result: Normal
+        }
+      ],
+      treatment: Regular Monitoring
+    }
+  ]
+}",1746384326751,1746384622159,295.408,2,368,1.4321192523428221,206.273325015873
+672d98919cc177d28c204e76,writing-task-tabular,json5,"{
+    ""patients"": {
+    ""name"": ""John"",
+        ""tests"": [
+            {""id"": 1, ""result"": normal},
+            {""id"": 2, ""result"": elevated cholesterol}
+            ]
+    }
+    ""paitents"": {
+    ""name"": ""Michael"",
+        ""tests"": [
+            {""id': 1, ""result"": normal}
+            ] 
+                ""treatment"": regular monitoring
+    }
+}",1744921481823,1744922400596,918.773,29,344,1.9511512569767262,470.88763452589643
+66b0d065329001a04e5ae671,writing-task-tabular,json,"{
+    ""patients"": 
+    {
+    ""name"": ""John"",
+    ""tests"":
+    { ""id"": 1
+    ""result"": ""normal""
+      ""id"": 2
+      ""result"": ""eleveted cholesterol""
+    },
+    ""name"": ""Michael"",
+    ""tests"":
+    {""id"": 1
+    ""result"": ""normal""
+    { ""treatment"": ""regular monitoring""
+
+        
+    }
+",1746523381062,1746525027779,1646.717,45,283,1.0455784278017106,1574.9339850690692
+67f1a4f8dd44e7cd5adffa29,writing-task-tabular,json5,"json5
+{
+    patients:[
+    {
+        name: {
+            firstName: ""..."",
+            lastName: ""...""
+        },
+        dob: {
+            year: ""..."",
+            month: ""..."",
+            day: ""...""
+        },
+        gender: ""..."",
+        tests: [
+          {
+              name: ""Glucose"",
+              result: {
+                  value: ""..."",
+                  details: {
+                      unit: ""mg/dl"",
+                      flag: ""high"" // or ""low"",
+    ""normal""
+                  }
+              }
+          },
+        {
+          name: ""Hemoglobin"",
+          result: {
+              value: ""..."",
+              details: {
+                  unit: ""g/dl"",
+                  flag: ""normal""
+              }
+          }
+    },
+      // ... more tests
+],
+treatment: ""Medication, 
+monitoring""
+   },
+   // ... more patients
+   ]
+}",1746389005374,1746389786204,780.83,0,842,1.0419892369625805,749.3647461044177
+5e3b5fa9255e7a37bc841135,writing-task-tabular,json,"{
+    ""patients"": {
+        ""name"": ""john"",
+        ""tests"": [
+            {""id"": 1, ""result"": ""normal""}
+            {""id"": 2, ""result"": ""elevated cholesterol""}
+            ]
+           
+        ""name"":""Michael"",
+        ""tests"": [
+            {""id"": 1, ""result"": ""normal""}
+            ]
+        ""treatment"": ""Regular Monitoring""
+    }
+}",1746391388491,1746392334602,946.111,18,337,1.1808256407853428,801.2283671031746
+677c52fe648cd68583dd3b1e,writing-task-tabular,xml,"  <patients>
+    <patient>
+      <name>John</name>
+      <tests>
+        <test>
+          <id>1</id>
+          <result>Normal</result>
+        </test>
+        <test>
+          <id>2</id>
+          <result>Elevated Cholesterol</result>
+        </test>
+      </tests>
+    </patient> 
+    <patient>
+      <name>Michael</name>
+      <tests>
+        <test>
+          <id>1</id>
+          <result>Normal</result>
+        </test>
+      </tests>
+      <treatment>Regular Monitoring</treatment>
+    </patient>
+  </patients>",1746144751182,1746146205533,1454.351,0,514,0.9078995590995412,1601.8853467033641
+5d30dfa68b1523000134878f,writing-task-tabular,json,"{
+    ""patients"":{
+        ""name"": ""John"",
+        ""tests"": [
+            { ""id"": 1,""result"": ""Normal""},
+            { ""id"": 2, ""result"": ""Elevated Cholesterol""}
+        ]
+        
+        ""name"": ""Michael"",
+        ""tests"": [
+            { ""id"": 1, ""result"": ""Normal""}
+        ]
+        ""treatment"": ""Regular Monitoring""
+    
+  
+        
+    }
+    
+}",1745929863340,1745930450687,587.347,5,351,2.604301766982434,225.52954786055776
+671a519900a99ebc15a67672,writing-task-tabular,yaml,"# patient
+patient_name: john
+Tests:
+  - id: 1
+  results: Normal
+  - id: 2
+  results: Elevated cholesterol
+  ptient_name: Michael
+  tests:
+  id:1
+  results: normal
+  treatment: regular Monitoring
+
+",1746389935249,1746391775047,1839.798,2,196,0.3542839543379945,5193.004022544
+672ca6c0324ac26cdc0dd298,writing-task-tabular,json5,"{
+    ""name"" ""john"" ,
+    ""bests"" : [
+    {
+        ""name"": ""Micheal"",
+        ""tests"": [
+        {
+            ""treatment"":
+""regular monitoring""        
+               ""results"":
+ ""Normal""      
+ 
+    },
+   {
+       ""results"":
+""Elevated cholestorol""   
+      }
+   ]
+    } ",1746523368698,1746524056739,688.041,2,273,0.6173872719440016,1114.4398844400002
+67d7fa657f5ac0292a291a38,writing-task-tabular,hjson,"patients""
+Name: John
+tests
+      id 
+         1
+         results 
+         normal
+         Id 2
+         results 
+         Elevated cholestrol
+         
+         
+         Name Michael
+    tests 
+    id 1
+    treatment regular monitring
+    results; normal",1746145784555,1746146419295,634.74,0,256,0.6403854725593414,991.1842588546256
+677d185800ab83d1b0185d82,writing-task-tabular,jsonc,"\""patients"":{
+  ""name"":{john,}
+  
+\""tests1"":{
+      ""id"":{,}
+       ""results"":{normal}
+    id:2
+    results:{elevated cholesterol}
+     ""id"":1
+     ""results"":normal
+ patients"":{
+     ""name"":michael
+ }    test:
+      id:1
+      results:normal
+      id:2
+     treatment: regular monitroring",1746149959824,1746151194428,1234.604,0,288,0.5674206005201355,2175.818077222222
+5b68c9eb87af310001584803,writing-task-tabular,json5,"( 
+""Patients"": 
+
+name
+michael
+
+tests
+id
+1
+result
+normal
+
+treatment
+regualr monitoring
+
+
+
+
+name
+
+john
+
+tests
+
+id
+1
+
+result
+normal
+
+id 
+2
+result
+elevated cholestrol ",1746384012149,1746384293029,280.88,5,163,1.3822003312892857,203.2122215873016
+6784ff2095dd9b97e969b01f,writing-task-tabular,jsonc,"""patients"":{""name"",""tests"",""name"",""test"",""treatment""},
+    ""name"":{""John"",""Michael""},
+    ""tests"":{""id"",""result""},
+    ""treatment"": {""Regular Monitoring""},
+    ""id"":{1,2},
+    ""result"":{""Normal"",""Elevated Cholesterol""},
+    
+    ",1746390951363,1746391664026,712.663,0,229,0.8391142758138049,849.3038678299596
+67eff2b1a264260e948a4d14,writing-task-tabular,xml,"<patients=""101"">
+    <name>John</name>
+    <test>Id</test>1
+    <test>Result</test>Normal
+    <test>Id</test>2
+    <test>Result</test>Elevated Cholssterol
+<patients=""102"">
+    <name>Michael</name>
+    <tests>Id</tests>1
+    <tests>Result</tests>Normal
+    <treatment>Regular Monitoring</treatment>",1746390588360,1746391647518,1059.158,2,297,0.8756261948285726,1209.6006335298803
+5ecc71c95c92c2000a9e9a19,writing-task-tabular,jsonc,"{
+    ""patients"":{
+        ""name"": ""John"",
+        ""tests"": [
+            {""id"": 1, ""result"": ""Normal""}, 
+            {""id"": 2, ""result"": ""Elevated Cholesterol""}
+            ]
+        ""name"": ""Michael"",
+        ""tests"": [
+            {""id"": 1, ""result"": Normal}
+            ]
+        ""treatment"": ""Regular Monitoring""
+    }
+    
+}",1746231888713,1746232554600,665.887,18,330,2.5610536906613004,260.00509182142855
+61267b828ead584bcf092e35,writing-task-tabular,hjson,"{
+patients
+}
+{
+name: John
+}
+{
+tests
+id: 1
+results: Normal
+}
+{
+id: 2
+results: Elevated cholesterol
+}
+{
+name: Michael
+}
+{
+tests
+id: 1
+results: Normal
+}
+{
+treatment: Regular Monitoring
+}",1746234818073,1746236455763,1637.69,4,183,0.7662928455007663,2137.159454920635
+6501c0a2e788b5556c24569d,writing-task-tabular,xml,"<patients>
+    <person id=0>
+        <name>John</name>
+        <tests>
+            <test id=1>
+                <result>Normal</result>
+            </test>
+            <test id=2>
+                <result>Elevated Cholesterol</result>
+            </test>
+        </tests>
+    </person>
+    <person id=1>
+        <name>Michael</name>
+        <tests>
+            <test id=1>
+                <result>Normal</result>
+            </test>
+        </tests>
+        <treatment>Regular Monitoring</treatment>
+    </person>
+</patients>
+    ",1746526733099,1746527080546,347.447,3,528,0.9873804128902316,351.8876771952191
+637d8ca00150ac6e71a34ec9,writing-task-tabular,yaml,"patient:
+    John:
+        id: 1
+        result: normal
+        id: 2
+        result: elevated cholesterol
+    Michael:
+        id: 1
+        result: normal
+        treatment: regular monitoring",1746144644734,1746145110348,465.614,6,194,1.7030781042786347,273.3955646721311
+67cb01a82dda2577eb6ee320,writing-task-tabular,json,"{
+    ""patients"": [
+        ""name"": ""John"",
+        ""tests"": [
+            {
+                ""id"": 1,
+            ""result"": ""Normal""
+            },
+            {
+                ""id"": 2,
+                ""result"": ""Elevated""
+                }
+                ],
+                ""treatment"": null
+}
+],
+""treatment"": null
+},
+{
+    ""name"": ""Michael"",
+    ""tests"": [
+        {
+            ""id"":1,
+            ""result"": ""Normal""
+        }
+        ],
+        ""treatment"": ""Regular Monitoring""
+}
+]
+}",1746394124168,1746395164920,1040.752,0,490,0.7509649900121657,1385.88617824
+67e17bac09359e09118892b4,writing-task-tabular,json5,"there is 2 patient s called Jonh and Micheal ,Jonh runns test id  1 results it was normal and id 2 results is elevated cholesterol 
+
+Micheal runns tests id 1 results were normal a day he get treatment for regular monitoring ",1746147247447,1746147644571,397.124,0,224,0.9543479809130403,416.1207525373135
+6606b31155457e4f162ecf5a,writing-task-tabular,json5,"{
+    ""patients"": [
+    {
+        ""name"": ""john"",
+        ""tests"": [
+        {
+            ""id"": 1,
+            ""result"": ""normal""
+        
+        },
+        {
+             ""id"": 2,
+            ""result"": ""Elevated Cholesterol""
+        }
+        ]
+    },
+    {
+         ""name"": ""Michael"",
+        ""tests"": [
+        {
+            ""id"": 1,
+            ""result"": ""normal""
+       }
+       ],
+       ""treatment"": ""Regular Monitoring"",
+    }
+    ]
+}",1746548445916,1746549115913,669.997,0,444,1.2489799358652636,536.4353587760735
+63e5b3e89a3823139cb9d35e,writing-task-tabular,toml,"#Patiend 1
+[patiends]
+idpatiend = 1
+name = ""John""
+
+[patiends.tests]
+idpatiend = 1
+id = 1
+result = ""Normal""
+
+[patiends.tests]
+idpatiend = 1
+id = 2
+result = ""Elevated Cholesterol""
+
+#Patiend 2
+[patiends]
+idpatiend = 2
+name = ""Michael""
+
+[patiends.tests]
+idpatiend = 2
+id = 1
+result = ""Normal""
+
+[patiends.treatment]
+idpatiend = 2
+treatment = ""Regular Monitoring""
+
+",1746550874676,1746551497529,622.853,0,359,1.2501612311111552,498.21813738888886
+66bb6b7e0ccbed81f3ed30a8,writing-task-tabular,xml,"<person> 
+<name> john</name>
+
+<test> id </test>
+<result> normal</result>
+<test>id2 </test>
+<result> elevated cholesterol </result>
+
+<person>
+<person>
+    
+    <name> Michael</name>
+</person>
+<test>
+</test>
+    <test id1></test>
+    <result>normal</result>
+    <treatment> regular monitoring</treatment>",1746384348679,1746385123374,774.695,18,302,1.831341475871529,423.0205072111554
+6753746b1f8827e2bd586bf0,writing-task-tabular,xml,"<patients></patients>
+<name>
+</John>
+<tests> 
+<id1>
+<result></normal>
+<id2>
+<result></Elevated cholesterol>
+<name>
+<micheal>
+<tests>
+<id1><>
+<result></normal>
+<treatment></regular monitoringt>
+",1746384432538,1746384915260,482.722,2,193,1.4162592807899839,340.84295619283745
+67cd944859dabbd1d4552d39,writing-task-tabular,json,"""person"" : {
+    ""name"" : ""John"" ,
+    ""tests"" :{
+    ""Id"" : ""1"" ,
+    ""result"" : ""normal"" ,
+    ""Id"" : ""2"" ,
+    ""Result"" : ""Elevated Cholestrol"" ,
+""Person"" : {
+    ""name"" : ""Michael""
+    ""tests"" : {
+    ""Id"" : ""1"" ,
+    ""result"" : ""Normal"" ,
+    ""treatment"" : {
+    ""regular monitoring""
+    }
+    }
+}",1746385167581,1746385954897,787.316,1,302,1.3648746772071387,576.8412390880001
+57c357770e6a1f00015f6038,writing-task-tabular,json,"{
+    ""patients"":{
+        ""name"":""John"",
+        ""tests"":{
+            ""id"":""1"",
+            ""result"":""Normal"",
+            ""id"":""2"",
+            ""result"":""Elevated Cholersterol""
+        }
+        ""name"": ""Michael"",
+        ""tests"":{
+            ""id"":""1"",
+            ""result"":""Normal""
+        }
+        ""treatment"":""regular Monitoring""    
+        
+    }
+}",1746384246705,1746384851226,604.521,15,358,2.196828925203619,275.1789149644269
+67d188bcc201cc08eac23f92,writing-task-tabular,json5,"(
+
+     ""patients""
+          
+          
+          
+          
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         { ""name"": ""john""
+          ""age""
+          ""test""
+             'testname':
+             ""results"";normal""
+             ""id"": ""normal""
+             ""results"":ellevated cholestrol"")
+                                                      }""patient"":micheal""
+                                                      '""test"";id""1} 
+                                                      ""results"";normal""
+                                                      ""treatment"":regular monitoring}
+                                                      ",1746146185662,1746146896329,710.667,0,727,0.9196720371538329,772.7395976932669
+67f3619e16d4ca195fbd1bd0,writing-task-tabular,yaml,"patient:
+   - name: john
+     tests:
+        - id: 1
+          result: normal
+        - id: 2
+          result: Elevated Cholesterol
+    - name: Micheal
+      tests:
+      - id: 1
+        result: normal
+     treatment: regular monitoring",1746160792565,1746161292111,499.546,0,237,0.6724888448640937,742.8316526216216
+66781db404eab5e142f849d9,writing-task-tabular,jsonc,"{
+    // Top-level key
+    ""patients"" :[
+        {
+            // First patient
+            ""name"" : ""John"",
+            
+            // Test results for John
+            ""tests"" : [
+                {
+                    
+                    ""id"" : 1, 
+                    ""results"" : ""Normal""
+                } ,       
+                {
+                    ""id"" : 2
+                    ""results"" : ""Elevated Cholesterol""
+                }
+              ]
+        },
+        {
+            // Second patient
+            ""name"" : ""Micheal"",
+            // Test results for Micheal
+            ""tests"" : [
+                {
+                    ""id"" : 1,
+                    ""results"" : ""Normal""
+                    
+                }
+                ],
+        // Treatment plan for Micheal
+        ""treatment"" : ""Regular Monitoring""
+        }
+    ]
+}
+    ",1746498263102,1746499416847,1153.745,2,854,0.8723536307840839,1322.5657110671934
+667c2175b570aa694ce2f63c,writing-task-tabular,toml,"[Patients]
+
+name=john
+
+[tests]
+
+# ID1 = ""Normal""
+# ID2 = ""Elevated Cholestral
+
+name=Michael
+
+[tests]
+
+# ID1 = ""Normal""
+# Treatment = ""Regular Monitoring""
+",1746395309157,1746395859624,550.467,9,154,1.7855877559696733,308.2833639285714
+67d1283c8f6169900d0072d2,writing-task-tabular,yaml," patience.John
+ Id 1
+ result normal
+ RESULT Elevated cholesterol
+ 
+ patient 2
+ name michael
+ redult normal
+ treatment regular monitoring
+ 
+ test results normal",1745935162600,1745935594288,431.688,0,159,0.1547589957582251,2789.421047125506
+5f29eff59714081a3594a331,writing-task-tabular,json,"{
+    ""patient"": {
+        ""name"": ""John"",
+        ""tests"": [
+            {""id"": 1,
+            ""result"": ""normal""}
+            {""id"": 2,
+            ""result"": ""Elevated Cholesterol""
+        ],
+        ""name"": ""Michael"",
+        ""tests"": [
+            {""id"": 1,
+                ""result"": ""Normal""
+            }],
+            ""treatment"": ""Regular Monitoring""
+    }
+}",1746144992871,1746145958666,965.795,19,366,1.6156746082630216,597.7657846825397
+65be552ceed6a0595fa1feb5,writing-task-tabular,json,"{
+    ""patients"": [
+        {
+            ""name"": ""John"",
+            ""tests"": [
+                {""id"": 1,
+                ""result"": ""Elevated Cholesterol""
+        }
+    ]
+}
+{
+    ""name"": ""Michael"",
+    ""tests"": [
+     {
+         ""id"": ""A""
+         ""result"": ""Normal""
+     }
+    ],
+    ""treatment"": ""Regular Monitoring""
+}
+]
+}",1746384465073,1746385040282,575.209,2,325,1.1998800119988002,479.38876741666655
+6577a27da9f5297d49f38e6f,writing-task-tabular,hjson,"{
+  patients: [
+    {
+      name: ""John""
+      tests: [
+        {
+          id: 1
+          result: ""Normal""
+        }
+        {
+          id:  2
+          result: ""Elevated Cholesterol""
+        }
+      ]
+    }
+    {
+      name: ""Michael""
+      tests: [
+        {
+          id: 1
+          result: ""Normal""
+        }
+      ]
+      treatment: ""Regular Monitoring""
+    }
+  ]
+}
+",1746157183337,1746158015323,831.986,6,375,1.0850242765651816,766.7902165597484
+67eefd0739d752c54dd52686,writing-task-tabular,toml,"patient Name: john 
+test : 1d=1
+result= normal
+test id = 2, result Elevated cholestrol
+
+patient 2
+Name: Micheal
+id=1
+result = normal
+treatment Regular monitoring",1746150254332,1746150563762,309.43,1,161,1.3371569391262066,231.40888772727274
+67e12acb51605ac16c227598,writing-task-tabular,jsonc,"""hierarchy"":{
+    ""root"":{
+        ""name"":""root"",
+        ""children"":[ 
+            {
+                ""name"": ""child1"",
+                
+            }
+    
+    }
+}",1746145236988,1746147011550,1774.562,0,163,0.769524294072755,2306.0506519008263
+67d9788747176969d8d0fa1d,writing-task-tabular,hjson,"patients: [
+    {
+        name: John
+        tests: [
+         {
+            id:1
+            result: Normal
+        }
+    ]
+    treatment: Regular Monitoring
+    }
+    {
+        name: Michael
+        tests: [
+            {
+                id:1
+                result: Elevated Cholesterol
+            }
+            {
+                id:1
+                result: Normal
+            }
+        ]
+    }
+]",1746385916076,1746386793181,877.105,0,401,0.5138541450901037,1706.914322635659
+669a84e18da4349ece0ea67c,writing-task-tabular,xml,"<patients></patients>
+<name>John</name>
+<test>ID,Results</test>
+<Result>Normal</Result>
+<name>Michael</name>
+<test>ID, Result</test>
+<Result>Normal</Result>",1746529913281,1746530284734,371.453,4,156,1.1755173915690582,315.9910713904382
+67d548b5aa5737666a77a6d2,writing-task-tabular,json5,"patients: {
+        name: [
+            {
+                name: 'John',
+                test: null,
+                tests: {
+                    id: '1',
+                    result: 'Normal',
+                    id: '2'
+                },
+                test: {
+                    id: {
+                        id: '2',
+                        results: {
+                            Elevated: [
+                                {
+                                    id: 1,
+                                    grade: 8,
+                                    weight: 0.1
+                                },
+                                {
+                                    id: 2,
+                                    grade: 9,
+                                    weight: 0.1
+                                }",1746147463379,1746148467855,1004.476,0,807,0.5040938052820264,1992.637063726708
+67ab57e88fd0774428bd1f32,writing-task-tabular,xml,<patients></patients>patient><name>John</name><tests><test><id>1</id><result>Normal</result></test><test><id>2</id><result>Elevated Cholesterol</result></test></tests></patient><name>Michael</name><test><test><id>1</id><result>Normal</result></test></tests><treatment>Regular Monitoring</treatment></patient></patients>,1746148881412,1746149954587,1073.175,0,319,0.7309767549391929,1468.1383405813954
+667983594f7d5d70a78c6e5a,writing-task-tabular,json,"[  
+   {
+       ""name"": ""john"",
+       ""tests"": [
+         { 
+           ""ID""  ""1""
+           ""result"": ""normal
+         } ,
+         {
+             ""ID"" : ""2""
+             ""result"" : ""elevated cholesterol""
+         }
+         ]
+   } ,
+   {
+        ""name"": ""Michael""
+        ""treatment"" : ""regular monitor"" ,
+        ""test"" :  [
+            {
+                ""ID"": ""1""
+                ""result"" : ""normal""
+            }
+            
+         ]
+   
+   
+   
+   
+         
+           ",1746145685192,1746146674986,989.794,0,480,0.597535042417456,1656.4618469831933
+67f913a9b5c79e960807c7e3,writing-task-tabular,yaml,"patients:
+    - name: John
+      tests:
+        - id: 1
+        results: Normal
+        - id: 2
+        results: Elevated Cholesterol
+        
+    - name: Michael
+        tests:
+        -id: 1
+        results: Normal
+        treatment: Regular Monitoring
+        ",1745933242018,1745933869137,627.119,3,263,1.480735802787061,423.5184958853755
+672003022f1b667a20157c45,writing-task-tabular,yaml,"patients:
+name: John
+tests: 
+      id: 1
+      result: Normal
+      id: 2
+      result: Elevated Cholesterol
+
+name: Michael
+tests:
+    id: 1
+    result: Normal
+treatment:
+    Regular Monitoring",1745929438714,1745929719213,280.499,8,193,2.060495496229212,136.131819027668
+671b65fe04c301eb14263ba5,writing-task-tabular,toml,"[[ Patient]]
+name:""John""
+# tests
+id=[1]
+# result=[normal]
+id=[2]
+# result=[elevated cholesterol]
+[[patient]]
+name:""Michael""
+#tests
+id=[1]
+#result[normal]
+#treatment[Regular monitoring]",1746146713118,1746147404823,691.705,0,184,1.0778489215095017,641.7457829166667
+6787d648d7b1963c661f9443,writing-task-tabular,json5,"""patients"":
+names:
+tests:
+id:1
+results:normal 
+id:2
+results:elevated cholesterol 
+name:Micheal
+tests; 
+id:1
+results:normal
+id:2
+results
+treatment:regular monitoring ",1746154441724,1746155658621,1216.897,0,165,0.7139336041748118,1704.4960384047617
+66a9285501ac98053902d481,writing-task-tabular,toml,"[[patients]]
+name = ""John""
+test = { id = 1, result = ""Normal"" }
+test = { id = 2, result = ""Elevated Cholesterol"" }
+
+[[patients]]
+name = ""Michael""
+test = { id = 1; result = ""Normal"" }
+treatment = ""Regular Monitoring""
+",1746383953971,1746384720719,766.748,32,216,2.491339864415528,307.7653157450199
+66a662a0a709312db9de01f2,writing-task-tabular,jsonc,"                 patients
+                 
+                 
+
+name  texts                      name    texts   treatment
+John                          Michael             regular 
+                                                   treatment
+        
+        
+                                        
+Id  result   Id   result                 Id   result
+1   Normal   2    Elevated                1    Normal
+                 Cholestrol",1746157041485,1746157357112,315.627,0,435,1.2780638142115843,246.95715228797468
+66b246951b9aefec80b7158a,writing-task-tabular,json,"{ 
+    ""patients"": 
+    {
+        ""name"": ""John"",
+        ""tests"":
+        {
+            ""id"":1,
+            ""results"":""normal""
+        },
+        {
+            ""id"":2,
+            ""results"":""Elevated Cholesterol""
+        }
+    },
+    {
+        ""name"": ""Michael"",
+        ""tests"":
+        {
+            ""id"":1,
+            ""results"":""normal""
+        },
+        ""treatment"":""Regular Monitoring""
+    }",1746231335303,1746231913518,578.215,10,399,2.102406459664788,275.0253155577689
+5d766978f47e6200019a2acf,writing-task-tabular,yaml,"patients:
+  name: John
+  tests:
+    id: 1
+    result: Normal
+    id: 2
+    result: Elevated Cholesterol
+    
+  name: Michael
+  tests:
+  id: 1
+  result: Normal
+  treatment: Regular Monitoring",1745929986159,1745930386782,400.623,1,190,1.5956840545571978,251.06661864285712
+677d32c679491be18090225b,writing-task-tabular,xml,"<patients>
+    
+</patients><name>john</name
+<tests>
+</tests>
+<id>1</id> <reslt>normal </reslt>
+<result>elevated cholestrol</result>
+
+<name>michael</name>
+<tests></tests>
+<id>1</id>
+<result>Normal</result>
+
+<treatment>Regular monitoring</treatment>
+",1746488888290,1746489431009,542.719,6,248,0.5021790202705653,1080.7281429391307
+67d163e7b7bcc1e9718e01da,writing-task-tabular,json5,"{
+    patients: 
+[
+    {
+        name: 'John',
+        tests: [ 
+          { id: 1, result: 'normal' },
+          { id: 2, result: 'Elevated Cholesterol' }
+        ]
+    },
+    {
+        name: 'Micheal',
+        tests: [ 
+          { id: 1, result: 'normal' }
+        ],
+        treatment: 'regular monitoring'
+    }
+  ]
+}",1745931472149,1745932833891,1361.742,0,322,0.3947294223792786,3449.811244857143
+665c5d94303fdf202ac9ded0,writing-task-tabular,toml,"[[patients]]
+name = ""John""
+
+[[patients.tests]]
+[[patients.tests.test]]
+id = 1
+result = ""Normal""
+
+[[patients.tests.test]]
+id = 2
+result = ""Elevated Cholesterol""
+
+[[patients]]
+name = ""Michael""
+treatment = ""Regular Monitoring""
+
+[patients.tests]
+[[patients.tests.test]]
+id = 1
+result = ""Normal""
+
+
+",1747340026290,1747340374503,348.213,6,293,1.5003482951399432,232.08810989285718
+67ab650c320eccf6141d4010,writing-task-tabular,jsonc,"""name"" John""
+""id"": 2
+""results"" ""normal""
+""id"" ""2""
+""result"" ""elevated cholesterol""""
+
+""name"" ""Michael""
+""id"" ""1""
+""result"" ""normal""
+""treatment"" ""regular monitoring""",1746146024272,1746147272533,1248.261,3,159,0.44393474159298585,2811.8119242499997
+65fad673a546ab14baf2f8d3,writing-task-tabular,json5,"{
+    patients: {
+    {
+    name:'John',
+    tests:{
+        '1': 'Normal',
+        '2': 'Elevated Cholestrol',
+    }
+    }
+    {
+        name:'Micheal',
+        tests:{
+            '1': 'Normal',
+        }
+    treatement: 'Regular Monitoring',
+    }
+    }
+    
+}",1745930426793,1745931203100,776.307,0,263,0.9815989155669124,790.8596756666667
+67f1c7bd6f1c4a3d8deae02f,writing-task-tabular,toml,"penalities = [""name"",""tests"",treatment]
+treatment = Regular monitoring
+name = [""Michael"", ""John""]
+tests = [""id"", ""result""]
+result = normal
+result = elevated cholesterol
+id = [""1"", ""2""]",1746145051620,1746145550967,499.347,0,184,0.907187217624532,550.4343428774704
+67adb27bd5f5776fcb16da62,writing-task-tabular,hjson,"patients: [
+
+{
+name: John 
+tests :  [
+    {
+      id: 1
+      results : Normal 
+       }
+      [
+       id; 2
+       result: Elevated cholesterol
+       ]",1746146238628,1746146764449,525.821,0,154,0.6533315911157571,804.830207432653
+6675c40cdc52b37294f0514e,writing-task-tabular,hjson,"{
+  patients: [
+    {
+         name : John
+         tests : [
+           {
+             id :1 
+             result:Normal
+           }
+           {
+             id: 2
+             result : Elevated Cholesterol
+           }
+         ]
+    }
+    {
+         name: Michael
+         tests: [
+           {
+             id:1
+             result:normal
+           }
+           ]
+           treatment: Regular Monitoring
+           ]
+        ]",1746234427248,1746235257791,830.543,0,434,0.3621388086475379,2293.4382622558137
